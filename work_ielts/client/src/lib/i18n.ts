@@ -71,6 +71,22 @@ export const homeLabels: Record<Locale, {
   exploreGlobalResources: string;
   free: string;
   premium: string;
+  listeningResourcesTitle: string;
+  listeningResourcesSubtitle: string;
+  howToUseListening: string;
+  listeningSteps: string[];
+  provider: string;
+  sourceType: string;
+  level: string;
+  duration: string;
+  skills: string;
+  languageSupport: string;
+  openResource: string;
+  official: string;
+  youtube: string;
+  playlist: string;
+  ieltsListening: string;
+  dailyListening: string;
 }> = {
   en: {
     back: "Back",
@@ -113,6 +129,29 @@ export const homeLabels: Record<Locale, {
     exploreGlobalResources: "Explore Global Resources",
     free: "Free",
     premium: "Premium",
+    listeningResourcesTitle: "Featured Free Listening Resources",
+    listeningResourcesSubtitle:
+      "Official IELTS listening practice and trusted YouTube listening materials for test skills and daily comprehension.",
+    howToUseListening: "How to use these resources",
+    listeningSteps: [
+      "Listen once for main idea",
+      "Listen again for details",
+      "Write down keywords",
+      "Check transcript or answers if available",
+      "Review vocabulary",
+    ],
+    provider: "Provider",
+    sourceType: "Source Type",
+    level: "Level",
+    duration: "Duration",
+    skills: "Skills",
+    languageSupport: "Language Support",
+    openResource: "Open resource",
+    official: "Official",
+    youtube: "YouTube",
+    playlist: "Playlist",
+    ieltsListening: "IELTS Listening",
+    dailyListening: "Daily Listening",
   },
   zh: {
     back: "返回",
@@ -153,6 +192,28 @@ export const homeLabels: Record<Locale, {
     exploreGlobalResources: "探索全球资源",
     free: "免费",
     premium: "付费",
+    listeningResourcesTitle: "精选免费听力资源",
+    listeningResourcesSubtitle: "官方雅思听力练习与可信 YouTube 听力材料，兼顾考试技能和日常理解。",
+    howToUseListening: "如何使用这些资源",
+    listeningSteps: [
+      "第一遍听主旨",
+      "第二遍听细节",
+      "写下关键词",
+      "如有原文或答案，完成后再核对",
+      "复习相关词汇",
+    ],
+    provider: "提供方",
+    sourceType: "来源类型",
+    level: "类型",
+    duration: "时长",
+    skills: "训练重点",
+    languageSupport: "语言支持",
+    openResource: "打开资源",
+    official: "官方",
+    youtube: "YouTube",
+    playlist: "播放列表",
+    ieltsListening: "雅思听力",
+    dailyListening: "日常听力",
   },
   yue: {
     back: "返回",
@@ -193,6 +254,28 @@ export const homeLabels: Record<Locale, {
     exploreGlobalResources: "探索全球資源",
     free: "免費",
     premium: "付費",
+    listeningResourcesTitle: "精選免費聽力資源",
+    listeningResourcesSubtitle: "官方雅思聽力練習同可信 YouTube 聽力材料，兼顧考試技巧同日常理解。",
+    howToUseListening: "點樣使用呢啲資源",
+    listeningSteps: [
+      "第一遍聽主旨",
+      "第二遍聽細節",
+      "寫低關鍵詞",
+      "如有原文或答案，完成後再核對",
+      "重溫相關詞彙",
+    ],
+    provider: "提供方",
+    sourceType: "來源類型",
+    level: "類型",
+    duration: "時長",
+    skills: "訓練重點",
+    languageSupport: "語言支援",
+    openResource: "打開資源",
+    official: "官方",
+    youtube: "YouTube",
+    playlist: "播放列表",
+    ieltsListening: "雅思聽力",
+    dailyListening: "日常聽力",
   },
 };
 

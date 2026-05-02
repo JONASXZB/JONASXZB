@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TopNav } from "@/components/TopNav";
+import { listeningResources } from "@/data/listeningResources";
 import { weeklyReadings } from "@/data/weeklyReading";
 import { homeLabels, type Locale } from "@/lib/i18n";
 import { ArrowRight, BookOpen, Headphones, MessageSquare, FileText, Zap, Globe, TrendingUp, Newspaper } from "lucide-react";
@@ -704,6 +705,15 @@ export default function Home() {
     if (tag === "Premium") return t.premium;
     return tag;
   };
+  const listeningLabel = (label: string) => {
+    if (label === "Official") return t.official;
+    if (label === "YouTube") return t.youtube;
+    if (label === "Playlist") return t.playlist;
+    if (label === "Free") return t.free;
+    if (label === "IELTS Listening") return t.ieltsListening;
+    if (label === "Daily Listening") return t.dailyListening;
+    return label;
+  };
 
   if (showThinkTanks) {
     return (
@@ -785,6 +795,74 @@ export default function Home() {
           </div>
 
           <div className="space-y-12">
+            {activeModule === "listening" && (
+              <section>
+                <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <h2 className="text-2xl font-semibold text-slate-950">{t.listeningResourcesTitle}</h2>
+                    <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-600">
+                      {t.listeningResourcesSubtitle}
+                    </p>
+                  </div>
+                </div>
+
+                <Card className="mb-5 rounded-3xl border-slate-200 bg-white p-6 shadow-sm">
+                  <h3 className="text-base font-semibold text-slate-950">{t.howToUseListening}</h3>
+                  <div className="mt-4 grid gap-3 md:grid-cols-5">
+                    {t.listeningSteps.map((step, index) => (
+                      <div key={step} className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4 text-sm leading-6 text-slate-600">
+                        <span className="mb-2 block text-xs font-bold text-blue-700">0{index + 1}</span>
+                        {step}
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  {listeningResources.map((resource) => (
+                    <a key={resource.id} href={resource.url} target="_blank" rel="noopener noreferrer" className="group">
+                      <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                        <div className="mb-5 flex items-start justify-between gap-4">
+                          <div className="flex flex-wrap gap-2">
+                            <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                              {listeningLabel(resource.sourceType)}
+                            </span>
+                            <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                              {t.free}
+                            </span>
+                          </div>
+                          <ArrowRight className="h-4 w-4 flex-shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-700" />
+                        </div>
+                        <h3 className="text-lg font-semibold leading-7 text-slate-950 group-hover:text-blue-700">
+                          {resource.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-6 text-slate-600">{resource.description[language]}</p>
+
+                        <div className="mt-5 grid gap-2 text-sm text-slate-500">
+                          <span><strong className="font-semibold text-slate-700">{t.provider}:</strong> {resource.provider}</span>
+                          <span><strong className="font-semibold text-slate-700">{t.level}:</strong> {listeningLabel(resource.level)}</span>
+                          <span><strong className="font-semibold text-slate-700">{t.duration}:</strong> {resource.duration}</span>
+                          <span><strong className="font-semibold text-slate-700">{t.languageSupport}:</strong> {resource.languageSupport[language]}</span>
+                        </div>
+
+                        <div className="mt-5 flex flex-wrap gap-2">
+                          {resource.skills.map((skill) => (
+                            <span key={skill} className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                              {listeningLabel(skill)}
+                            </span>
+                          ))}
+                        </div>
+
+                        <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
+                          {t.openResource} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                        </span>
+                      </Card>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {Object.entries(module.categories).map(([category, resources]) => (
               <section key={category}>
                 <h2 className="mb-5 text-xl font-semibold text-slate-950">{category}</h2>
