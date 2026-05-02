@@ -679,13 +679,21 @@ const thinkTankResources = {
 type ResourceKey = keyof typeof resourcesData;
 
 const primarySkillKeys = ["listening", "reading", "writing", "speaking"] as const;
+type PrimarySkillKey = (typeof primarySkillKeys)[number];
 const supportResourceKeys = ["vocabulary"] as const;
 
-const skillStyles: Record<(typeof primarySkillKeys)[number], { ring: string; text: string; bg: string }> = {
+const skillStyles: Record<PrimarySkillKey, { ring: string; text: string; bg: string }> = {
   listening: { ring: "bg-blue-50", text: "text-blue-700", bg: "bg-blue-600" },
   reading: { ring: "bg-emerald-50", text: "text-emerald-700", bg: "bg-emerald-600" },
   writing: { ring: "bg-orange-50", text: "text-orange-700", bg: "bg-orange-600" },
   speaking: { ring: "bg-violet-50", text: "text-violet-700", bg: "bg-violet-600" },
+};
+
+const skillVisuals: Record<PrimarySkillKey, string> = {
+  listening: "/visuals/listening-accent.svg",
+  reading: "/visuals/reading-article.svg",
+  writing: "/visuals/writing-draft.svg",
+  speaking: "/visuals/speaking-dialogue.svg",
 };
 
 const weeklyReadingPreview = weeklyReadings.slice(0, 4);
@@ -697,6 +705,12 @@ export default function Home() {
   const [showThinkTanks, setShowThinkTanks] = useState(false);
   const [language, setLanguage] = useState<Locale>("en");
   const t = homeLabels[language];
+  const skillVisualAlt: Record<PrimarySkillKey, string> = {
+    listening: t.listeningVisualAlt,
+    reading: t.readingVisualAlt,
+    writing: t.writingVisualAlt,
+    speaking: t.speakingVisualAlt,
+  };
   const skillCopy: Partial<Record<ResourceKey, { title: string; description: string }>> = {
     listening: { title: t.listening, description: t.listeningDesc },
     reading: { title: t.reading, description: t.readingDesc },
@@ -825,18 +839,31 @@ export default function Home() {
   if (activeModule) {
     const module = resourcesData[activeModule];
     const IconComponent = module.icon;
+    const activeSkillKey = primarySkillKeys.includes(activeModule as PrimarySkillKey)
+      ? (activeModule as PrimarySkillKey)
+      : null;
 
     return (
       <div className="min-h-screen bg-[#f8fafc] text-slate-950">
         <TopNav language={language} onLanguageChange={setLanguage} />
         <main className="container py-10 sm:py-14">
           <div className="mb-10 flex flex-col gap-5 border-b border-slate-200 pb-8 md:flex-row md:items-end md:justify-between">
-            <div>
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-700">
-                <IconComponent className="h-6 w-6" />
+            <div className="flex flex-1 flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <div>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-700">
+                  <IconComponent className="h-6 w-6" />
+                </div>
+                <h1 className="text-4xl font-semibold text-slate-950 md:text-5xl">{moduleTitle(activeModule)}</h1>
+                <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">{moduleDescription(activeModule)}</p>
               </div>
-              <h1 className="text-4xl font-semibold text-slate-950 md:text-5xl">{moduleTitle(activeModule)}</h1>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">{moduleDescription(activeModule)}</p>
+              {activeSkillKey && (
+                <img
+                  src={skillVisuals[activeSkillKey]}
+                  alt={skillVisualAlt[activeSkillKey]}
+                  loading="lazy"
+                  className="hidden h-28 w-40 rounded-3xl border border-slate-200 bg-white object-contain p-3 shadow-sm md:block"
+                />
+              )}
             </div>
             <Button variant="outline" onClick={() => setActiveModule(null)} className="rounded-full">
               {t.back}
@@ -1304,22 +1331,20 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative hidden min-h-[420px] lg:block" aria-hidden="true">
+          <div className="relative hidden min-h-[420px] lg:block">
             <div className="absolute left-8 top-10 grid grid-cols-8 gap-3 opacity-45">
               {Array.from({ length: 64 }).map((_, index) => (
                 <span key={index} className="h-1 w-1 rounded-full bg-slate-400" />
               ))}
             </div>
-            <div className="absolute right-0 top-4 h-80 w-80 rounded-full border border-blue-900/50" />
-            <div className="absolute right-16 top-16 h-64 w-64 rounded-full bg-white shadow-inner ring-1 ring-slate-100" />
-            <div className="absolute bottom-12 right-2 h-44 w-72 rounded-t-full bg-blue-950 shadow-2xl" />
-            <div className="absolute bottom-7 right-20 h-9 w-[420px] rounded-full bg-white shadow-xl ring-1 ring-slate-200" />
-            <div className="absolute bottom-24 left-48 h-16 w-16 rounded-full bg-slate-100 shadow-xl ring-1 ring-slate-200" />
-            <div className="absolute right-0 bottom-12 flex gap-2">
-              {Array.from({ length: 8 }).map((_, index) => (
-                <span key={index} className="h-44 w-1 rounded-full bg-slate-200" />
-              ))}
-            </div>
+            <div className="absolute right-8 top-6 h-80 w-80 rounded-full border border-blue-900/20" aria-hidden="true" />
+            <div className="absolute bottom-8 right-6 h-10 w-[420px] rounded-full bg-white shadow-xl ring-1 ring-slate-200" aria-hidden="true" />
+            <img
+              src="/visuals/hero-learning-map.svg"
+              alt={t.heroVisualAlt}
+              className="absolute right-8 top-16 h-[300px] w-[440px] rounded-[2rem] object-contain shadow-2xl shadow-slate-950/10 ring-1 ring-slate-200/80"
+              decoding="async"
+            />
           </div>
         </section>
 
@@ -1338,8 +1363,16 @@ export default function Home() {
                 return (
                   <button key={key} onClick={() => setActiveModule(key)} className="group text-left">
                     <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
-                      <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-full ${style.ring} ${style.text}`}>
-                        <IconComponent className="h-6 w-6" />
+                      <div className="mb-5 flex items-start justify-between gap-4">
+                        <div className={`flex h-14 w-14 items-center justify-center rounded-full ${style.ring} ${style.text}`}>
+                          <IconComponent className="h-6 w-6" />
+                        </div>
+                        <img
+                          src={skillVisuals[key]}
+                          alt={skillVisualAlt[key]}
+                          loading="lazy"
+                          className="h-16 w-20 rounded-2xl border border-slate-100 bg-slate-50 object-contain p-2 opacity-85 transition group-hover:opacity-100"
+                        />
                       </div>
                       <h3 className="text-lg font-semibold text-slate-950">{moduleTitle(key)}</h3>
                       <p className="mt-3 min-h-16 text-sm leading-6 text-slate-600">{moduleDescription(key)}</p>
@@ -1355,8 +1388,16 @@ export default function Home() {
             <Card className="mt-8 rounded-3xl border-slate-200 bg-[#f8fafc] p-6 shadow-sm md:p-8">
               <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
                 <div>
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
-                    <BookOpen className="h-6 w-6" />
+                  <div className="mb-4 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+                      <BookOpen className="h-6 w-6" />
+                    </div>
+                    <img
+                      src="/visuals/global-reading.svg"
+                      alt={t.globalReadingVisualAlt}
+                      loading="lazy"
+                      className="h-16 w-24 rounded-2xl border border-slate-200 bg-white object-contain p-2"
+                    />
                   </div>
                   <h3 className="text-2xl font-semibold text-slate-950">{t.readingPathTitle}</h3>
                   <p className="mt-3 text-sm leading-7 text-slate-600">{t.readingPathBody}</p>
@@ -1379,13 +1420,21 @@ export default function Home() {
         <section id="weekly-news-preview" className="bg-[#f8fafc] py-16 sm:py-20">
           <div className="container">
             <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <div>
-                <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">
-                  {t.readingTitle}
-                </h2>
-                <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
-                  {t.readingSubtitle}
-                </p>
+              <div className="flex max-w-3xl items-start gap-5">
+                <img
+                  src="/visuals/global-reading.svg"
+                  alt={t.globalReadingVisualAlt}
+                  loading="lazy"
+                  className="hidden h-20 w-28 rounded-2xl border border-slate-200 bg-white object-contain p-2 shadow-sm sm:block"
+                />
+                <div>
+                  <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">
+                    {t.readingTitle}
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+                    {t.readingSubtitle}
+                  </p>
+                </div>
               </div>
               <Button variant="outline" onClick={() => setLocation("/weekly-news")} className="rounded-full bg-white">
                 {t.viewReading} <ArrowRight className="ml-2 h-4 w-4" />

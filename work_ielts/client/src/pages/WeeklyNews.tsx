@@ -86,6 +86,12 @@ export default function WeeklyNews() {
           </div>
 
           <Card className="rounded-2xl border-slate-200 bg-white p-6 shadow-sm">
+            <img
+              src="/visuals/global-reading.svg"
+              alt={t.visualAlt}
+              loading="lazy"
+              className="mb-5 h-24 w-full rounded-2xl border border-slate-100 bg-slate-50 object-contain p-3"
+            />
             <p className="text-sm leading-7 text-slate-600">
               <strong className="font-semibold text-slate-950">{t.learningFocus}</strong>{" "}
               {t.learningFocusBody}

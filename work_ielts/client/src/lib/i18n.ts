@@ -158,6 +158,12 @@ export const homeLabels: Record<Locale, {
   practiceRoutine: string;
   speakingRoutineSteps: string[];
   speakingChecklistItems: string[];
+  heroVisualAlt: string;
+  listeningVisualAlt: string;
+  readingVisualAlt: string;
+  writingVisualAlt: string;
+  speakingVisualAlt: string;
+  globalReadingVisualAlt: string;
 }> = {
   en: {
     back: "Back",
@@ -328,6 +334,12 @@ export const homeLabels: Record<Locale, {
       "Examples: support opinions with personal or global examples",
       "Structure: answer directly, explain, and extend",
     ],
+    heroVisualAlt: "Minimal open book, compass, and global learning map illustration",
+    listeningVisualAlt: "Minimal headphones and accent practice illustration",
+    readingVisualAlt: "Minimal article reading and bookmark illustration",
+    writingVisualAlt: "Minimal writing draft and checklist illustration",
+    speakingVisualAlt: "Minimal speaking dialogue and timer illustration",
+    globalReadingVisualAlt: "Minimal globe and reading cards illustration",
   },
   zh: {
     back: "返回",
@@ -491,6 +503,12 @@ export const homeLabels: Record<Locale, {
       "例子：用个人或全球议题例子支持观点",
       "结构：直接回答、解释并延展",
     ],
+    heroVisualAlt: "打开的书、指南针和全球学习地图的极简插画",
+    listeningVisualAlt: "耳机与口音练习的极简插画",
+    readingVisualAlt: "文章阅读与书签的极简插画",
+    writingVisualAlt: "写作草稿与检查清单的极简插画",
+    speakingVisualAlt: "口语对话与计时器的极简插画",
+    globalReadingVisualAlt: "全球阅读与文章卡片的极简插画",
   },
   yue: {
     back: "返回",
@@ -654,6 +672,12 @@ export const homeLabels: Record<Locale, {
       "例子：用個人或者全球議題例子支持觀點",
       "結構：直接回答、解釋並延展",
     ],
+    heroVisualAlt: "打開嘅書、指南針同全球學習地圖嘅極簡插畫",
+    listeningVisualAlt: "耳機同口音練習嘅極簡插畫",
+    readingVisualAlt: "文章閱讀同書籤嘅極簡插畫",
+    writingVisualAlt: "寫作草稿同檢查清單嘅極簡插畫",
+    speakingVisualAlt: "口語對話同計時器嘅極簡插畫",
+    globalReadingVisualAlt: "全球閱讀同文章卡片嘅極簡插畫",
   },
 };
 
@@ -679,6 +703,7 @@ export const weeklyReadingLabels: Record<Locale, {
   level: string;
   sourceType: string;
   free: string;
+  visualAlt: string;
 }> = {
   en: {
     title: "Weekly Global Reading",
@@ -703,6 +728,7 @@ export const weeklyReadingLabels: Record<Locale, {
     level: "Level",
     sourceType: "Source Type",
     free: "Free",
+    visualAlt: "Minimal globe and article cards for Weekly Global Reading",
   },
   zh: {
     title: "每周全球精读",
@@ -727,6 +753,7 @@ export const weeklyReadingLabels: Record<Locale, {
     level: "难度",
     sourceType: "来源类型",
     free: "免费",
+    visualAlt: "每周全球精读的地球与文章卡片极简插画",
   },
   yue: {
     title: "每週全球精讀",
@@ -751,6 +778,7 @@ export const weeklyReadingLabels: Record<Locale, {
     level: "難度",
     sourceType: "來源類型",
     free: "免費",
+    visualAlt: "每週全球精讀嘅地球同文章卡片極簡插畫",
   },
 };
 
