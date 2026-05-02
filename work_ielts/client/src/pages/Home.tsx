@@ -879,7 +879,7 @@ export default function Home() {
                 <Newspaper className="w-4 h-4" />
                 Weekly News
               </Button>
-              {(["en", "zh", "yue"] as const).map((lang) => ( (
+             {(["en", "zh", "yue"] as const).map((lang) => (
                 <button
                   key={lang}
                   onClick={() => setLanguage(lang)}
