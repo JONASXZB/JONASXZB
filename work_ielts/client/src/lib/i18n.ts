@@ -87,6 +87,23 @@ export const homeLabels: Record<Locale, {
   playlist: string;
   ieltsListening: string;
   dailyListening: string;
+  readingResourcesTitle: string;
+  readingResourcesSubtitle: string;
+  howToUseReading: string;
+  readingSteps: string[];
+  topicFocus: string;
+  howToUse: string;
+  paywallNote: string;
+  news: string;
+  thinkTank: string;
+  research: string;
+  data: string;
+  publicInstitution: string;
+  officialIeltsPractice: string;
+  newsCurrentAffairs: string;
+  thinkTanksResearch: string;
+  dataPublicInstitutions: string;
+  ieltsReading: string;
 }> = {
   en: {
     back: "Back",
@@ -152,6 +169,30 @@ export const homeLabels: Record<Locale, {
     playlist: "Playlist",
     ieltsListening: "IELTS Listening",
     dailyListening: "Daily Listening",
+    readingResourcesTitle: "Featured Free Reading Resources",
+    readingResourcesSubtitle:
+      "Official IELTS reading practice, trusted news, think tanks, research, and public data for stronger academic reading.",
+    howToUseReading: "How to use Reading resources",
+    readingSteps: [
+      "Skim the article first",
+      "Identify the main argument",
+      "Highlight academic vocabulary",
+      "Summarize in 3 sentences",
+      "Turn the topic into a speaking or writing idea",
+    ],
+    topicFocus: "Topic Focus",
+    howToUse: "How to Use",
+    paywallNote: "Access Note",
+    news: "News",
+    thinkTank: "Think Tank",
+    research: "Research",
+    data: "Data",
+    publicInstitution: "Public Institution",
+    officialIeltsPractice: "Official IELTS Practice",
+    newsCurrentAffairs: "News & Current Affairs",
+    thinkTanksResearch: "Think Tanks & Research",
+    dataPublicInstitutions: "Data & Public Institutions",
+    ieltsReading: "IELTS Reading",
   },
   zh: {
     back: "返回",
@@ -214,6 +255,29 @@ export const homeLabels: Record<Locale, {
     playlist: "播放列表",
     ieltsListening: "雅思听力",
     dailyListening: "日常听力",
+    readingResourcesTitle: "精选免费阅读资源",
+    readingResourcesSubtitle: "官方雅思阅读练习、可信新闻、智库研究和公共数据，帮助提升学术阅读能力。",
+    howToUseReading: "如何使用阅读资源",
+    readingSteps: [
+      "先快速浏览文章",
+      "找出主要论点",
+      "标出学术词汇",
+      "用三句话总结",
+      "把主题转化为口语或写作观点",
+    ],
+    topicFocus: "主题重点",
+    howToUse: "使用方法",
+    paywallNote: "访问说明",
+    news: "新闻",
+    thinkTank: "智库",
+    research: "研究",
+    data: "数据",
+    publicInstitution: "公共机构",
+    officialIeltsPractice: "官方雅思练习",
+    newsCurrentAffairs: "新闻与时事",
+    thinkTanksResearch: "智库与研究",
+    dataPublicInstitutions: "数据与公共机构",
+    ieltsReading: "雅思阅读",
   },
   yue: {
     back: "返回",
@@ -276,6 +340,29 @@ export const homeLabels: Record<Locale, {
     playlist: "播放列表",
     ieltsListening: "雅思聽力",
     dailyListening: "日常聽力",
+    readingResourcesTitle: "精選免費閱讀資源",
+    readingResourcesSubtitle: "官方雅思閱讀練習、可信新聞、智庫研究同公共數據，幫助提升學術閱讀能力。",
+    howToUseReading: "點樣使用閱讀資源",
+    readingSteps: [
+      "先快速瀏覽文章",
+      "搵出主要論點",
+      "標出學術詞彙",
+      "用三句總結",
+      "將主題轉化為口語或者寫作觀點",
+    ],
+    topicFocus: "主題重點",
+    howToUse: "使用方法",
+    paywallNote: "訪問說明",
+    news: "新聞",
+    thinkTank: "智庫",
+    research: "研究",
+    data: "數據",
+    publicInstitution: "公共機構",
+    officialIeltsPractice: "官方雅思練習",
+    newsCurrentAffairs: "新聞與時事",
+    thinkTanksResearch: "智庫與研究",
+    dataPublicInstitutions: "數據與公共機構",
+    ieltsReading: "雅思閱讀",
   },
 };
 
