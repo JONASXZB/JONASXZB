@@ -681,6 +681,104 @@ export const homeLabels: Record<Locale, {
   },
 };
 
+export const vocabularyNotebookLabels: Record<Locale, {
+  title: string;
+  subtitle: string;
+  word: string;
+  wordPlaceholder: string;
+  meaning: string;
+  meaningPlaceholder: string;
+  example: string;
+  examplePlaceholder: string;
+  topic: string;
+  topicPlaceholder: string;
+  skill: string;
+  ieltsUse: string;
+  ieltsUsePlaceholder: string;
+  saveEntry: string;
+  deleteEntry: string;
+  emptyState: string;
+  allSkills: string;
+  skillOptions: Record<"Reading" | "Listening" | "Writing" | "Speaking", string>;
+}> = {
+  en: {
+    title: "Vocabulary Notebook",
+    subtitle:
+      "Save useful words and phrases from IELTS practice, then filter them by skill when you revise.",
+    word: "Word or phrase",
+    wordPlaceholder: "e.g. sustainable development",
+    meaning: "Meaning",
+    meaningPlaceholder: "Write the meaning in your own words",
+    example: "Example sentence",
+    examplePlaceholder: "Use the word in a natural sentence",
+    topic: "Topic",
+    topicPlaceholder: "e.g. climate, education, technology",
+    skill: "Skill",
+    ieltsUse: "IELTS use",
+    ieltsUsePlaceholder: "How could you use this in IELTS?",
+    saveEntry: "Save Entry",
+    deleteEntry: "Delete entry",
+    emptyState: "No vocabulary saved yet. Add your first useful word or phrase.",
+    allSkills: "All Skills",
+    skillOptions: {
+      Reading: "Reading",
+      Listening: "Listening",
+      Writing: "Writing",
+      Speaking: "Speaking",
+    },
+  },
+  zh: {
+    title: "词汇笔记本",
+    subtitle: "保存雅思练习中的高频词和表达，复习时可按技能筛选。",
+    word: "单词或短语",
+    wordPlaceholder: "例如：sustainable development",
+    meaning: "含义",
+    meaningPlaceholder: "用自己的话写下意思",
+    example: "例句",
+    examplePlaceholder: "用这个词写一个自然的句子",
+    topic: "主题",
+    topicPlaceholder: "例如：气候、教育、科技",
+    skill: "技能",
+    ieltsUse: "雅思用途",
+    ieltsUsePlaceholder: "这个表达可以怎样用于雅思？",
+    saveEntry: "保存词条",
+    deleteEntry: "删除词条",
+    emptyState: "还没有保存词汇。先添加一个有用的单词或短语。",
+    allSkills: "全部技能",
+    skillOptions: {
+      Reading: "阅读",
+      Listening: "听力",
+      Writing: "写作",
+      Speaking: "口语",
+    },
+  },
+  yue: {
+    title: "詞彙筆記本",
+    subtitle: "保存雅思練習入面有用嘅詞同表達，溫習時可以按技能篩選。",
+    word: "單詞或短語",
+    wordPlaceholder: "例如：sustainable development",
+    meaning: "意思",
+    meaningPlaceholder: "用自己嘅講法寫低意思",
+    example: "例句",
+    examplePlaceholder: "用呢個詞寫一句自然嘅句子",
+    topic: "主題",
+    topicPlaceholder: "例如：氣候、教育、科技",
+    skill: "技能",
+    ieltsUse: "雅思用途",
+    ieltsUsePlaceholder: "呢個表達可以點樣用喺雅思？",
+    saveEntry: "保存詞條",
+    deleteEntry: "刪除詞條",
+    emptyState: "暫時未保存詞彙。先添加一個有用嘅單詞或短語。",
+    allSkills: "全部技能",
+    skillOptions: {
+      Reading: "閱讀",
+      Listening: "聽力",
+      Writing: "寫作",
+      Speaking: "口語",
+    },
+  },
+};
+
 export const weeklyReadingLabels: Record<Locale, {
   title: string;
   subtitle: string;

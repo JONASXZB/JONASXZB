@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TopNav } from "@/components/TopNav";
 import { SpeakingPractice } from "@/components/SpeakingPractice";
+import { VocabularyNotebook } from "@/components/VocabularyNotebook";
 import { WritingPractice } from "@/components/WritingPractice";
 import { listeningAccentResources } from "@/data/listeningAccentResources";
 import { listeningResources } from "@/data/listeningResources";
@@ -1457,6 +1458,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <VocabularyNotebook language={language} />
 
         <section id="resources" className="border-t border-slate-200 bg-white py-16 sm:py-20">
           <div className="container">
