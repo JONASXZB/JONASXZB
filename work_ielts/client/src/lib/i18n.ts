@@ -104,6 +104,29 @@ export const homeLabels: Record<Locale, {
   thinkTanksResearch: string;
   dataPublicInstitutions: string;
   ieltsReading: string;
+  writingPracticeTitle: string;
+  writingPracticeSubtitle: string;
+  task1: string;
+  task2: string;
+  promptBank: string;
+  writingPracticeArea: string;
+  writingChecklist: string;
+  freeWritingResources: string;
+  taskType: string;
+  prompt: string;
+  questionType: string;
+  usefulIdeas: string;
+  usefulVocabulary: string;
+  relatedReadingTopic: string;
+  wordCount: string;
+  timeGuide: string;
+  saveDraft: string;
+  clearDraft: string;
+  draftSaved: string;
+  writeHere: string;
+  writingChecklistItems: string[];
+  sourceLesson: string;
+  practice: string;
 }> = {
   en: {
     back: "Back",
@@ -193,6 +216,36 @@ export const homeLabels: Record<Locale, {
     thinkTanksResearch: "Think Tanks & Research",
     dataPublicInstitutions: "Data & Public Institutions",
     ieltsReading: "IELTS Reading",
+    writingPracticeTitle: "IELTS Writing Practice Flow",
+    writingPracticeSubtitle:
+      "Build ideas from reading, practise Task 1 and Task 2, and self-check your response before you revise.",
+    task1: "Task 1",
+    task2: "Task 2",
+    promptBank: "Writing Prompt Bank",
+    writingPracticeArea: "Writing Practice Area",
+    writingChecklist: "Writing Checklist",
+    freeWritingResources: "Free Writing Resources",
+    taskType: "Task Type",
+    prompt: "Prompt",
+    questionType: "Question Type",
+    usefulIdeas: "Useful Ideas",
+    usefulVocabulary: "Useful Vocabulary",
+    relatedReadingTopic: "Related Reading Topic",
+    wordCount: "Word Count",
+    timeGuide: "Time Guide",
+    saveDraft: "Save Draft",
+    clearDraft: "Clear Draft",
+    draftSaved: "Draft saved locally",
+    writeHere: "Write your answer here...",
+    writingChecklistItems: [
+      "Task Response: answer every part of the question directly",
+      "Coherence and Cohesion: use clear paragraphs and logical linking",
+      "Lexical Resource: use precise topic vocabulary without overcomplicating",
+      "Grammar Range and Accuracy: mix sentence structures and check errors",
+      "Revision: check examples, explanations, and word count before saving",
+    ],
+    sourceLesson: "Lesson",
+    practice: "Practice",
   },
   zh: {
     back: "返回",
@@ -278,6 +331,35 @@ export const homeLabels: Record<Locale, {
     thinkTanksResearch: "智库与研究",
     dataPublicInstitutions: "数据与公共机构",
     ieltsReading: "雅思阅读",
+    writingPracticeTitle: "雅思写作练习流程",
+    writingPracticeSubtitle: "从阅读中积累观点，练习 Task 1 与 Task 2，并在修改前进行自查。",
+    task1: "Task 1",
+    task2: "Task 2",
+    promptBank: "写作题库",
+    writingPracticeArea: "写作练习区",
+    writingChecklist: "写作检查清单",
+    freeWritingResources: "免费写作资源",
+    taskType: "任务类型",
+    prompt: "题目",
+    questionType: "题型",
+    usefulIdeas: "可用观点",
+    usefulVocabulary: "可用词汇",
+    relatedReadingTopic: "相关阅读主题",
+    wordCount: "字数",
+    timeGuide: "时间建议",
+    saveDraft: "保存草稿",
+    clearDraft: "清空草稿",
+    draftSaved: "草稿已保存在本地",
+    writeHere: "在这里写下你的答案……",
+    writingChecklistItems: [
+      "任务回应：直接回答题目的每个部分",
+      "连贯与衔接：段落清晰，逻辑连接自然",
+      "词汇资源：使用准确主题词汇，不要过度复杂化",
+      "语法多样性与准确性：混合句式并检查错误",
+      "修改：保存前检查例子、解释和字数",
+    ],
+    sourceLesson: "课程",
+    practice: "练习",
   },
   yue: {
     back: "返回",
@@ -363,6 +445,35 @@ export const homeLabels: Record<Locale, {
     thinkTanksResearch: "智庫與研究",
     dataPublicInstitutions: "數據與公共機構",
     ieltsReading: "雅思閱讀",
+    writingPracticeTitle: "雅思寫作練習流程",
+    writingPracticeSubtitle: "由閱讀入面累積觀點，練習 Task 1 同 Task 2，並喺修改前做自查。",
+    task1: "Task 1",
+    task2: "Task 2",
+    promptBank: "寫作題庫",
+    writingPracticeArea: "寫作練習區",
+    writingChecklist: "寫作檢查清單",
+    freeWritingResources: "免費寫作資源",
+    taskType: "任務類型",
+    prompt: "題目",
+    questionType: "題型",
+    usefulIdeas: "可用觀點",
+    usefulVocabulary: "可用詞彙",
+    relatedReadingTopic: "相關閱讀主題",
+    wordCount: "字數",
+    timeGuide: "時間建議",
+    saveDraft: "儲存草稿",
+    clearDraft: "清空草稿",
+    draftSaved: "草稿已儲存喺本機",
+    writeHere: "喺呢度寫低你嘅答案……",
+    writingChecklistItems: [
+      "任務回應：直接回答題目每個部分",
+      "連貫與銜接：段落清晰，邏輯連接自然",
+      "詞彙資源：使用準確主題詞彙，唔好過度複雜化",
+      "語法多樣性與準確性：混合句式並檢查錯誤",
+      "修改：儲存前檢查例子、解釋同字數",
+    ],
+    sourceLesson: "課程",
+    practice: "練習",
   },
 };
 

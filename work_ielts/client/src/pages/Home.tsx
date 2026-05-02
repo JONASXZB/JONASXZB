@@ -2,8 +2,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TopNav } from "@/components/TopNav";
+import { WritingPractice } from "@/components/WritingPractice";
 import { listeningResources } from "@/data/listeningResources";
 import { readingResourceGroups, readingResources } from "@/data/readingResources";
+import { writingResources } from "@/data/writingResources";
 import { weeklyReadings } from "@/data/weeklyReading";
 import { homeLabels, type Locale } from "@/lib/i18n";
 import { ArrowRight, BookOpen, Headphones, MessageSquare, FileText, Zap, Globe, TrendingUp, Newspaper } from "lucide-react";
@@ -730,6 +732,16 @@ export default function Home() {
     if (label === "Data & Public Institutions") return t.dataPublicInstitutions;
     return label;
   };
+  const writingLabel = (label: string) => {
+    if (label === "Official") return t.official;
+    if (label === "Lesson") return t.sourceLesson;
+    if (label === "Practice") return t.practice;
+    if (label === "Free") return t.free;
+    if (label === "Task 1") return t.task1;
+    if (label === "Task 2") return t.task2;
+    if (label === "Task 1 / Task 2") return `${t.task1} / ${t.task2}`;
+    return label;
+  };
 
   if (showThinkTanks) {
     return (
@@ -949,6 +961,92 @@ export default function Home() {
                     );
                   })}
                 </div>
+              </section>
+            )}
+
+            {activeModule === "writing" && (
+              <section>
+                <div className="mb-5">
+                  <h2 className="text-2xl font-semibold text-slate-950">{t.writingPracticeTitle}</h2>
+                  <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-600">
+                    {t.writingPracticeSubtitle}
+                  </p>
+                </div>
+
+                <div className="mb-5 grid gap-4 md:grid-cols-2">
+                  <Card className="rounded-3xl border-slate-200 bg-white p-6 shadow-sm">
+                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{t.task1}</span>
+                    <h3 className="mt-4 text-xl font-semibold text-slate-950">Report, compare, summarize</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      {language === "en"
+                        ? "Practise describing charts, maps, processes, and formal letters with clear overview sentences."
+                        : language === "zh"
+                          ? "练习描述图表、地图、流程和正式信件，重点写清总体概述。"
+                          : "練習描述圖表、地圖、流程同正式信件，重點寫清整體概述。"}
+                    </p>
+                  </Card>
+                  <Card className="rounded-3xl border-slate-200 bg-white p-6 shadow-sm">
+                    <span className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700">{t.task2}</span>
+                    <h3 className="mt-4 text-xl font-semibold text-slate-950">Ideas, arguments, examples</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
+                      {language === "en"
+                        ? "Turn Reading and Weekly Global Reading topics into balanced essays with clear positions."
+                        : language === "zh"
+                          ? "把阅读和每周全球精读主题转化为有立场、有平衡论证的文章。"
+                          : "將閱讀同每週全球精讀主題轉化為有立場、有平衡論證嘅文章。"}
+                    </p>
+                  </Card>
+                </div>
+
+                <WritingPractice language={language} />
+
+                <Card className="mt-5 rounded-3xl border-slate-200 bg-white p-6 shadow-sm">
+                  <h3 className="text-xl font-semibold text-slate-950">{t.writingChecklist}</h3>
+                  <div className="mt-4 grid gap-3 md:grid-cols-5">
+                    {t.writingChecklistItems.map((item, index) => (
+                      <div key={item} className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4 text-sm leading-6 text-slate-600">
+                        <span className="mb-2 block text-xs font-bold text-blue-700">0{index + 1}</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+
+                <section className="mt-8">
+                  <h3 className="mb-4 text-xl font-semibold text-slate-950">{t.freeWritingResources}</h3>
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {writingResources.map((resource) => (
+                      <a key={resource.id} href={resource.url} target="_blank" rel="noopener noreferrer" className="group">
+                        <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                          <div className="mb-5 flex items-start justify-between gap-4">
+                            <div className="flex flex-wrap gap-2">
+                              <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                                {writingLabel(resource.sourceType)}
+                              </span>
+                              <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                                {t.free}
+                              </span>
+                            </div>
+                            <ArrowRight className="h-4 w-4 flex-shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-700" />
+                          </div>
+                          <h4 className="text-lg font-semibold leading-7 text-slate-950 group-hover:text-blue-700">
+                            {resource.title}
+                          </h4>
+                          <p className="mt-3 text-sm leading-6 text-slate-600">{resource.description[language]}</p>
+                          <div className="mt-5 grid gap-2 text-sm text-slate-500">
+                            <span><strong className="font-semibold text-slate-700">{t.provider}:</strong> {resource.provider}</span>
+                            <span><strong className="font-semibold text-slate-700">{t.level}:</strong> {writingLabel(resource.level)}</span>
+                            <span><strong className="font-semibold text-slate-700">{t.howToUse}:</strong> {resource.howToUse[language]}</span>
+                            <span><strong className="font-semibold text-slate-700">{t.languageSupport}:</strong> {resource.languageSupport[language]}</span>
+                          </div>
+                          <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
+                            {t.openResource} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                          </span>
+                        </Card>
+                      </a>
+                    ))}
+                  </div>
+                </section>
               </section>
             )}
 
