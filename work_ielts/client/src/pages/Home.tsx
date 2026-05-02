@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TopNav } from "@/components/TopNav";
+import { weeklyReadings } from "@/data/weeklyReading";
 import { ArrowRight, BookOpen, Headphones, MessageSquare, FileText, Zap, Globe, TrendingUp, Newspaper } from "lucide-react";
 import { useLocation } from "wouter";
 
@@ -679,32 +680,7 @@ const skillStyles: Record<(typeof primarySkillKeys)[number], { ring: string; tex
   speaking: { ring: "bg-violet-50", text: "text-violet-700", bg: "bg-violet-600" },
 };
 
-const weeklyNewsPreview = [
-  {
-    title: "Global Climate Summit Reaches Historic Agreement on Carbon Emissions",
-    category: "Environment",
-    description: "World leaders agree on unprecedented measures to combat climate change.",
-    sourceUrl: "https://www.bbc.com/news",
-  },
-  {
-    title: "Tech Giants Announce New AI Collaboration Framework",
-    category: "Technology",
-    description: "Leading technology companies establish ethical AI standards.",
-    sourceUrl: "https://www.reuters.com/",
-  },
-  {
-    title: "European Central Bank Adjusts Interest Rates",
-    category: "Economics",
-    description: "Policy changes follow stronger economic indicators across Europe.",
-    sourceUrl: "https://www.ft.com/",
-  },
-  {
-    title: "Breakthrough in Medical Research Offers New Hope",
-    category: "Science",
-    description: "Scientists report clinical trial progress for rare diseases.",
-    sourceUrl: "https://www.nature.com/",
-  },
-];
+const weeklyReadingPreview = weeklyReadings.slice(0, 4);
 
 export default function Home() {
   const [, setLocation] = useLocation();
@@ -718,7 +694,7 @@ export default function Home() {
       back: "Back",
       explore: "Start Practicing",
       heroSubtitle:
-        "High-quality IELTS practice, expert strategies, and weekly global news to help you achieve your target band score.",
+        "High-quality IELTS practice, expert strategies, and weekly global reading to help you achieve your target band score.",
       skillsSubtitle: "Comprehensive practice and resources for all four IELTS modules.",
       resourcesTitle: "Resources",
       resourcesSubtitle: "IELTS vocabulary, grammar, think tanks, newspapers, and global media for deeper reading practice.",
@@ -730,7 +706,7 @@ export default function Home() {
     zh: {
       back: "返回",
       explore: "开始练习",
-      heroSubtitle: "高质量雅思练习、专家策略和每周全球新闻，帮助您达到目标分数。",
+      heroSubtitle: "高质量雅思练习、专家策略和每周全球阅读，帮助您达到目标分数。",
       skillsSubtitle: "覆盖雅思四个模块的综合练习和学习资源。",
       resourcesTitle: "学习资源",
       resourcesSubtitle: "雅思词汇、语法、智库、报纸和全球媒体，帮助您进行深入英文阅读。",
@@ -742,7 +718,7 @@ export default function Home() {
     yue: {
       back: "返回",
       explore: "開始練習",
-      heroSubtitle: "高質量雅思練習、專家策略同每週全球新聞，幫助您達到目標分數。",
+      heroSubtitle: "高質量雅思練習、專家策略同每週全球閱讀，幫助您達到目標分數。",
       skillsSubtitle: "覆蓋雅思四個模組的綜合練習同學習資源。",
       resourcesTitle: "學習資源",
       resourcesSubtitle: "雅思詞彙、語法、智庫、報紙同全球媒體，幫助您深入英文閱讀。",
@@ -888,7 +864,7 @@ export default function Home() {
                 className="h-12 rounded-xl border-slate-300 bg-white px-7 text-sm font-semibold text-slate-950 shadow-sm hover:bg-slate-50"
               >
                 <Newspaper className="mr-2 h-4 w-4" />
-                Weekly Global News
+                Weekly Global Reading
               </Button>
             </div>
           </div>
@@ -948,19 +924,19 @@ export default function Home() {
             <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">
-                  Weekly Global News
+                  Weekly Global Reading
                 </h2>
                 <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
-                  Curated international news for IELTS reading and discussion practice.
+                  Structured global reading lessons for IELTS vocabulary, discussion, and writing practice.
                 </p>
               </div>
               <Button variant="outline" onClick={() => setLocation("/weekly-news")} className="rounded-full bg-white">
-                View All News <ArrowRight className="ml-2 h-4 w-4" />
+                View Reading Lessons <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
 
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {weeklyNewsPreview.map((item) => (
+              {weeklyReadingPreview.map((item) => (
                 <a key={item.title} href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="group">
                   <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
                     <div className="mb-5 flex items-center justify-between">
@@ -968,7 +944,7 @@ export default function Home() {
                       <Newspaper className="h-4 w-4 text-slate-400" />
                     </div>
                     <h3 className="text-lg font-semibold leading-7 text-slate-950 group-hover:text-blue-700">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.summary}</p>
                   </Card>
                 </a>
               ))}
