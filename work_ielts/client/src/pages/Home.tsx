@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { TopNav } from "@/components/TopNav";
 import { ArrowRight, BookOpen, Headphones, MessageSquare, FileText, Zap, Globe, TrendingUp, Newspaper } from "lucide-react";
 import { useLocation } from "wouter";
 
@@ -666,345 +667,367 @@ const thinkTankResources = {
   ]
 };
 
+type ResourceKey = keyof typeof resourcesData;
+
+const primarySkillKeys = ["listening", "reading", "writing", "speaking"] as const;
+const supportResourceKeys = ["vocabulary"] as const;
+
+const skillStyles: Record<(typeof primarySkillKeys)[number], { ring: string; text: string; bg: string }> = {
+  listening: { ring: "bg-blue-50", text: "text-blue-700", bg: "bg-blue-600" },
+  reading: { ring: "bg-emerald-50", text: "text-emerald-700", bg: "bg-emerald-600" },
+  writing: { ring: "bg-orange-50", text: "text-orange-700", bg: "bg-orange-600" },
+  speaking: { ring: "bg-violet-50", text: "text-violet-700", bg: "bg-violet-600" },
+};
+
+const weeklyNewsPreview = [
+  {
+    title: "Global Climate Summit Reaches Historic Agreement on Carbon Emissions",
+    category: "Environment",
+    description: "World leaders agree on unprecedented measures to combat climate change.",
+    sourceUrl: "https://www.bbc.com/news",
+  },
+  {
+    title: "Tech Giants Announce New AI Collaboration Framework",
+    category: "Technology",
+    description: "Leading technology companies establish ethical AI standards.",
+    sourceUrl: "https://www.reuters.com/",
+  },
+  {
+    title: "European Central Bank Adjusts Interest Rates",
+    category: "Economics",
+    description: "Policy changes follow stronger economic indicators across Europe.",
+    sourceUrl: "https://www.ft.com/",
+  },
+  {
+    title: "Breakthrough in Medical Research Offers New Hope",
+    category: "Science",
+    description: "Scientists report clinical trial progress for rare diseases.",
+    sourceUrl: "https://www.nature.com/",
+  },
+];
+
 export default function Home() {
   const [, setLocation] = useLocation();
 
-  const [activeModule, setActiveModule] = useState<string | null>(null);
+  const [activeModule, setActiveModule] = useState<ResourceKey | null>(null);
   const [showThinkTanks, setShowThinkTanks] = useState(false);
   const [language, setLanguage] = useState<"en" | "zh" | "yue">("en");
 
   const translations = {
     en: {
-      title: "IELTS Navigator",
-      subtitle: "Your Complete Guide to IELTS Success",
-      tagline: "Curated resources for Listening, Reading, Writing & Speaking",
-      selectModule: "Select a Module",
-      back: "← Back",
-      explore: "Explore Resources",
+      back: "Back",
+      explore: "Start Practicing",
+      heroSubtitle:
+        "High-quality IELTS practice, expert strategies, and weekly global news to help you achieve your target band score.",
+      skillsSubtitle: "Comprehensive practice and resources for all four IELTS modules.",
+      resourcesTitle: "Resources",
+      resourcesSubtitle: "IELTS vocabulary, grammar, think tanks, newspapers, and global media for deeper reading practice.",
       thinkTanks: "Think Tanks, Newspapers & Media",
-      thinkTanksDesc: "High-quality English reading from global policy institutes, newspapers & media outlets",
+      thinkTanksDesc: "High-quality English reading from global policy institutes, newspapers & media outlets.",
       learning: "IELTS Learning Websites",
-      academic: "Global Think Tanks, Newspapers & Media"
+      academic: "Global Think Tanks, Newspapers & Media",
     },
     zh: {
-      title: "雅思学习导航",
-      subtitle: "您的完整雅思成功指南",
-      tagline: "精选听、说、读、写四个部分的学习资源",
-      selectModule: "选择模块",
-      back: "← 返回",
-      explore: "浏览资源",
+      back: "返回",
+      explore: "开始练习",
+      heroSubtitle: "高质量雅思练习、专家策略和每周全球新闻，帮助您达到目标分数。",
+      skillsSubtitle: "覆盖雅思四个模块的综合练习和学习资源。",
+      resourcesTitle: "学习资源",
+      resourcesSubtitle: "雅思词汇、语法、智库、报纸和全球媒体，帮助您进行深入英文阅读。",
       thinkTanks: "智库、报纸与媒体",
-      thinkTanksDesc: "来自全球政策研究机构、报纸和媒体的高质量英文阅读",
+      thinkTanksDesc: "来自全球政策研究机构、报纸和媒体的高质量英文阅读。",
       learning: "雅思学习网站",
-      academic: "全球智库、报纸与媒体"
+      academic: "全球智库、报纸与媒体",
     },
     yue: {
-      title: "雅思考試導航",
-      subtitle: "您的完整雅思成功指南",
-      tagline: "精選聽、講、讀、寫四個部分的學習資源",
-      selectModule: "選擇模組",
-      back: "← 返回",
-      explore: "瀏覽資源",
+      back: "返回",
+      explore: "開始練習",
+      heroSubtitle: "高質量雅思練習、專家策略同每週全球新聞，幫助您達到目標分數。",
+      skillsSubtitle: "覆蓋雅思四個模組的綜合練習同學習資源。",
+      resourcesTitle: "學習資源",
+      resourcesSubtitle: "雅思詞彙、語法、智庫、報紙同全球媒體，幫助您深入英文閱讀。",
       thinkTanks: "智庫、報紙與媒體",
-      thinkTanksDesc: "來自全球政策研究機構、報紙和媒體的高質量英文閱讀",
+      thinkTanksDesc: "來自全球政策研究機構、報紙和媒體的高質量英文閱讀。",
       learning: "雅思學習網站",
-      academic: "全球智庫、報紙與媒體"
-    }
+      academic: "全球智庫、報紙與媒體",
+    },
   };
 
   const t = translations[language];
 
   if (showThinkTanks) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-        {/* Header */}
-        <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Globe className="w-8 h-8 text-amber-600" />
-              <h1 className="text-2xl font-bold text-slate-900">{t.thinkTanks}</h1>
+      <div className="min-h-screen bg-[#f8fafc] text-slate-950">
+        <TopNav language={language} onLanguageChange={setLanguage} />
+        <main className="container py-10 sm:py-14">
+          <div className="mb-10 flex flex-col gap-5 border-b border-slate-200 pb-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-700">
+                <Globe className="h-6 w-6" />
+              </div>
+              <h1 className="text-4xl font-semibold text-slate-950 md:text-5xl">
+                {t.thinkTanks}
+              </h1>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">{t.thinkTanksDesc}</p>
             </div>
-            <Button
-              variant="outline"
-              onClick={() => setShowThinkTanks(false)}
-              className="gap-2"
-            >
+            <Button variant="outline" onClick={() => setShowThinkTanks(false)} className="rounded-full">
               {t.back}
             </Button>
           </div>
-        </header>
 
-        {/* Content */}
-        <main className="container mx-auto px-4 py-12">
-          <div className="mb-8 p-6 bg-blue-50 border border-blue-200 rounded-lg">
-            <p className="text-slate-700 text-sm">
-              <strong>📚 Resource Types:</strong> These think tanks, newspapers, and media outlets provide high-quality English reading material for general knowledge and advanced vocabulary building. They complement IELTS-specific learning websites by exposing you to real-world English used in policy, news, business, and ideas.
-            </p>
+          <div className="space-y-12">
+            {Object.entries(thinkTankResources).map(([category, resources]) => (
+              <section key={category}>
+                <h2 className="mb-5 text-xl font-semibold text-slate-950">{category}</h2>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  {resources.map((resource, idx) => (
+                    <a key={idx} href={resource.url} target="_blank" rel="noopener noreferrer" className="group">
+                      <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                        <div className="mb-4 flex items-start justify-between gap-4">
+                          <h3 className="text-base font-semibold leading-6 text-slate-950 group-hover:text-blue-700">
+                            {resource.title}
+                          </h3>
+                          <ArrowRight className="h-4 w-4 flex-shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-700" />
+                        </div>
+                        <p className="mb-5 text-sm leading-6 text-slate-600">{resource.desc}</p>
+                        <div className="flex flex-wrap gap-2 text-xs font-semibold">
+                          <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-700">{resource.level}</span>
+                          <span className="rounded-full bg-blue-50 px-3 py-1 text-blue-700">
+                            {resource.free ? "Free" : (resource as any).freeLimit || "Premium"}
+                          </span>
+                          {(resource as any).country && (
+                            <span className="rounded-full bg-white px-3 py-1 text-slate-500 ring-1 ring-slate-200">
+                              {(resource as any).country}
+                            </span>
+                          )}
+                        </div>
+                      </Card>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            ))}
           </div>
-
-          {Object.entries(thinkTankResources).map(([category, resources]) => (
-            <div key={category} className="mb-12">
-              <h2 className="text-xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-slate-300">
-                {category}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {resources.map((resource, idx) => (
-                  <a
-                    key={idx}
-                    href={resource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group"
-                  >
-                    <Card className="h-full p-5 hover:shadow-lg hover:border-slate-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                      <div className="flex items-start justify-between mb-3">
-                        <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-                          {resource.title}
-                        </h3>
-                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-all group-hover:translate-x-1 flex-shrink-0" />
-                      </div>
-                      <p className="text-sm text-slate-600 mb-4 line-clamp-3">
-                        {resource.desc}
-                      </p>
-                      <div className="flex gap-2 flex-wrap items-center">
-                        <span className="inline-block px-2 py-1 bg-amber-100 text-amber-700 text-xs font-semibold rounded-full">
-                          {resource.level}
-                        </span>
-                        {resource.free ? (
-                          <span className="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">
-                            Free
-                          </span>
-                        ) : (
-                          <span className="inline-block px-2 py-1 bg-slate-200 text-slate-700 text-xs font-semibold rounded-full">
-                            {(resource as any).freeLimit || "Premium"}
-                          </span>
-                        )}
-                        {(resource as any).country && (
-                          <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
-                            {(resource as any).country}
-                          </span>
-                        )}
-                      </div>
-                    </Card>
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
         </main>
       </div>
     );
   }
 
   if (activeModule) {
-    const module = resourcesData[activeModule as keyof typeof resourcesData];
+    const module = resourcesData[activeModule];
     const IconComponent = module.icon;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-        {/* Header */}
-        <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur-md">
-          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <IconComponent className="w-8 h-8 text-blue-600" />
-              <h1 className="text-2xl font-bold text-slate-900">{module.title}</h1>
+      <div className="min-h-screen bg-[#f8fafc] text-slate-950">
+        <TopNav language={language} onLanguageChange={setLanguage} />
+        <main className="container py-10 sm:py-14">
+          <div className="mb-10 flex flex-col gap-5 border-b border-slate-200 pb-8 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-700">
+                <IconComponent className="h-6 w-6" />
+              </div>
+              <h1 className="text-4xl font-semibold text-slate-950 md:text-5xl">{module.title}</h1>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">{module.description}</p>
             </div>
-            <Button
-              variant="outline"
-              onClick={() => setActiveModule(null)}
-              className="gap-2"
-            >
+            <Button variant="outline" onClick={() => setActiveModule(null)} className="rounded-full">
               {t.back}
             </Button>
           </div>
-        </header>
 
-        {/* Content */}
-        <main className="container mx-auto px-4 py-12">
-          {Object.entries(module.categories).map(([category, resources]) => (
-            <div key={category} className="mb-12">
-              <h2 className="text-xl font-bold text-slate-900 mb-6 pb-3 border-b-2 border-slate-300">
-                {category}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {resources.map((resource, idx) => (
-                  <a
-                    key={idx}
-                    href={resource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group"
-                  >
-                    <Card className="h-full p-5 hover:shadow-lg hover:border-slate-400 transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-                      <div className="flex items-start justify-between mb-3">
-                        <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-                          {resource.title}
-                        </h3>
-                        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-all group-hover:translate-x-1 flex-shrink-0" />
-                      </div>
-                      <p className="text-sm text-slate-600 mb-4 line-clamp-3">
-                        {resource.desc}
-                      </p>
-                      <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">
-                        {resource.tag}
-                      </span>
-                    </Card>
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
+          <div className="space-y-12">
+            {Object.entries(module.categories).map(([category, resources]) => (
+              <section key={category}>
+                <h2 className="mb-5 text-xl font-semibold text-slate-950">{category}</h2>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                  {resources.map((resource, idx) => (
+                    <a key={idx} href={resource.url} target="_blank" rel="noopener noreferrer" className="group">
+                      <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                        <div className="mb-4 flex items-start justify-between gap-4">
+                          <h3 className="text-base font-semibold leading-6 text-slate-950 group-hover:text-blue-700">
+                            {resource.title}
+                          </h3>
+                          <ArrowRight className="h-4 w-4 flex-shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-700" />
+                        </div>
+                        <p className="mb-5 text-sm leading-6 text-slate-600">{resource.desc}</p>
+                        <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                          {resource.tag}
+                        </span>
+                      </Card>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
         </main>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100">
-      {/* Header */}
-      <header className="border-b border-slate-200 bg-white/50 backdrop-blur-md sticky top-0 z-40">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <h1 className="text-3xl font-bold text-slate-900">{t.title}</h1>
-            </div>
-            <div className="flex gap-2 items-center">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-950">
+      <TopNav language={language} onLanguageChange={setLanguage} />
+
+      <main>
+        <section className="container grid min-h-[560px] items-center gap-12 py-14 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl font-semibold leading-[0.95] text-slate-950 sm:text-6xl lg:text-7xl">
+              Your Path to IELTS Success
+            </h1>
+            <p className="mt-7 max-w-xl text-lg leading-8 text-slate-600">{t.heroSubtitle}</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button
-                onClick={() => setLocation("/weekly-news")}
-                className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white flex items-center gap-2"
+                onClick={() => document.getElementById("ielts-skills")?.scrollIntoView({ behavior: "smooth" })}
+                className="h-12 rounded-xl bg-slate-950 px-7 text-sm font-semibold text-white shadow-lg shadow-slate-950/10 hover:bg-slate-800"
               >
-                <Newspaper className="w-4 h-4" />
-                Weekly News
+                Explore Skills <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              {(["en", "zh", "yue"] as const).map((lang) => ( (
-                <button
-                  key={lang}
-                  onClick={() => setLanguage(lang)}
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
-                    language === lang
-                      ? "bg-blue-600 text-white"
-                      : "bg-slate-200 text-slate-700 hover:bg-slate-300"
-                  }`}
-                >
-                  {lang === "en" ? "EN" : lang === "zh" ? "中文" : "粵語"}
-                </button>
+              <Button
+                variant="outline"
+                onClick={() => setLocation("/weekly-news")}
+                className="h-12 rounded-xl border-slate-300 bg-white px-7 text-sm font-semibold text-slate-950 shadow-sm hover:bg-slate-50"
+              >
+                <Newspaper className="mr-2 h-4 w-4" />
+                Weekly Global News
+              </Button>
+            </div>
+          </div>
+
+          <div className="relative hidden min-h-[420px] lg:block" aria-hidden="true">
+            <div className="absolute left-8 top-10 grid grid-cols-8 gap-3 opacity-45">
+              {Array.from({ length: 64 }).map((_, index) => (
+                <span key={index} className="h-1 w-1 rounded-full bg-slate-400" />
+              ))}
+            </div>
+            <div className="absolute right-0 top-4 h-80 w-80 rounded-full border border-blue-900/50" />
+            <div className="absolute right-16 top-16 h-64 w-64 rounded-full bg-white shadow-inner ring-1 ring-slate-100" />
+            <div className="absolute bottom-12 right-2 h-44 w-72 rounded-t-full bg-blue-950 shadow-2xl" />
+            <div className="absolute bottom-7 right-20 h-9 w-[420px] rounded-full bg-white shadow-xl ring-1 ring-slate-200" />
+            <div className="absolute bottom-24 left-48 h-16 w-16 rounded-full bg-slate-100 shadow-xl ring-1 ring-slate-200" />
+            <div className="absolute right-0 bottom-12 flex gap-2">
+              {Array.from({ length: 8 }).map((_, index) => (
+                <span key={index} className="h-44 w-1 rounded-full bg-slate-200" />
               ))}
             </div>
           </div>
-          <p className="text-lg text-slate-600 mb-2">{t.subtitle}</p>
-          <p className="text-sm text-slate-500">{t.tagline}</p>
-        </div>
-      </header>
+        </section>
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Master IELTS with Confidence
-          </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Access 70+ curated resources for all four IELTS modules. From official practice tests to AI-powered feedback tools, think tanks, and premium newspapers.
-          </p>
-        </div>
+        <section id="ielts-skills" className="border-y border-slate-200 bg-white py-16 sm:py-20">
+          <div className="container">
+            <div className="mx-auto mb-10 max-w-2xl text-center">
+              <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">IELTS Skills</h2>
+              <p className="mt-3 text-base leading-7 text-slate-600">{t.skillsSubtitle}</p>
+            </div>
 
-        {/* Module Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {Object.entries(resourcesData).map(([key, module]) => {
-            const IconComponent = module.icon;
-            return (
-              <button
-                key={key}
-                onClick={() => setActiveModule(key)}
-                className="group"
-              >
-                <Card className="h-full p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border-2 hover:border-blue-400">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${module.color} p-2.5 mb-4 group-hover:scale-110 transition-transform`}>
-                    <IconComponent className="w-full h-full text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
-                    {module.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 mb-6">
-                    {module.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all">
-                    {t.explore}
-                    <ArrowRight className="w-4 h-4" />
-                  </div>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {primarySkillKeys.map((key) => {
+                const module = resourcesData[key];
+                const IconComponent = module.icon;
+                const style = skillStyles[key];
+                return (
+                  <button key={key} onClick={() => setActiveModule(key)} className="group text-left">
+                    <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                      <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-full ${style.ring} ${style.text}`}>
+                        <IconComponent className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-slate-950">{module.title}</h3>
+                      <p className="mt-3 min-h-16 text-sm leading-6 text-slate-600">{module.description}</p>
+                      <span className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold ${style.text}`}>
+                        {t.explore} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                      </span>
+                    </Card>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section id="weekly-news-preview" className="bg-[#f8fafc] py-16 sm:py-20">
+          <div className="container">
+            <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">
+                  Weekly Global News
+                </h2>
+                <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+                  Curated international news for IELTS reading and discussion practice.
+                </p>
+              </div>
+              <Button variant="outline" onClick={() => setLocation("/weekly-news")} className="rounded-full bg-white">
+                View All News <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {weeklyNewsPreview.map((item) => (
+                <a key={item.title} href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="group">
+                  <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                    <div className="mb-5 flex items-center justify-between">
+                      <span className="text-xs font-bold uppercase tracking-[0.12em] text-blue-700">{item.category}</span>
+                      <Newspaper className="h-4 w-4 text-slate-400" />
+                    </div>
+                    <h3 className="text-lg font-semibold leading-7 text-slate-950 group-hover:text-blue-700">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+                  </Card>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="resources" className="border-t border-slate-200 bg-white py-16 sm:py-20">
+          <div className="container">
+            <div className="mb-8 max-w-2xl">
+              <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">{t.resourcesTitle}</h2>
+              <p className="mt-3 text-base leading-7 text-slate-600">{t.resourcesSubtitle}</p>
+            </div>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {supportResourceKeys.map((key) => {
+                const module = resourcesData[key];
+                const IconComponent = module.icon;
+                return (
+                  <button key={key} onClick={() => setActiveModule(key)} className="group text-left">
+                    <Card className="h-full rounded-2xl border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                      <IconComponent className="mb-5 h-7 w-7 text-blue-700" />
+                      <h3 className="text-xl font-semibold text-slate-950">{module.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-600">{module.description}</p>
+                      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
+                        Explore Resources <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                      </span>
+                    </Card>
+                  </button>
+                );
+              })}
+              <button onClick={() => setShowThinkTanks(true)} className="group text-left">
+                <Card className="h-full rounded-2xl border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                  <Globe className="mb-5 h-7 w-7 text-blue-700" />
+                  <h3 className="text-xl font-semibold text-slate-950">{t.academic}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{t.thinkTanksDesc}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
+                    Explore Global Resources <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </span>
                 </Card>
               </button>
-            );
-          })}
-        </div>
-
-        {/* Think Tanks Section */}
-        <div className="mt-16 pt-16 border-t-2 border-slate-300">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              {t.thinkTanks}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-6">
-              {t.thinkTanksDesc}
-            </p>
-            <Button
-              onClick={() => setShowThinkTanks(true)}
-              className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 mx-auto"
-            >
-              <Globe className="w-5 h-5" />
-              Explore Global Resources
-            </Button>
+            </div>
           </div>
+        </section>
+      </main>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <Card className="p-6 bg-blue-50 border-2 border-blue-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">📚 {t.learning}</h3>
-              <p className="text-sm text-slate-600 mb-4">
-                Designed specifically for IELTS exam preparation. Focus on test strategies, mock tests, and band score improvement.
-              </p>
-              <ul className="text-sm text-slate-700 space-y-2">
-                <li>✓ Task-specific lessons</li>
-                <li>✓ Sample answers & tips</li>
-                <li>✓ Mock tests & practice</li>
-                <li>✓ AI feedback tools</li>
-              </ul>
-            </Card>
-
-            <Card className="p-6 bg-amber-50 border-2 border-amber-200">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">🌍 {t.academic}</h3>
-              <p className="text-sm text-slate-600 mb-4">
-                High-quality English reading from global policy institutes, newspapers & media for advanced vocabulary and critical thinking.
-              </p>
-              <ul className="text-sm text-slate-700 space-y-2">
-                <li>✓ Real-world English usage</li>
-                <li>✓ Advanced vocabulary</li>
-                <li>✓ Policy & current affairs</li>
-                <li>✓ Global perspectives</li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white/50 backdrop-blur-md mt-20">
-        <div className="container mx-auto px-4 py-8 text-center text-slate-600 text-sm">
-          <p>© 2025 IELTS Navigator | Comprehensive IELTS Study Resources</p>
-          <p className="mt-2">
-            <a href="https://ielts.org" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="container flex flex-col gap-3 py-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+          <p>© 2026 IELTS Navigator Pro. Curated IELTS study resources.</p>
+          <div className="flex flex-wrap gap-4">
+            <a href="https://ielts.org" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">
               Official IELTS
             </a>
-            {" | "}
-            <a href="https://www.britishcouncil.org" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+            <a href="https://www.britishcouncil.org" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">
               British Council
             </a>
-            {" | "}
-            <a href="https://idp.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+            <a href="https://idp.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">
               IDP
             </a>
-          </p>
+          </div>
         </div>
       </footer>
     </div>

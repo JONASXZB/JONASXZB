@@ -12,7 +12,7 @@ function Router() {
   // WeeklyNews is public and accessible to all users
   return (
     <Switch>
-      <Route path={"\\"} component={Home} />
+      <Route path="/" component={Home} />
       <Route path={"/weekly-news"} component={WeeklyNews} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

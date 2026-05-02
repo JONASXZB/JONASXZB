@@ -60,11 +60,36 @@ The current public pages can run without a database or OpenAI key. AI calls will
 
 ```bash
 pnpm dev      # local development
-pnpm build    # production build
-pnpm start    # run production server after build
+pnpm build    # Vite frontend production build
 pnpm check    # TypeScript check
 pnpm format   # format code
 ```
+
+For the optional Express/tRPC server bundle, use:
+
+```bash
+pnpm build:server
+pnpm start
+```
+
+## Vercel deployment
+
+The first launch is configured as a frontend-first Vercel deployment. The
+Express/tRPC code remains in the repository for future AI or API features, but
+the Vercel build does not deploy the backend server.
+
+Use these Vercel project settings:
+
+```text
+Root Directory: work_ielts
+Install Command: npm install
+Build Command: npm run build
+Output Directory: dist/public
+```
+
+The Vite frontend build writes `index.html` to `dist/public/index.html`.
+`vercel.json` also includes a rewrite to `index.html` so client-side routes such
+as `/weekly-news` work after deployment.
 
 ## Project structure
 
