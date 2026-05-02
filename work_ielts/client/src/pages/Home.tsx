@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TopNav } from "@/components/TopNav";
+import { SpeakingPractice } from "@/components/SpeakingPractice";
 import { WritingPractice } from "@/components/WritingPractice";
 import { listeningResources } from "@/data/listeningResources";
 import { readingResourceGroups, readingResources } from "@/data/readingResources";
+import { speakingResources } from "@/data/speakingResources";
 import { writingResources } from "@/data/writingResources";
 import { weeklyReadings } from "@/data/weeklyReading";
 import { homeLabels, type Locale } from "@/lib/i18n";
@@ -742,6 +744,17 @@ export default function Home() {
     if (label === "Task 1 / Task 2") return `${t.task1} / ${t.task2}`;
     return label;
   };
+  const speakingLabel = (label: string) => {
+    if (label === "Official") return t.official;
+    if (label === "Lesson") return t.sourceLesson;
+    if (label === "Practice") return t.practice;
+    if (label === "Free") return t.free;
+    if (label === "Part 1") return t.part1;
+    if (label === "Part 2") return t.part2;
+    if (label === "Part 3") return t.part3;
+    if (label === "Part 1 / Part 2 / Part 3") return `${t.part1} / ${t.part2} / ${t.part3}`;
+    return label;
+  };
 
   if (showThinkTanks) {
     return (
@@ -1036,6 +1049,120 @@ export default function Home() {
                           <div className="mt-5 grid gap-2 text-sm text-slate-500">
                             <span><strong className="font-semibold text-slate-700">{t.provider}:</strong> {resource.provider}</span>
                             <span><strong className="font-semibold text-slate-700">{t.level}:</strong> {writingLabel(resource.level)}</span>
+                            <span><strong className="font-semibold text-slate-700">{t.howToUse}:</strong> {resource.howToUse[language]}</span>
+                            <span><strong className="font-semibold text-slate-700">{t.languageSupport}:</strong> {resource.languageSupport[language]}</span>
+                          </div>
+                          <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
+                            {t.openResource} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                          </span>
+                        </Card>
+                      </a>
+                    ))}
+                  </div>
+                </section>
+              </section>
+            )}
+
+            {activeModule === "speaking" && (
+              <section>
+                <div className="mb-5">
+                  <h2 className="text-2xl font-semibold text-slate-950">{t.speakingPracticeTitle}</h2>
+                  <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-600">
+                    {t.speakingPracticeSubtitle}
+                  </p>
+                </div>
+
+                <div className="mb-5 grid gap-4 md:grid-cols-3">
+                  {[
+                    {
+                      label: t.part1,
+                      title: "Short personal answers",
+                      body:
+                        language === "en"
+                          ? "Build direct answers with one detail and one reason."
+                          : language === "zh"
+                            ? "练习直接回答，并加入一个细节和一个原因。"
+                            : "練習直接回答，並加入一個細節同一個原因。",
+                    },
+                    {
+                      label: t.part2,
+                      title: "Cue card storytelling",
+                      body:
+                        language === "en"
+                          ? "Prepare notes, speak for 1-2 minutes, and keep a clear structure."
+                          : language === "zh"
+                            ? "准备笔记，讲 1-2 分钟，并保持清晰结构。"
+                            : "準備筆記，講 1-2 分鐘，並保持清晰結構。",
+                    },
+                    {
+                      label: t.part3,
+                      title: "Abstract discussion",
+                      body:
+                        language === "en"
+                          ? "Use reading topics to explain causes, effects, opinions, and examples."
+                          : language === "zh"
+                            ? "用阅读主题解释原因、影响、观点和例子。"
+                            : "用閱讀主題解釋原因、影響、觀點同例子。",
+                    },
+                  ].map((card) => (
+                    <Card key={card.label} className="rounded-3xl border-slate-200 bg-white p-6 shadow-sm">
+                      <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{card.label}</span>
+                      <h3 className="mt-4 text-xl font-semibold text-slate-950">{card.title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">{card.body}</p>
+                    </Card>
+                  ))}
+                </div>
+
+                <Card className="mb-5 rounded-3xl border-slate-200 bg-white p-6 shadow-sm">
+                  <h3 className="text-xl font-semibold text-slate-950">{t.practiceRoutine}</h3>
+                  <div className="mt-4 grid gap-3 md:grid-cols-5">
+                    {t.speakingRoutineSteps.map((step, index) => (
+                      <div key={step} className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4 text-sm leading-6 text-slate-600">
+                        <span className="mb-2 block text-xs font-bold text-blue-700">0{index + 1}</span>
+                        {step}
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+
+                <SpeakingPractice language={language} />
+
+                <Card className="mt-5 rounded-3xl border-slate-200 bg-white p-6 shadow-sm">
+                  <h3 className="text-xl font-semibold text-slate-950">{t.speakingChecklist}</h3>
+                  <div className="mt-4 grid gap-3 md:grid-cols-5">
+                    {t.speakingChecklistItems.map((item, index) => (
+                      <div key={item} className="rounded-2xl border border-slate-200 bg-[#f8fafc] p-4 text-sm leading-6 text-slate-600">
+                        <span className="mb-2 block text-xs font-bold text-blue-700">0{index + 1}</span>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+
+                <section className="mt-8">
+                  <h3 className="mb-4 text-xl font-semibold text-slate-950">{t.freeSpeakingResources}</h3>
+                  <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    {speakingResources.map((resource) => (
+                      <a key={resource.id} href={resource.url} target="_blank" rel="noopener noreferrer" className="group">
+                        <Card className="h-full rounded-2xl border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
+                          <div className="mb-5 flex items-start justify-between gap-4">
+                            <div className="flex flex-wrap gap-2">
+                              <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                                {speakingLabel(resource.sourceType)}
+                              </span>
+                              <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                                {t.free}
+                              </span>
+                            </div>
+                            <ArrowRight className="h-4 w-4 flex-shrink-0 text-slate-400 transition group-hover:translate-x-1 group-hover:text-blue-700" />
+                          </div>
+                          <h4 className="text-lg font-semibold leading-7 text-slate-950 group-hover:text-blue-700">
+                            {resource.title}
+                          </h4>
+                          <p className="mt-3 text-sm leading-6 text-slate-600">{resource.description[language]}</p>
+                          <div className="mt-5 grid gap-2 text-sm text-slate-500">
+                            <span><strong className="font-semibold text-slate-700">{t.provider}:</strong> {resource.provider}</span>
+                            <span><strong className="font-semibold text-slate-700">{t.level}:</strong> {speakingLabel(resource.level)}</span>
                             <span><strong className="font-semibold text-slate-700">{t.howToUse}:</strong> {resource.howToUse[language]}</span>
                             <span><strong className="font-semibold text-slate-700">{t.languageSupport}:</strong> {resource.languageSupport[language]}</span>
                           </div>

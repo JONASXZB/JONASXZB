@@ -127,6 +127,25 @@ export const homeLabels: Record<Locale, {
   writingChecklistItems: string[];
   sourceLesson: string;
   practice: string;
+  speakingPracticeTitle: string;
+  speakingPracticeSubtitle: string;
+  part1: string;
+  part2: string;
+  part3: string;
+  cueCard: string;
+  topicBank: string;
+  discussionQuestions: string;
+  timerGuide: string;
+  speakingChecklist: string;
+  usefulPhrases: string;
+  followUpQuestions: string;
+  sampleStructure: string;
+  preparation: string;
+  speakingPractice: string;
+  freeSpeakingResources: string;
+  practiceRoutine: string;
+  speakingRoutineSteps: string[];
+  speakingChecklistItems: string[];
 }> = {
   en: {
     back: "Back",
@@ -246,6 +265,38 @@ export const homeLabels: Record<Locale, {
     ],
     sourceLesson: "Lesson",
     practice: "Practice",
+    speakingPracticeTitle: "IELTS Speaking Practice Flow",
+    speakingPracticeSubtitle:
+      "Practise Part 1, cue cards, and Part 3 discussion with topic ideas from high-quality reading.",
+    part1: "Part 1",
+    part2: "Part 2",
+    part3: "Part 3",
+    cueCard: "Cue Card",
+    topicBank: "Topic Bank",
+    discussionQuestions: "Discussion Questions",
+    timerGuide: "Timer Guide",
+    speakingChecklist: "Self-check Checklist",
+    usefulPhrases: "Useful Phrases",
+    followUpQuestions: "Follow-up Questions",
+    sampleStructure: "Sample Structure",
+    preparation: "Preparation",
+    speakingPractice: "Speaking Practice",
+    freeSpeakingResources: "Free Speaking Resources",
+    practiceRoutine: "Practice Routine",
+    speakingRoutineSteps: [
+      "Choose one question",
+      "Prepare for 30-60 seconds",
+      "Speak out loud",
+      "Check fluency, vocabulary, grammar, and examples",
+      "Repeat once with a better structure",
+    ],
+    speakingChecklistItems: [
+      "Fluency: keep speaking without long silent pauses",
+      "Vocabulary: use topic words naturally",
+      "Grammar: include simple and complex sentences",
+      "Examples: support opinions with personal or global examples",
+      "Structure: answer directly, explain, and extend",
+    ],
   },
   zh: {
     back: "返回",
@@ -360,6 +411,37 @@ export const homeLabels: Record<Locale, {
     ],
     sourceLesson: "课程",
     practice: "练习",
+    speakingPracticeTitle: "雅思口语练习流程",
+    speakingPracticeSubtitle: "练习 Part 1、Cue Card 和 Part 3 讨论，并从高质量阅读中积累观点。",
+    part1: "Part 1",
+    part2: "Part 2",
+    part3: "Part 3",
+    cueCard: "Cue Card",
+    topicBank: "话题库",
+    discussionQuestions: "讨论问题",
+    timerGuide: "计时建议",
+    speakingChecklist: "自查清单",
+    usefulPhrases: "实用表达",
+    followUpQuestions: "追问问题",
+    sampleStructure: "回答结构",
+    preparation: "准备",
+    speakingPractice: "口语练习",
+    freeSpeakingResources: "免费口语资源",
+    practiceRoutine: "练习流程",
+    speakingRoutineSteps: [
+      "选择一个问题",
+      "准备 30-60 秒",
+      "大声说出答案",
+      "检查流利度、词汇、语法和例子",
+      "用更好的结构再说一遍",
+    ],
+    speakingChecklistItems: [
+      "流利度：尽量避免长时间停顿",
+      "词汇：自然使用主题词汇",
+      "语法：结合简单句和复杂句",
+      "例子：用个人或全球议题例子支持观点",
+      "结构：直接回答、解释并延展",
+    ],
   },
   yue: {
     back: "返回",
@@ -474,6 +556,37 @@ export const homeLabels: Record<Locale, {
     ],
     sourceLesson: "課程",
     practice: "練習",
+    speakingPracticeTitle: "雅思口語練習流程",
+    speakingPracticeSubtitle: "練習 Part 1、Cue Card 同 Part 3 討論，並由高質量閱讀入面累積觀點。",
+    part1: "Part 1",
+    part2: "Part 2",
+    part3: "Part 3",
+    cueCard: "Cue Card",
+    topicBank: "話題庫",
+    discussionQuestions: "討論問題",
+    timerGuide: "計時建議",
+    speakingChecklist: "自查清單",
+    usefulPhrases: "實用表達",
+    followUpQuestions: "追問問題",
+    sampleStructure: "回答結構",
+    preparation: "準備",
+    speakingPractice: "口語練習",
+    freeSpeakingResources: "免費口語資源",
+    practiceRoutine: "練習流程",
+    speakingRoutineSteps: [
+      "選擇一條問題",
+      "準備 30-60 秒",
+      "大聲講出答案",
+      "檢查流利度、詞彙、語法同例子",
+      "用更好結構再講一次",
+    ],
+    speakingChecklistItems: [
+      "流利度：盡量避免長時間停頓",
+      "詞彙：自然使用主題詞彙",
+      "語法：結合簡單句同複雜句",
+      "例子：用個人或者全球議題例子支持觀點",
+      "結構：直接回答、解釋並延展",
+    ],
   },
 };
 
