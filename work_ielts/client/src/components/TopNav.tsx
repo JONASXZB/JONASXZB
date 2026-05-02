@@ -1,41 +1,12 @@
 import { Button } from "@/components/ui/button";
+import { languageLabels, navLabels, type Locale } from "@/lib/i18n";
 import { ChevronDown, Compass, Globe2 } from "lucide-react";
 import { useLocation } from "wouter";
 
 type TopNavProps = {
-  language?: "en" | "zh" | "yue";
-  onLanguageChange?: (language: "en" | "zh" | "yue") => void;
+  language?: Locale;
+  onLanguageChange?: (language: Locale) => void;
 };
-
-const languageLabels = {
-  en: "EN",
-  zh: "中文",
-  yue: "粵語",
-} as const;
-
-const navLabels = {
-  en: {
-    home: "Home",
-    skills: "IELTS Skills",
-    reading: "Weekly Global Reading",
-    resources: "Resources",
-    getStarted: "Get Started",
-  },
-  zh: {
-    home: "首页",
-    skills: "雅思技能",
-    reading: "每周全球精读",
-    resources: "资源",
-    getStarted: "开始学习",
-  },
-  yue: {
-    home: "首頁",
-    skills: "雅思技能",
-    reading: "每週全球精讀",
-    resources: "資源",
-    getStarted: "開始學習",
-  },
-} as const;
 
 export function TopNav({ language = "en", onLanguageChange }: TopNavProps) {
   const [location, setLocation] = useLocation();
@@ -103,7 +74,7 @@ export function TopNav({ language = "en", onLanguageChange }: TopNavProps) {
               <Globe2 className="h-4 w-4" />
               <select
                 value={language}
-                onChange={(event) => onLanguageChange?.(event.target.value as "en" | "zh" | "yue")}
+                onChange={(event) => onLanguageChange?.(event.target.value as Locale)}
                 className="bg-transparent text-sm font-semibold outline-none"
                 aria-label="Language"
               >

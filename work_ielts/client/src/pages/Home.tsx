@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TopNav } from "@/components/TopNav";
 import { weeklyReadings } from "@/data/weeklyReading";
+import { homeLabels, type Locale } from "@/lib/i18n";
 import { ArrowRight, BookOpen, Headphones, MessageSquare, FileText, Zap, Globe, TrendingUp, Newspaper } from "lucide-react";
 import { useLocation } from "wouter";
 
@@ -687,64 +688,22 @@ export default function Home() {
 
   const [activeModule, setActiveModule] = useState<ResourceKey | null>(null);
   const [showThinkTanks, setShowThinkTanks] = useState(false);
-  const [language, setLanguage] = useState<"en" | "zh" | "yue">("en");
-
-  const translations = {
-    en: {
-      back: "Back",
-      explore: "Start Practicing",
-      exploreSkills: "Explore Skills",
-      readingCta: "Weekly Global Reading",
-      readingTitle: "Weekly Global Reading",
-      readingSubtitle: "Structured global reading lessons for IELTS vocabulary, discussion, and writing practice.",
-      viewReading: "View Reading Lessons",
-      heroSubtitle:
-        "High-quality IELTS practice, expert strategies, and weekly global reading to help you achieve your target band score.",
-      skillsSubtitle: "Comprehensive practice and resources for all four IELTS modules.",
-      resourcesTitle: "Resources",
-      resourcesSubtitle: "IELTS vocabulary, grammar, think tanks, newspapers, and global media for deeper reading practice.",
-      thinkTanks: "Think Tanks, Newspapers & Media",
-      thinkTanksDesc: "High-quality English reading from global policy institutes, newspapers & media outlets.",
-      learning: "IELTS Learning Websites",
-      academic: "Global Think Tanks, Newspapers & Media",
-    },
-    zh: {
-      back: "返回",
-      explore: "开始练习",
-      exploreSkills: "探索技能",
-      readingCta: "每周全球精读",
-      readingTitle: "每周全球精读",
-      readingSubtitle: "面向雅思词汇、讨论和写作练习的结构化全球阅读课程。",
-      viewReading: "查看阅读课程",
-      heroSubtitle: "高质量雅思练习、专家策略和每周全球阅读，帮助您达到目标分数。",
-      skillsSubtitle: "覆盖雅思四个模块的综合练习和学习资源。",
-      resourcesTitle: "学习资源",
-      resourcesSubtitle: "雅思词汇、语法、智库、报纸和全球媒体，帮助您进行深入英文阅读。",
-      thinkTanks: "智库、报纸与媒体",
-      thinkTanksDesc: "来自全球政策研究机构、报纸和媒体的高质量英文阅读。",
-      learning: "雅思学习网站",
-      academic: "全球智库、报纸与媒体",
-    },
-    yue: {
-      back: "返回",
-      explore: "開始練習",
-      exploreSkills: "探索技能",
-      readingCta: "每週全球精讀",
-      readingTitle: "每週全球精讀",
-      readingSubtitle: "面向雅思詞彙、討論同寫作練習嘅結構化全球閱讀課程。",
-      viewReading: "查看閱讀課程",
-      heroSubtitle: "高質量雅思練習、專家策略同每週全球閱讀，幫助您達到目標分數。",
-      skillsSubtitle: "覆蓋雅思四個模組的綜合練習同學習資源。",
-      resourcesTitle: "學習資源",
-      resourcesSubtitle: "雅思詞彙、語法、智庫、報紙同全球媒體，幫助您深入英文閱讀。",
-      thinkTanks: "智庫、報紙與媒體",
-      thinkTanksDesc: "來自全球政策研究機構、報紙和媒體的高質量英文閱讀。",
-      learning: "雅思學習網站",
-      academic: "全球智庫、報紙與媒體",
-    },
+  const [language, setLanguage] = useState<Locale>("en");
+  const t = homeLabels[language];
+  const skillCopy: Partial<Record<ResourceKey, { title: string; description: string }>> = {
+    listening: { title: t.listening, description: t.listeningDesc },
+    reading: { title: t.reading, description: t.readingDesc },
+    writing: { title: t.writing, description: t.writingDesc },
+    speaking: { title: t.speaking, description: t.speakingDesc },
   };
 
-  const t = translations[language];
+  const moduleTitle = (key: ResourceKey) => skillCopy[key]?.title || resourcesData[key].title;
+  const moduleDescription = (key: ResourceKey) => skillCopy[key]?.description || resourcesData[key].description;
+  const resourceTag = (tag: string) => {
+    if (tag === "Free") return t.free;
+    if (tag === "Premium") return t.premium;
+    return tag;
+  };
 
   if (showThinkTanks) {
     return (
@@ -784,7 +743,7 @@ export default function Home() {
                         <div className="flex flex-wrap gap-2 text-xs font-semibold">
                           <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-700">{resource.level}</span>
                           <span className="rounded-full bg-blue-50 px-3 py-1 text-blue-700">
-                            {resource.free ? "Free" : (resource as any).freeLimit || "Premium"}
+                            {resource.free ? t.free : (resource as any).freeLimit || t.premium}
                           </span>
                           {(resource as any).country && (
                             <span className="rounded-full bg-white px-3 py-1 text-slate-500 ring-1 ring-slate-200">
@@ -817,8 +776,8 @@ export default function Home() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-700">
                 <IconComponent className="h-6 w-6" />
               </div>
-              <h1 className="text-4xl font-semibold text-slate-950 md:text-5xl">{module.title}</h1>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">{module.description}</p>
+              <h1 className="text-4xl font-semibold text-slate-950 md:text-5xl">{moduleTitle(activeModule)}</h1>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">{moduleDescription(activeModule)}</p>
             </div>
             <Button variant="outline" onClick={() => setActiveModule(null)} className="rounded-full">
               {t.back}
@@ -841,7 +800,7 @@ export default function Home() {
                         </div>
                         <p className="mb-5 text-sm leading-6 text-slate-600">{resource.desc}</p>
                         <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-                          {resource.tag}
+                          {resourceTag(resource.tag)}
                         </span>
                       </Card>
                     </a>
@@ -906,7 +865,7 @@ export default function Home() {
         <section id="ielts-skills" className="border-y border-slate-200 bg-white py-16 sm:py-20">
           <div className="container">
             <div className="mx-auto mb-10 max-w-2xl text-center">
-              <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">IELTS Skills</h2>
+              <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">{t.ieltsSkills}</h2>
               <p className="mt-3 text-base leading-7 text-slate-600">{t.skillsSubtitle}</p>
             </div>
 
@@ -921,16 +880,38 @@ export default function Home() {
                       <div className={`mb-5 flex h-14 w-14 items-center justify-center rounded-full ${style.ring} ${style.text}`}>
                         <IconComponent className="h-6 w-6" />
                       </div>
-                      <h3 className="text-lg font-semibold text-slate-950">{module.title}</h3>
-                      <p className="mt-3 min-h-16 text-sm leading-6 text-slate-600">{module.description}</p>
+                      <h3 className="text-lg font-semibold text-slate-950">{moduleTitle(key)}</h3>
+                      <p className="mt-3 min-h-16 text-sm leading-6 text-slate-600">{moduleDescription(key)}</p>
                       <span className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold ${style.text}`}>
-                        {t.explore} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                        {t.startPracticing} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                       </span>
                     </Card>
                   </button>
                 );
               })}
             </div>
+
+            <Card className="mt-8 rounded-3xl border-slate-200 bg-[#f8fafc] p-6 shadow-sm md:p-8">
+              <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+                <div>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+                    <BookOpen className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-slate-950">{t.readingPathTitle}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">{t.readingPathBody}</p>
+                </div>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {t.readingPathPoints.map((point) => (
+                    <div key={point} className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-medium leading-6 text-slate-700">
+                      {point}
+                    </div>
+                  ))}
+                  <Button onClick={() => setLocation("/weekly-news")} className="h-auto rounded-2xl bg-slate-950 px-5 py-4 text-sm font-semibold text-white hover:bg-slate-800 sm:col-span-2">
+                    {t.openReading} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </Card>
           </div>
         </section>
 
@@ -981,10 +962,10 @@ export default function Home() {
                   <button key={key} onClick={() => setActiveModule(key)} className="group text-left">
                     <Card className="h-full rounded-2xl border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
                       <IconComponent className="mb-5 h-7 w-7 text-blue-700" />
-                      <h3 className="text-xl font-semibold text-slate-950">{module.title}</h3>
-                      <p className="mt-3 text-sm leading-6 text-slate-600">{module.description}</p>
+                      <h3 className="text-xl font-semibold text-slate-950">{moduleTitle(key)}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-600">{moduleDescription(key)}</p>
                       <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
-                        Explore Resources <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                        {t.exploreResources} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                       </span>
                     </Card>
                   </button>
@@ -996,7 +977,7 @@ export default function Home() {
                   <h3 className="text-xl font-semibold text-slate-950">{t.academic}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{t.thinkTanksDesc}</p>
                   <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700">
-                    Explore Global Resources <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                    {t.exploreGlobalResources} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                   </span>
                 </Card>
               </button>

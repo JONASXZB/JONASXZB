@@ -1,7 +1,8 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { Card } from "@/components/ui/card";
 import { TopNav } from "@/components/TopNav";
-import { weeklyReadings, weeklyReadingWeeks, type Locale, type WeeklyReadingItem } from "@/data/weeklyReading";
+import { weeklyReadings, weeklyReadingWeeks, type WeeklyReadingItem } from "@/data/weeklyReading";
+import { labelFor, weeklyReadingLabels, type Locale } from "@/lib/i18n";
 import {
   ArrowRight,
   BookOpen,
@@ -15,139 +16,6 @@ import {
   Tag,
 } from "lucide-react";
 
-const pageText: Record<Locale, {
-  title: string;
-  subtitle: string;
-  learningFocus: string;
-  learningFocusBody: string;
-  archive: string;
-  category: string;
-  region: string;
-  readingList: string;
-  lessons: string;
-  noLessons: string;
-  whyItMatters: string;
-  usefulExpression: string;
-  keyVocabulary: string;
-  discussionQuestion: string;
-  writingPrompt: string;
-  readOriginalArticle: string;
-  level: string;
-  sourceType: string;
-  free: string;
-  all: string;
-}> = {
-  en: {
-    title: "Weekly Global Reading",
-    subtitle: "Short global reading lessons with vocabulary, discussion, and IELTS-style writing practice.",
-    learningFocus: "Learning focus:",
-    learningFocusBody:
-      "Read original summaries of free public sources, then practise useful expressions, speaking ideas, and writing prompts. Source links go to specific articles or research pages.",
-    archive: "Archive",
-    category: "Category",
-    region: "Region",
-    readingList: "Reading List",
-    lessons: "lessons",
-    noLessons: "No reading lessons match your filters.",
-    whyItMatters: "Why It Matters",
-    usefulExpression: "Useful Expression",
-    keyVocabulary: "Key Vocabulary",
-    discussionQuestion: "Discussion Question",
-    writingPrompt: "Writing Prompt",
-    readOriginalArticle: "Read original article",
-    level: "Level",
-    sourceType: "Source Type",
-    free: "Free",
-    all: "All",
-  },
-  zh: {
-    title: "每周全球精读",
-    subtitle: "精选全球议题，配套词汇、讨论问题和雅思写作练习。",
-    learningFocus: "学习重点：",
-    learningFocusBody:
-      "阅读基于免费公开资料的原创短摘要，并练习实用表达、口语观点和写作任务。来源链接均指向具体文章或研究页面。",
-    archive: "归档",
-    category: "类别",
-    region: "地区",
-    readingList: "阅读列表",
-    lessons: "篇课程",
-    noLessons: "没有符合筛选条件的阅读课程。",
-    whyItMatters: "为什么重要",
-    usefulExpression: "实用表达",
-    keyVocabulary: "核心词汇",
-    discussionQuestion: "讨论问题",
-    writingPrompt: "写作题目",
-    readOriginalArticle: "阅读原文",
-    level: "难度",
-    sourceType: "来源类型",
-    free: "免费",
-    all: "全部",
-  },
-  yue: {
-    title: "每週全球精讀",
-    subtitle: "精選全球議題，配套詞彙、討論問題同雅思寫作練習。",
-    learningFocus: "學習重點：",
-    learningFocusBody:
-      "閱讀基於免費公開資料嘅原創短摘要，並練習實用表達、口語觀點同寫作任務。來源連結都指向具體文章或者研究頁。",
-    archive: "歸檔",
-    category: "類別",
-    region: "地區",
-    readingList: "閱讀列表",
-    lessons: "篇課程",
-    noLessons: "冇符合篩選條件嘅閱讀課程。",
-    whyItMatters: "點解重要",
-    usefulExpression: "實用表達",
-    keyVocabulary: "核心詞彙",
-    discussionQuestion: "討論問題",
-    writingPrompt: "寫作題目",
-    readOriginalArticle: "閱讀原文",
-    level: "難度",
-    sourceType: "來源類型",
-    free: "免費",
-    all: "全部",
-  },
-};
-
-const optionLabels: Record<Locale, Record<string, string>> = {
-  en: {},
-  zh: {
-    All: "全部",
-    Global: "全球",
-    Americas: "美洲",
-    Environment: "环境",
-    Technology: "科技",
-    Economy: "经济",
-    Society: "社会",
-    Migration: "移民",
-    Beginner: "初级",
-    Intermediate: "中级",
-    Advanced: "高级",
-    News: "新闻",
-    "Think Tank": "智库",
-    Research: "研究",
-    Data: "数据",
-    "Public Institution": "公共机构",
-  },
-  yue: {
-    All: "全部",
-    Global: "全球",
-    Americas: "美洲",
-    Environment: "環境",
-    Technology: "科技",
-    Economy: "經濟",
-    Society: "社會",
-    Migration: "移民",
-    Beginner: "初級",
-    Intermediate: "中級",
-    Advanced: "高級",
-    News: "新聞",
-    "Think Tank": "智庫",
-    Research: "研究",
-    Data: "數據",
-    "Public Institution": "公共機構",
-  },
-};
-
 const categoryColors: Record<string, { bg: string; text: string }> = {
   Environment: { bg: "bg-emerald-50", text: "text-emerald-700" },
   Technology: { bg: "bg-blue-50", text: "text-blue-700" },
@@ -155,6 +23,7 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
   Health: { bg: "bg-rose-50", text: "text-rose-700" },
   Science: { bg: "bg-cyan-50", text: "text-cyan-700" },
   Society: { bg: "bg-amber-50", text: "text-amber-700" },
+  Migration: { bg: "bg-orange-50", text: "text-orange-700" },
 };
 
 const levelColors: Record<string, string> = {
@@ -169,7 +38,7 @@ export default function WeeklyNews() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedRegion, setSelectedRegion] = useState("All");
   const [selectedArticleId, setSelectedArticleId] = useState(weeklyReadings[0]?.id);
-  const t = pageText[language];
+  const t = weeklyReadingLabels[language];
 
   const weekItems = weeklyReadings.filter((item) => item.week === selectedWeek);
   const categories = ["All", ...Array.from(new Set(weekItems.map((item) => item.category)))];
@@ -300,7 +169,7 @@ function ArticleCard({
   language: Locale;
 }) {
   const catColor = categoryColors[item.category] || { bg: "bg-slate-100", text: "text-slate-700" };
-  const t = pageText[language];
+  const t = weeklyReadingLabels[language];
 
   return (
     <button onClick={onSelect} className="group text-left">
@@ -324,10 +193,13 @@ function ArticleCard({
         <h3 className="text-xl font-semibold leading-8 text-slate-950 transition group-hover:text-blue-700">
           {item.title}
         </h3>
+        {language !== "en" && (
+          <p className="mt-2 text-sm font-medium leading-6 text-blue-700">{item.titleNote[language]}</p>
+        )}
         <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{item.summary[language]}</p>
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-5 text-sm text-slate-500">
-          <span>{item.source}</span>
+          <span>{t.source}: {item.source}</span>
           <span className={`rounded-full px-3 py-1 text-xs font-semibold ${levelColors[item.level]}`}>
             {t.level}: {labelFor(item.level, language)}
           </span>
@@ -345,7 +217,7 @@ function ArticleCard({
 
 function ReadingLesson({ article, language }: { article: WeeklyReadingItem; language: Locale }) {
   const catColor = categoryColors[article.category] || { bg: "bg-slate-100", text: "text-slate-700" };
-  const t = pageText[language];
+  const t = weeklyReadingLabels[language];
 
   return (
     <Card className="sticky top-28 rounded-3xl border-slate-200 bg-white p-6 shadow-sm lg:p-8">
@@ -370,7 +242,13 @@ function ReadingLesson({ article, language }: { article: WeeklyReadingItem; lang
       <div className="border-b border-slate-100 pb-6">
         <p className="mb-3 text-sm font-semibold text-blue-700">{article.week} · {article.date}</p>
         <h2 className="text-3xl font-semibold leading-tight text-slate-950">{article.title}</h2>
-        <p className="mt-5 text-base leading-8 text-slate-600">{article.summary[language]}</p>
+        {language !== "en" && (
+          <p className="mt-3 text-base font-medium leading-7 text-blue-700">{article.titleNote[language]}</p>
+        )}
+        <div className="mt-5">
+          <p className="mb-2 text-sm font-semibold text-slate-950">{t.summary}</p>
+          <p className="text-base leading-8 text-slate-600">{article.summary[language]}</p>
+        </div>
         <a
           href={article.sourceUrl}
           target="_blank"
@@ -477,8 +355,4 @@ function FilterGroup({
       </div>
     </div>
   );
-}
-
-function labelFor(value: string, language: Locale) {
-  return optionLabels[language][value] || value;
 }

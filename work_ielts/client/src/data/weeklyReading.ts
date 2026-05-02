@@ -1,12 +1,12 @@
-export type Locale = "en" | "zh" | "yue";
+import type { LocalizedText } from "@/lib/i18n";
+
 export type ReadingLevel = "Beginner" | "Intermediate" | "Advanced";
 export type SourceType = "News" | "Think Tank" | "Research" | "Data" | "Public Institution";
-
-export type LocalizedText = Record<Locale, string>;
 
 export interface WeeklyReadingItem {
   id: string;
   title: string;
+  titleNote: LocalizedText;
   source: string;
   sourceUrl: string;
   sourceType: SourceType;
@@ -32,6 +32,11 @@ export const weeklyReadings: WeeklyReadingItem[] = [
   {
     id: "2026-w18-climate-finance-cfr",
     title: "Understanding the Global Push for Climate Finance",
+    titleNote: {
+      en: "Reading focus: global responsibility and climate policy funding.",
+      zh: "标题说明：这篇适合练习全球责任与气候政策资金相关表达。",
+      yue: "標題說明：呢篇適合練習全球責任同氣候政策資金相關表達。",
+    },
     source: "Council on Foreign Relations",
     sourceUrl: "https://www.cfr.org/backgrounders/understanding-global-push-climate-finance",
     sourceType: "Think Tank",
@@ -101,6 +106,11 @@ export const weeklyReadings: WeeklyReadingItem[] = [
   {
     id: "2026-w18-ai-schools-brookings",
     title: "AI's Future for Students Is in Our Hands",
+    titleNote: {
+      en: "Reading focus: how schools can shape responsible AI learning.",
+      zh: "标题说明：这篇关注学校如何引导负责任的 AI 学习。",
+      yue: "標題說明：呢篇關注學校點樣引導負責任嘅 AI 學習。",
+    },
     source: "Brookings",
     sourceUrl: "https://www.brookings.edu/articles/ais-future-for-students-is-in-our-hands/",
     sourceType: "Think Tank",
@@ -170,6 +180,11 @@ export const weeklyReadings: WeeklyReadingItem[] = [
   {
     id: "2026-w18-renewables-owid",
     title: "Renewable Energy",
+    titleNote: {
+      en: "Reading focus: using data to describe energy trends and transitions.",
+      zh: "标题说明：这篇适合练习用数据描述能源趋势与转型。",
+      yue: "標題說明：呢篇適合練習用數據描述能源趨勢同轉型。",
+    },
     source: "Our World in Data",
     sourceUrl: "https://ourworldindata.org/renewable-energy",
     sourceType: "Data",
@@ -239,6 +254,11 @@ export const weeklyReadings: WeeklyReadingItem[] = [
   {
     id: "2026-w18-inflation-imf",
     title: "Global Inflationary Episode Offers Lessons for Monetary Policy",
+    titleNote: {
+      en: "Reading focus: inflation causes, central bank policy, and living costs.",
+      zh: "标题说明：这篇适合练习通胀原因、央行政策和生活成本。",
+      yue: "標題說明：呢篇適合練習通脹原因、央行政策同生活成本。",
+    },
     source: "IMF Blog",
     sourceUrl: "https://www.imf.org/en/blogs/articles/2024/10/16/global-inflationary-episode-offers-lessons-for-monetary-policy",
     sourceType: "Public Institution",
@@ -308,6 +328,11 @@ export const weeklyReadings: WeeklyReadingItem[] = [
   {
     id: "2026-w17-public-spaces-world-bank",
     title: "The Hidden Wealth of Cities",
+    titleNote: {
+      en: "Reading focus: public space, city planning, and quality of life.",
+      zh: "标题说明：这篇适合练习公共空间、城市规划和生活质量。",
+      yue: "標題說明：呢篇適合練習公共空間、城市規劃同生活質素。",
+    },
     source: "World Bank Open Knowledge Repository",
     sourceUrl: "https://openknowledge.worldbank.org/entities/publication/3d291575-ce4d-5acc-98c5-7304f8a4536a",
     sourceType: "Public Institution",
@@ -377,6 +402,11 @@ export const weeklyReadings: WeeklyReadingItem[] = [
   {
     id: "2026-w17-youth-work-pew",
     title: "Young Workers Express Lower Levels of Job Satisfaction Than Older Ones",
+    titleNote: {
+      en: "Reading focus: work satisfaction, generations, and career expectations.",
+      zh: "标题说明：这篇适合练习工作满意度、代际差异和职业期待。",
+      yue: "標題說明：呢篇適合練習工作滿意度、代際差異同職業期待。",
+    },
     source: "Pew Research Center",
     sourceUrl: "https://www.pewresearch.org/short-reads/2023/05/25/young-workers-express-lower-levels-of-job-satisfaction-than-older-ones-but-most-are-content-with-their-job/",
     sourceType: "Research",
@@ -446,6 +476,11 @@ export const weeklyReadings: WeeklyReadingItem[] = [
   {
     id: "2026-w17-climate-remittances-carnegie",
     title: "How the Global Migration Crackdown Affects Climate Finance",
+    titleNote: {
+      en: "Reading focus: migration, remittances, and climate resilience.",
+      zh: "标题说明：这篇适合练习移民、汇款和气候韧性之间的联系。",
+      yue: "標題說明：呢篇適合練習移民、匯款同氣候韌性之間嘅連繫。",
+    },
     source: "Carnegie Endowment",
     sourceUrl: "https://carnegieendowment.org/research/2025/03/how-the-global-migration-crackdown-affects-climate-finance",
     sourceType: "Think Tank",
@@ -515,6 +550,11 @@ export const weeklyReadings: WeeklyReadingItem[] = [
   {
     id: "2026-w17-water-climate-csis",
     title: "Water and Global Climate Action at COP28",
+    titleNote: {
+      en: "Reading focus: water security, adaptation, and climate action.",
+      zh: "标题说明：这篇适合练习水安全、适应措施和气候行动。",
+      yue: "標題說明：呢篇適合練習水安全、適應措施同氣候行動。",
+    },
     source: "CSIS",
     sourceUrl: "https://www.csis.org/analysis/water-and-global-climate-action-cop28",
     sourceType: "Think Tank",
