@@ -693,6 +693,11 @@ export default function Home() {
     en: {
       back: "Back",
       explore: "Start Practicing",
+      exploreSkills: "Explore Skills",
+      readingCta: "Weekly Global Reading",
+      readingTitle: "Weekly Global Reading",
+      readingSubtitle: "Structured global reading lessons for IELTS vocabulary, discussion, and writing practice.",
+      viewReading: "View Reading Lessons",
       heroSubtitle:
         "High-quality IELTS practice, expert strategies, and weekly global reading to help you achieve your target band score.",
       skillsSubtitle: "Comprehensive practice and resources for all four IELTS modules.",
@@ -706,6 +711,11 @@ export default function Home() {
     zh: {
       back: "返回",
       explore: "开始练习",
+      exploreSkills: "探索技能",
+      readingCta: "每周全球精读",
+      readingTitle: "每周全球精读",
+      readingSubtitle: "面向雅思词汇、讨论和写作练习的结构化全球阅读课程。",
+      viewReading: "查看阅读课程",
       heroSubtitle: "高质量雅思练习、专家策略和每周全球阅读，帮助您达到目标分数。",
       skillsSubtitle: "覆盖雅思四个模块的综合练习和学习资源。",
       resourcesTitle: "学习资源",
@@ -718,6 +728,11 @@ export default function Home() {
     yue: {
       back: "返回",
       explore: "開始練習",
+      exploreSkills: "探索技能",
+      readingCta: "每週全球精讀",
+      readingTitle: "每週全球精讀",
+      readingSubtitle: "面向雅思詞彙、討論同寫作練習嘅結構化全球閱讀課程。",
+      viewReading: "查看閱讀課程",
       heroSubtitle: "高質量雅思練習、專家策略同每週全球閱讀，幫助您達到目標分數。",
       skillsSubtitle: "覆蓋雅思四個模組的綜合練習同學習資源。",
       resourcesTitle: "學習資源",
@@ -856,7 +871,7 @@ export default function Home() {
                 onClick={() => document.getElementById("ielts-skills")?.scrollIntoView({ behavior: "smooth" })}
                 className="h-12 rounded-xl bg-slate-950 px-7 text-sm font-semibold text-white shadow-lg shadow-slate-950/10 hover:bg-slate-800"
               >
-                Explore Skills <ArrowRight className="ml-2 h-4 w-4" />
+                {t.exploreSkills} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
@@ -864,7 +879,7 @@ export default function Home() {
                 className="h-12 rounded-xl border-slate-300 bg-white px-7 text-sm font-semibold text-slate-950 shadow-sm hover:bg-slate-50"
               >
                 <Newspaper className="mr-2 h-4 w-4" />
-                Weekly Global Reading
+                {t.readingCta}
               </Button>
             </div>
           </div>
@@ -924,14 +939,14 @@ export default function Home() {
             <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div>
                 <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">
-                  Weekly Global Reading
+                  {t.readingTitle}
                 </h2>
                 <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
-                  Structured global reading lessons for IELTS vocabulary, discussion, and writing practice.
+                  {t.readingSubtitle}
                 </p>
               </div>
               <Button variant="outline" onClick={() => setLocation("/weekly-news")} className="rounded-full bg-white">
-                View Reading Lessons <ArrowRight className="ml-2 h-4 w-4" />
+                {t.viewReading} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
 
@@ -944,7 +959,7 @@ export default function Home() {
                       <Newspaper className="h-4 w-4 text-slate-400" />
                     </div>
                     <h3 className="text-lg font-semibold leading-7 text-slate-950 group-hover:text-blue-700">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.summary}</p>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.summary[language]}</p>
                   </Card>
                 </a>
               ))}

@@ -13,8 +13,33 @@ const languageLabels = {
   yue: "粵語",
 } as const;
 
+const navLabels = {
+  en: {
+    home: "Home",
+    skills: "IELTS Skills",
+    reading: "Weekly Global Reading",
+    resources: "Resources",
+    getStarted: "Get Started",
+  },
+  zh: {
+    home: "首页",
+    skills: "雅思技能",
+    reading: "每周全球精读",
+    resources: "资源",
+    getStarted: "开始学习",
+  },
+  yue: {
+    home: "首頁",
+    skills: "雅思技能",
+    reading: "每週全球精讀",
+    resources: "資源",
+    getStarted: "開始學習",
+  },
+} as const;
+
 export function TopNav({ language = "en", onLanguageChange }: TopNavProps) {
   const [location, setLocation] = useLocation();
+  const labels = navLabels[language];
 
   const goToHomeSection = (sectionId?: string) => {
     setLocation("/");
@@ -51,25 +76,25 @@ export function TopNav({ language = "en", onLanguageChange }: TopNavProps) {
               onClick={() => goToHomeSection()}
               className="rounded-full px-4 py-2 text-blue-700 transition hover:bg-blue-50"
             >
-              Home
+              {labels.home}
             </button>
             <button
               onClick={() => goToHomeSection("ielts-skills")}
               className="flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-slate-100 hover:text-slate-950"
             >
-              IELTS Skills <ChevronDown className="h-3.5 w-3.5" />
+              {labels.skills} <ChevronDown className="h-3.5 w-3.5" />
             </button>
             <button
               onClick={() => setLocation("/weekly-news")}
               className="rounded-full px-4 py-2 transition hover:bg-slate-100 hover:text-slate-950"
             >
-              Weekly Global Reading
+              {labels.reading}
             </button>
             <button
               onClick={() => goToHomeSection("resources")}
               className="flex items-center gap-1 rounded-full px-4 py-2 transition hover:bg-slate-100 hover:text-slate-950"
             >
-              Resources <ChevronDown className="h-3.5 w-3.5" />
+              {labels.resources} <ChevronDown className="h-3.5 w-3.5" />
             </button>
           </nav>
 
@@ -93,7 +118,7 @@ export function TopNav({ language = "en", onLanguageChange }: TopNavProps) {
               onClick={() => goToHomeSection("ielts-skills")}
               className="rounded-full bg-slate-950 px-5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
             >
-              Get Started
+              {labels.getStarted}
             </Button>
           </div>
         </div>
