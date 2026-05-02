@@ -87,6 +87,18 @@ export const homeLabels: Record<Locale, {
   playlist: string;
   ieltsListening: string;
   dailyListening: string;
+  accentPracticeTitle: string;
+  accentPracticeSubtitle: string;
+  accentPracticeRoutine: string;
+  accentRoutineSteps: string[];
+  accent: string;
+  british: string;
+  american: string;
+  australian: string;
+  newZealand: string;
+  globalEnglish: string;
+  academicEnglish: string;
+  podcast: string;
   readingResourcesTitle: string;
   readingResourcesSubtitle: string;
   howToUseReading: string;
@@ -211,6 +223,25 @@ export const homeLabels: Record<Locale, {
     playlist: "Playlist",
     ieltsListening: "IELTS Listening",
     dailyListening: "Daily Listening",
+    accentPracticeTitle: "Accent Practice",
+    accentPracticeSubtitle:
+      "Train your ear for British, American, Australian, New Zealand, global, and academic English using free trusted sources.",
+    accentPracticeRoutine: "Accent practice routine",
+    accentRoutineSteps: [
+      "Listen once for the main idea",
+      "Listen again for details",
+      "Shadow one short sentence",
+      "Write down 5 keywords",
+      "Review accent features",
+    ],
+    accent: "Accent",
+    british: "British",
+    american: "American",
+    australian: "Australian",
+    newZealand: "New Zealand",
+    globalEnglish: "Global English",
+    academicEnglish: "Academic English",
+    podcast: "Podcast",
     readingResourcesTitle: "Featured Free Reading Resources",
     readingResourcesSubtitle:
       "Official IELTS reading practice, trusted news, think tanks, research, and public data for stronger academic reading.",
@@ -359,6 +390,24 @@ export const homeLabels: Record<Locale, {
     playlist: "播放列表",
     ieltsListening: "雅思听力",
     dailyListening: "日常听力",
+    accentPracticeTitle: "口音练习",
+    accentPracticeSubtitle: "使用免费可信资源训练英式、美式、澳式、新西兰、全球英语和学术英语听力。",
+    accentPracticeRoutine: "口音练习流程",
+    accentRoutineSteps: [
+      "第一遍听主旨",
+      "第二遍听细节",
+      "跟读一个短句",
+      "写下 5 个关键词",
+      "复盘口音特征",
+    ],
+    accent: "口音",
+    british: "英式",
+    american: "美式",
+    australian: "澳式",
+    newZealand: "新西兰",
+    globalEnglish: "全球英语",
+    academicEnglish: "学术英语",
+    podcast: "播客",
     readingResourcesTitle: "精选免费阅读资源",
     readingResourcesSubtitle: "官方雅思阅读练习、可信新闻、智库研究和公共数据，帮助提升学术阅读能力。",
     howToUseReading: "如何使用阅读资源",
@@ -504,6 +553,24 @@ export const homeLabels: Record<Locale, {
     playlist: "播放列表",
     ieltsListening: "雅思聽力",
     dailyListening: "日常聽力",
+    accentPracticeTitle: "口音練習",
+    accentPracticeSubtitle: "使用免費可信資源訓練英式、美式、澳式、新西蘭、全球英語同學術英語聽力。",
+    accentPracticeRoutine: "口音練習流程",
+    accentRoutineSteps: [
+      "第一遍聽主旨",
+      "第二遍聽細節",
+      "跟讀一個短句",
+      "寫低 5 個關鍵詞",
+      "重溫口音特徵",
+    ],
+    accent: "口音",
+    british: "英式",
+    american: "美式",
+    australian: "澳式",
+    newZealand: "新西蘭",
+    globalEnglish: "全球英語",
+    academicEnglish: "學術英語",
+    podcast: "播客",
     readingResourcesTitle: "精選免費閱讀資源",
     readingResourcesSubtitle: "官方雅思閱讀練習、可信新聞、智庫研究同公共數據，幫助提升學術閱讀能力。",
     howToUseReading: "點樣使用閱讀資源",

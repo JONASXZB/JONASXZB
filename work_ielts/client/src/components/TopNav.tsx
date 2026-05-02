@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { languageLabels, navLabels, type Locale } from "@/lib/i18n";
-import { ChevronDown, Compass, Globe2 } from "lucide-react";
+import { ChevronDown, Globe2 } from "lucide-react";
 import { useLocation } from "wouter";
 
 type TopNavProps = {
@@ -29,8 +29,8 @@ export function TopNav({ language = "en", onLanguageChange }: TopNavProps) {
             className="flex items-center gap-3 text-left"
             aria-label="Go to home"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-950 shadow-sm">
-              <Compass className="h-5 w-5" />
+            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm">
+              <img src="/logo.svg" alt="" className="h-8 w-8" />
             </span>
             <span className="flex items-center gap-2">
               <span className="text-base font-bold tracking-[0.08em] text-slate-950 sm:text-lg">
