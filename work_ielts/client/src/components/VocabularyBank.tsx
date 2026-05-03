@@ -18,7 +18,7 @@ const skills: VocabularySkill[] = ["Reading", "Listening", "Writing", "Speaking"
 
 type LearnedFilter = "All" | "Learned" | "Unlearned";
 
-export function VocabularyBank({ language }: { language: Locale }) {
+export function VocabularyBank({ language, showHeader = true }: { language: Locale; showHeader?: boolean }) {
   const labels = vocabularyBankLabels[language];
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTopic, setSelectedTopic] = useState<"All" | VocabularyTopic>("All");
@@ -112,26 +112,28 @@ export function VocabularyBank({ language }: { language: Locale }) {
   };
 
   return (
-    <section id="vocabulary-bank" className="border-t border-slate-200 bg-[#f8fafc] py-14 sm:py-16">
+    <section id="vocabulary-bank" className={`${showHeader ? "border-t border-slate-200 py-14 sm:py-16" : "py-0"} bg-[#f8fafc]`}>
       <div className="container">
-        <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-900">
-              <BookIcon />
+        {showHeader && (
+          <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-900">
+                <BookIcon />
+              </div>
+              <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">{labels.title}</h2>
+              <p className="mt-2 text-sm leading-7 text-slate-600 md:text-base">{labels.subtitle}</p>
             </div>
-            <h2 className="text-3xl font-semibold text-slate-950 md:text-4xl">{labels.title}</h2>
-            <p className="mt-2 text-sm leading-7 text-slate-600 md:text-base">{labels.subtitle}</p>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setLearnedIds([])}
+              className="h-10 rounded-full bg-white px-4 text-xs font-semibold"
+            >
+              <RotateCcw className="mr-2 h-3.5 w-3.5" />
+              {labels.resetLearned}
+            </Button>
           </div>
-          <Button
-            type="button"
-            variant="outline"
-            onClick={() => setLearnedIds([])}
-            className="h-10 rounded-full bg-white px-4 text-xs font-semibold"
-          >
-            <RotateCcw className="mr-2 h-3.5 w-3.5" />
-            {labels.resetLearned}
-          </Button>
-        </div>
+        )}
 
         <Card className="mb-5 rounded-2xl border-slate-200 bg-white p-4 shadow-sm">
           <div className="grid gap-3 lg:grid-cols-[1.25fr_0.9fr_0.75fr_0.75fr_0.75fr]">
@@ -181,7 +183,17 @@ export function VocabularyBank({ language }: { language: Locale }) {
             <Stat label={labels.totalWords} value={ieltsVocabulary.length} />
             <Stat label={labels.learned} value={learnedIds.length} />
             <Stat label={labels.visible} value={filteredVocabulary.length} />
-            {speechMessage && <span className="ml-auto font-medium text-red-600">{speechMessage}</span>}
+            {speechMessage && <span className="font-medium text-red-600">{speechMessage}</span>}
+            {!showHeader && (
+              <button
+                type="button"
+                onClick={() => setLearnedIds([])}
+                className="ml-auto inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-semibold text-slate-600 transition hover:border-slate-300 hover:text-slate-950"
+              >
+                <RotateCcw className="mr-1.5 h-3.5 w-3.5" />
+                {labels.resetLearned}
+              </button>
+            )}
           </div>
         </Card>
 

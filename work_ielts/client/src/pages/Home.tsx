@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { TopNav } from "@/components/TopNav";
 import { SpeakingPractice } from "@/components/SpeakingPractice";
-import { VocabularyBank } from "@/components/VocabularyBank";
 import { VocabularyNotebook } from "@/components/VocabularyNotebook";
 import { WritingPractice } from "@/components/WritingPractice";
 import { listeningAccentResources } from "@/data/listeningAccentResources";
@@ -13,7 +12,7 @@ import { speakingResources } from "@/data/speakingResources";
 import { writingResources } from "@/data/writingResources";
 import { weeklyReadings } from "@/data/weeklyReading";
 import { homeLabels, type Locale } from "@/lib/i18n";
-import { ArrowRight, BookOpen, Headphones, MessageSquare, FileText, Zap, Globe, TrendingUp, Newspaper } from "lucide-react";
+import { ArrowRight, BookMarked, BookOpen, Headphones, MessageSquare, FileText, Zap, Globe, TrendingUp, Newspaper } from "lucide-react";
 import { useLocation } from "wouter";
 
 const resourcesData = {
@@ -1460,7 +1459,31 @@ export default function Home() {
           </div>
         </section>
 
-        <VocabularyBank language={language} />
+        <section className="border-t border-slate-200 bg-white py-12 sm:py-14">
+          <div className="container">
+            <Card className="rounded-3xl border-slate-200 bg-[#f8fafc] p-6 shadow-sm md:p-8">
+              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                <div className="flex max-w-2xl gap-4">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-950">
+                    <BookMarked className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[0.14em] text-blue-700">{t.vocabulary}</p>
+                    <h2 className="mt-2 text-2xl font-semibold text-slate-950">{t.vocabularyBankTitle}</h2>
+                    <p className="mt-2 text-sm font-semibold text-slate-700">{t.vocabularyPreviewStats}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{t.vocabularyPreviewBody}</p>
+                  </div>
+                </div>
+                <Button
+                  onClick={() => setLocation("/vocabulary")}
+                  className="h-11 rounded-full bg-slate-950 px-5 text-sm font-semibold text-white hover:bg-slate-800"
+                >
+                  {t.openVocabularyBank} <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </Card>
+          </div>
+        </section>
 
         <VocabularyNotebook language={language} />
 

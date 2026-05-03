@@ -11,6 +11,7 @@ export const navLabels: Record<Locale, {
   home: string;
   skills: string;
   reading: string;
+  vocabulary: string;
   resources: string;
   getStarted: string;
 }> = {
@@ -18,6 +19,7 @@ export const navLabels: Record<Locale, {
     home: "Home",
     skills: "IELTS Skills",
     reading: "Weekly Global Reading",
+    vocabulary: "Vocabulary",
     resources: "Resources",
     getStarted: "Get Started",
   },
@@ -25,6 +27,7 @@ export const navLabels: Record<Locale, {
     home: "首页",
     skills: "雅思技能",
     reading: "每周全球精读",
+    vocabulary: "词汇",
     resources: "资源",
     getStarted: "开始学习",
   },
@@ -32,6 +35,7 @@ export const navLabels: Record<Locale, {
     home: "首頁",
     skills: "雅思技能",
     reading: "每週全球精讀",
+    vocabulary: "詞彙",
     resources: "資源",
     getStarted: "開始學習",
   },
@@ -59,6 +63,11 @@ export const homeLabels: Record<Locale, {
   readingTitle: string;
   readingSubtitle: string;
   viewReading: string;
+  vocabulary: string;
+  vocabularyBankTitle: string;
+  vocabularyPreviewStats: string;
+  vocabularyPreviewBody: string;
+  openVocabularyBank: string;
   heroSubtitle: string;
   skillsSubtitle: string;
   resourcesTitle: string;
@@ -193,6 +202,12 @@ export const homeLabels: Record<Locale, {
     readingTitle: "Weekly Global Reading",
     readingSubtitle: "Structured global reading lessons for IELTS vocabulary, discussion, and writing practice.",
     viewReading: "View All",
+    vocabulary: "Vocabulary",
+    vocabularyBankTitle: "Vocabulary Bank",
+    vocabularyPreviewStats: "300 IELTS topic words with UK/US pronunciation",
+    vocabularyPreviewBody:
+      "Build your IELTS vocabulary with topic-based words, examples, and pronunciation practice.",
+    openVocabularyBank: "Open Vocabulary Bank",
     heroSubtitle:
       "High-quality IELTS practice, expert strategies, and weekly global reading to help you achieve your target band score.",
     skillsSubtitle: "Comprehensive practice and resources for all four IELTS modules.",
@@ -368,6 +383,11 @@ export const homeLabels: Record<Locale, {
     readingTitle: "每周全球精读",
     readingSubtitle: "面向雅思词汇、讨论和写作练习的结构化全球阅读课程。",
     viewReading: "查看全部",
+    vocabulary: "词汇",
+    vocabularyBankTitle: "雅思词汇库",
+    vocabularyPreviewStats: "300 个雅思主题词，支持英式/美式发音",
+    vocabularyPreviewBody: "通过主题词汇、例句和发音练习积累雅思词汇。",
+    openVocabularyBank: "打开词汇库",
     heroSubtitle: "高质量雅思练习、专家策略和每周全球阅读，帮助您达到目标分数。",
     skillsSubtitle: "覆盖雅思四个模块的综合练习和学习资源。",
     resourcesTitle: "学习资源",
@@ -537,6 +557,11 @@ export const homeLabels: Record<Locale, {
     readingTitle: "每週全球精讀",
     readingSubtitle: "面向雅思詞彙、討論同寫作練習嘅結構化全球閱讀課程。",
     viewReading: "查看全部",
+    vocabulary: "詞彙",
+    vocabularyBankTitle: "雅思詞彙庫",
+    vocabularyPreviewStats: "300 個雅思主題詞，支援英式/美式發音",
+    vocabularyPreviewBody: "透過主題詞彙、例句同發音練習累積雅思詞彙。",
+    openVocabularyBank: "打開詞彙庫",
     heroSubtitle: "高質量雅思練習、專家策略同每週全球閱讀，幫助您達到目標分數。",
     skillsSubtitle: "覆蓋雅思四個模組嘅綜合練習同學習資源。",
     resourcesTitle: "學習資源",
@@ -684,6 +709,7 @@ export const homeLabels: Record<Locale, {
 export const vocabularyNotebookLabels: Record<Locale, {
   title: string;
   subtitle: string;
+  pageHelper: string;
   word: string;
   wordPlaceholder: string;
   meaning: string;
@@ -817,6 +843,7 @@ export const vocabularyBankLabels: Record<Locale, {
     title: "Vocabulary Bank",
     subtitle:
       "Browse 300 IELTS words by topic, listen to UK or US pronunciation, and track learned words locally.",
+    pageHelper: "Search, filter, listen, and mark words as learned.",
     search: "Search",
     searchPlaceholder: "Search by word or phrase",
     topic: "Topic",
@@ -873,6 +900,7 @@ export const vocabularyBankLabels: Record<Locale, {
   zh: {
     title: "雅思词汇库",
     subtitle: "浏览 300 个雅思词汇，按主题筛选，听英式/美式发音，并在本地记录已掌握词汇。",
+    pageHelper: "搜索、筛选、听发音，并标记已掌握词汇。",
     search: "搜索",
     searchPlaceholder: "按单词或短语搜索",
     topic: "主题",
@@ -929,6 +957,7 @@ export const vocabularyBankLabels: Record<Locale, {
   yue: {
     title: "雅思詞彙庫",
     subtitle: "瀏覽 300 個雅思詞彙，按主題篩選，聽英式/美式發音，並喺本機記錄已掌握詞彙。",
+    pageHelper: "搜尋、篩選、聽發音，並標記已掌握詞彙。",
     search: "搜尋",
     searchPlaceholder: "按單詞或短語搜尋",
     topic: "主題",
