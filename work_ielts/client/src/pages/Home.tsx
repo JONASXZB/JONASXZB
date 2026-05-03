@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { PracticeTestsSection } from "@/components/PracticeTestsSection";
 import { TopNav } from "@/components/TopNav";
 import { SpeakingPractice } from "@/components/SpeakingPractice";
 import { VocabularyNotebook } from "@/components/VocabularyNotebook";
@@ -1272,6 +1273,10 @@ export default function Home() {
                   </div>
                 </section>
               </section>
+            )}
+
+            {activeSkillKey && (
+              <PracticeTestsSection skill={activeSkillKey} language={language} />
             )}
 
             {Object.entries(module.categories).map(([category, resources]) => (

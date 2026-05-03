@@ -1013,6 +1013,100 @@ export const vocabularyBankLabels: Record<Locale, {
   },
 };
 
+export const practiceTestsLabels: Record<Locale, {
+  title: string;
+  subtitle: string;
+  mockPractice: string;
+  timedPractice: string;
+  difficulty: string;
+  easy: string;
+  medium: string;
+  hard: string;
+  official: string;
+  officialComputerPractice: string;
+  thirdPartyMock: string;
+  internalPractice: string;
+  learningResource: string;
+  free: string;
+  estimatedTime: string;
+  level: string;
+  taskTypes: string;
+  howToUse: string;
+  notes: string;
+  openPractice: string;
+  noExternalLink: string;
+}> = {
+  en: {
+    title: "Practice Tests",
+    subtitle: "Follow a clear Easy, Medium, Hard practice path using official and carefully labeled free resources.",
+    mockPractice: "Mock Practice",
+    timedPractice: "Timed Practice",
+    difficulty: "Difficulty",
+    easy: "Easy",
+    medium: "Medium",
+    hard: "Hard",
+    official: "Official",
+    officialComputerPractice: "Official Computer Practice",
+    thirdPartyMock: "Third-party Mock",
+    internalPractice: "Internal Practice",
+    learningResource: "Learning Resource",
+    free: "Free",
+    estimatedTime: "Estimated Time",
+    level: "Level",
+    taskTypes: "Task Types",
+    howToUse: "How to use",
+    notes: "Notes",
+    openPractice: "Open Practice",
+    noExternalLink: "No external link",
+  },
+  zh: {
+    title: "练习测试",
+    subtitle: "按照简单、中等、困难路径练习，优先使用官方资源，并清楚标注免费第三方资源。",
+    mockPractice: "模拟练习",
+    timedPractice: "限时练习",
+    difficulty: "难度",
+    easy: "简单",
+    medium: "中等",
+    hard: "困难",
+    official: "官方",
+    officialComputerPractice: "官方机考练习",
+    thirdPartyMock: "第三方模拟",
+    internalPractice: "站内练习",
+    learningResource: "学习资源",
+    free: "免费",
+    estimatedTime: "预计时间",
+    level: "难度",
+    taskTypes: "任务类型",
+    howToUse: "如何使用",
+    notes: "备注",
+    openPractice: "打开练习",
+    noExternalLink: "无外部链接",
+  },
+  yue: {
+    title: "練習測試",
+    subtitle: "按照簡單、中等、困難路徑練習，優先使用官方資源，並清楚標示免費第三方資源。",
+    mockPractice: "模擬練習",
+    timedPractice: "限時練習",
+    difficulty: "難度",
+    easy: "簡單",
+    medium: "中等",
+    hard: "困難",
+    official: "官方",
+    officialComputerPractice: "官方機考練習",
+    thirdPartyMock: "第三方模擬",
+    internalPractice: "站內練習",
+    learningResource: "學習資源",
+    free: "免費",
+    estimatedTime: "預計時間",
+    level: "難度",
+    taskTypes: "任務類型",
+    howToUse: "點樣使用",
+    notes: "備註",
+    openPractice: "打開練習",
+    noExternalLink: "冇外部連結",
+  },
+};
+
 export const weeklyReadingLabels: Record<Locale, {
   title: string;
   subtitle: string;
