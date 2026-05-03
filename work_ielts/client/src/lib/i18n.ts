@@ -786,8 +786,15 @@ export const vocabularyBankLabels: Record<Locale, {
   searchPlaceholder: string;
   topic: string;
   skill: string;
+  all: string;
+  levelFilter: string;
+  learnedFilter: string;
   allTopics: string;
   allSkills: string;
+  allLevels: string;
+  unlearned: string;
+  totalWords: string;
+  visible: string;
   learned: string;
   markLearned: string;
   unmarkLearned: string;
@@ -802,22 +809,27 @@ export const vocabularyBankLabels: Record<Locale, {
   partOfSpeech: string;
   noResults: string;
   wordCount: string;
-  topicOptions: Record<
-    "Education" | "Technology" | "Environment" | "Government & Politics" | "Economy & Work" | "Health & Fitness",
-    string
-  >;
+  topicOptions: Record<string, string>;
   skillOptions: Record<"Reading" | "Listening" | "Writing" | "Speaking", string>;
+  levelOptions: Record<"Intermediate" | "Upper Intermediate" | "Advanced", string>;
 }> = {
   en: {
     title: "Vocabulary Bank",
     subtitle:
-      "Explore 30 starter IELTS words by topic, listen to UK or US pronunciation, and mark words as learned locally.",
+      "Browse 300 IELTS words by topic, listen to UK or US pronunciation, and track learned words locally.",
     search: "Search",
     searchPlaceholder: "Search by word or phrase",
     topic: "Topic",
     skill: "Skill",
+    all: "All",
+    levelFilter: "Level",
+    learnedFilter: "Learned",
     allTopics: "All Topics",
     allSkills: "All Skills",
+    allLevels: "All Levels",
+    unlearned: "Unlearned",
+    totalWords: "Total Words",
+    visible: "Visible",
     learned: "Learned",
     markLearned: "Mark learned",
     unmarkLearned: "Remove learned",
@@ -839,6 +851,12 @@ export const vocabularyBankLabels: Record<Locale, {
       "Government & Politics": "Government & Politics",
       "Economy & Work": "Economy & Work",
       "Health & Fitness": "Health & Fitness",
+      "Society & Culture": "Society & Culture",
+      "Media & Communication": "Media & Communication",
+      "Cities & Transport": "Cities & Transport",
+      "Global Issues": "Global Issues",
+      "Science & Research": "Science & Research",
+      "Art, Photography & Creativity": "Art, Photography & Creativity",
     },
     skillOptions: {
       Reading: "Reading",
@@ -846,16 +864,28 @@ export const vocabularyBankLabels: Record<Locale, {
       Writing: "Writing",
       Speaking: "Speaking",
     },
+    levelOptions: {
+      Intermediate: "Intermediate",
+      "Upper Intermediate": "Upper Intermediate",
+      Advanced: "Advanced",
+    },
   },
   zh: {
     title: "雅思词汇库",
-    subtitle: "先从 30 个雅思核心词开始，按主题筛选，听英式/美式发音，并在本地标记已掌握。",
+    subtitle: "浏览 300 个雅思词汇，按主题筛选，听英式/美式发音，并在本地记录已掌握词汇。",
     search: "搜索",
     searchPlaceholder: "按单词或短语搜索",
     topic: "主题",
     skill: "技能",
+    all: "全部",
+    levelFilter: "难度",
+    learnedFilter: "掌握状态",
     allTopics: "全部主题",
     allSkills: "全部技能",
+    allLevels: "全部难度",
+    unlearned: "未掌握",
+    totalWords: "总词数",
+    visible: "当前显示",
     learned: "已掌握",
     markLearned: "标记为已掌握",
     unmarkLearned: "取消掌握标记",
@@ -877,6 +907,12 @@ export const vocabularyBankLabels: Record<Locale, {
       "Government & Politics": "政府与政治",
       "Economy & Work": "经济与工作",
       "Health & Fitness": "健康与健身",
+      "Society & Culture": "社会与文化",
+      "Media & Communication": "媒体与传播",
+      "Cities & Transport": "城市与交通",
+      "Global Issues": "全球议题",
+      "Science & Research": "科学与研究",
+      "Art, Photography & Creativity": "艺术、摄影与创意",
     },
     skillOptions: {
       Reading: "阅读",
@@ -884,16 +920,28 @@ export const vocabularyBankLabels: Record<Locale, {
       Writing: "写作",
       Speaking: "口语",
     },
+    levelOptions: {
+      Intermediate: "中级",
+      "Upper Intermediate": "中高级",
+      Advanced: "高级",
+    },
   },
   yue: {
     title: "雅思詞彙庫",
-    subtitle: "先由 30 個雅思核心詞開始，按主題篩選，聽英式/美式發音，並喺本機標記已掌握。",
+    subtitle: "瀏覽 300 個雅思詞彙，按主題篩選，聽英式/美式發音，並喺本機記錄已掌握詞彙。",
     search: "搜尋",
     searchPlaceholder: "按單詞或短語搜尋",
     topic: "主題",
     skill: "技能",
+    all: "全部",
+    levelFilter: "難度",
+    learnedFilter: "掌握狀態",
     allTopics: "全部主題",
     allSkills: "全部技能",
+    allLevels: "全部難度",
+    unlearned: "未掌握",
+    totalWords: "總詞數",
+    visible: "目前顯示",
     learned: "已掌握",
     markLearned: "標記為已掌握",
     unmarkLearned: "取消掌握標記",
@@ -915,12 +963,23 @@ export const vocabularyBankLabels: Record<Locale, {
       "Government & Politics": "政府與政治",
       "Economy & Work": "經濟與工作",
       "Health & Fitness": "健康與健身",
+      "Society & Culture": "社會與文化",
+      "Media & Communication": "媒體與傳播",
+      "Cities & Transport": "城市與交通",
+      "Global Issues": "全球議題",
+      "Science & Research": "科學與研究",
+      "Art, Photography & Creativity": "藝術、攝影與創意",
     },
     skillOptions: {
       Reading: "閱讀",
       Listening: "聽力",
       Writing: "寫作",
       Speaking: "口語",
+    },
+    levelOptions: {
+      Intermediate: "中級",
+      "Upper Intermediate": "中高級",
+      Advanced: "高級",
     },
   },
 };
