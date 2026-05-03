@@ -779,6 +779,152 @@ export const vocabularyNotebookLabels: Record<Locale, {
   },
 };
 
+export const vocabularyBankLabels: Record<Locale, {
+  title: string;
+  subtitle: string;
+  search: string;
+  searchPlaceholder: string;
+  topic: string;
+  skill: string;
+  allTopics: string;
+  allSkills: string;
+  learned: string;
+  markLearned: string;
+  unmarkLearned: string;
+  resetLearned: string;
+  ukPronunciation: string;
+  usPronunciation: string;
+  speechUnavailable: string;
+  meaning: string;
+  example: string;
+  tags: string;
+  level: string;
+  partOfSpeech: string;
+  noResults: string;
+  wordCount: string;
+  topicOptions: Record<
+    "Education" | "Technology" | "Environment" | "Government & Politics" | "Economy & Work" | "Health & Fitness",
+    string
+  >;
+  skillOptions: Record<"Reading" | "Listening" | "Writing" | "Speaking", string>;
+}> = {
+  en: {
+    title: "Vocabulary Bank",
+    subtitle:
+      "Explore 30 starter IELTS words by topic, listen to UK or US pronunciation, and mark words as learned locally.",
+    search: "Search",
+    searchPlaceholder: "Search by word or phrase",
+    topic: "Topic",
+    skill: "Skill",
+    allTopics: "All Topics",
+    allSkills: "All Skills",
+    learned: "Learned",
+    markLearned: "Mark learned",
+    unmarkLearned: "Remove learned",
+    resetLearned: "Reset learned words",
+    ukPronunciation: "UK",
+    usPronunciation: "US",
+    speechUnavailable: "Pronunciation is not available in this browser.",
+    meaning: "Meaning",
+    example: "Example",
+    tags: "Tags",
+    level: "Level",
+    partOfSpeech: "Part of speech",
+    noResults: "No vocabulary items match your filters.",
+    wordCount: "words",
+    topicOptions: {
+      Education: "Education",
+      Technology: "Technology",
+      Environment: "Environment",
+      "Government & Politics": "Government & Politics",
+      "Economy & Work": "Economy & Work",
+      "Health & Fitness": "Health & Fitness",
+    },
+    skillOptions: {
+      Reading: "Reading",
+      Listening: "Listening",
+      Writing: "Writing",
+      Speaking: "Speaking",
+    },
+  },
+  zh: {
+    title: "雅思词汇库",
+    subtitle: "先从 30 个雅思核心词开始，按主题筛选，听英式/美式发音，并在本地标记已掌握。",
+    search: "搜索",
+    searchPlaceholder: "按单词或短语搜索",
+    topic: "主题",
+    skill: "技能",
+    allTopics: "全部主题",
+    allSkills: "全部技能",
+    learned: "已掌握",
+    markLearned: "标记为已掌握",
+    unmarkLearned: "取消掌握标记",
+    resetLearned: "重置已掌握词汇",
+    ukPronunciation: "英式",
+    usPronunciation: "美式",
+    speechUnavailable: "当前浏览器不支持发音功能。",
+    meaning: "含义",
+    example: "例句",
+    tags: "标签",
+    level: "难度",
+    partOfSpeech: "词性",
+    noResults: "没有符合筛选条件的词汇。",
+    wordCount: "个词",
+    topicOptions: {
+      Education: "教育",
+      Technology: "科技",
+      Environment: "环境",
+      "Government & Politics": "政府与政治",
+      "Economy & Work": "经济与工作",
+      "Health & Fitness": "健康与健身",
+    },
+    skillOptions: {
+      Reading: "阅读",
+      Listening: "听力",
+      Writing: "写作",
+      Speaking: "口语",
+    },
+  },
+  yue: {
+    title: "雅思詞彙庫",
+    subtitle: "先由 30 個雅思核心詞開始，按主題篩選，聽英式/美式發音，並喺本機標記已掌握。",
+    search: "搜尋",
+    searchPlaceholder: "按單詞或短語搜尋",
+    topic: "主題",
+    skill: "技能",
+    allTopics: "全部主題",
+    allSkills: "全部技能",
+    learned: "已掌握",
+    markLearned: "標記為已掌握",
+    unmarkLearned: "取消掌握標記",
+    resetLearned: "重設已掌握詞彙",
+    ukPronunciation: "英式",
+    usPronunciation: "美式",
+    speechUnavailable: "目前瀏覽器唔支援發音功能。",
+    meaning: "意思",
+    example: "例句",
+    tags: "標籤",
+    level: "難度",
+    partOfSpeech: "詞性",
+    noResults: "冇符合篩選條件嘅詞彙。",
+    wordCount: "個詞",
+    topicOptions: {
+      Education: "教育",
+      Technology: "科技",
+      Environment: "環境",
+      "Government & Politics": "政府與政治",
+      "Economy & Work": "經濟與工作",
+      "Health & Fitness": "健康與健身",
+    },
+    skillOptions: {
+      Reading: "閱讀",
+      Listening: "聽力",
+      Writing: "寫作",
+      Speaking: "口語",
+    },
+  },
+};
+
 export const weeklyReadingLabels: Record<Locale, {
   title: string;
   subtitle: string;
