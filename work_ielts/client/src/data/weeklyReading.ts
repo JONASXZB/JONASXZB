@@ -30,6 +30,450 @@ export interface WeeklyReadingItem {
 
 export const weeklyReadings: WeeklyReadingItem[] = [
   {
+    id: "2026-w19-ai-growth-fairness-brookings",
+    title: "AI Growth Acceleration versus Distributional Fairness",
+    titleNote: {
+      en: "Reading focus: AI adoption, productivity, and who benefits from technological change.",
+      zh: "标题说明：这篇适合练习 AI 采用、生产率以及技术收益分配相关表达。",
+      yue: "標題說明：呢篇適合練習 AI 採用、生產率同技術收益分配相關表達。",
+    },
+    source: "Brookings",
+    sourceUrl: "https://www.brookings.edu/articles/ai-growth-acceleration-versus-distributional-fairness/",
+    sourceType: "Think Tank",
+    isFree: true,
+    date: "2026-05-05",
+    week: "2026 Week 19",
+    region: "Global",
+    category: "Technology",
+    level: "Advanced",
+    summary: {
+      en: "This Brookings analysis argues that stronger AI capability does not automatically create broad economic gains. Its key point is that productivity depends on diffusion, skills, organizational change, and whether benefits are shared across workers, firms, and regions.",
+      zh: "这篇 Brookings 分析指出，更强的 AI 能力并不会自动带来广泛经济收益。核心观点是，生产率提升取决于扩散速度、技能、组织变革，以及收益能否在劳动者、企业和地区之间更公平地分配。",
+      yue: "呢篇 Brookings 分析指出，更強嘅 AI 能力唔會自動帶嚟廣泛經濟收益。核心觀點係，生產率提升取決於擴散速度、技能、組織變革，同收益可唔可以喺勞動者、企業同地區之間更公平分配。",
+    },
+    whyItMatters: {
+      en: "AI and work is a high-value IELTS topic because it connects technology, employment, inequality, education, and regulation.",
+      zh: "AI 与工作是高价值雅思话题，因为它连接科技、就业、不平等、教育和监管。",
+      yue: "AI 同工作係高價值雅思題目，因為佢連接科技、就業、不平等、教育同監管。",
+    },
+    keyVocabulary: [
+      {
+        word: "diffusion",
+        meaning: {
+          en: "the spread of a technology, idea, or practice across groups",
+          zh: "技术、理念或做法在不同群体中的扩散",
+          yue: "技術、理念或者做法喺唔同群體入面擴散",
+        },
+      },
+      {
+        word: "distributional fairness",
+        meaning: {
+          en: "whether benefits and costs are shared in a fair way",
+          zh: "收益和成本是否以公平方式分配",
+          yue: "收益同成本係咪以公平方式分配",
+        },
+      },
+      {
+        word: "productivity gains",
+        meaning: {
+          en: "improvements in output or efficiency",
+          zh: "产出或效率方面的提升",
+          yue: "產出或者效率方面嘅提升",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Technological progress does not guarantee shared prosperity.",
+      zh: "技术进步并不保证共同繁荣。",
+      yue: "技術進步並唔保證共同繁榮。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this when discussing why innovation may need education, policy, or regulation to benefit society widely.",
+      zh: "当讨论为什么创新需要教育、政策或监管才能广泛惠及社会时，可以使用这个表达。",
+      yue: "當討論點解創新需要教育、政策或者監管先可以廣泛惠及社會，可以用呢個表達。",
+    },
+    discussionQuestion: {
+      en: "Should governments focus more on speeding up AI adoption or making sure AI benefits are widely shared?",
+      zh: "政府应该更重视加快 AI 采用，还是更重视确保 AI 收益被广泛分享？",
+      yue: "政府應該更重視加快 AI 採用，定係更重視確保 AI 收益可以廣泛分享？",
+    },
+    writingPrompt: {
+      en: "Some people believe artificial intelligence will make economies more productive. Others worry it will increase inequality. Discuss both views and give your opinion.",
+      zh: "有人认为人工智能会提高经济生产率，也有人担心它会加剧不平等。讨论双方观点并给出你的看法。",
+      yue: "有人認為人工智能會提高經濟生產率，亦有人擔心佢會加劇不平等。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
+    id: "2026-w19-gambia-climate-jobs-worldbank",
+    title: "Building Resilience, Powering Jobs and Growth for The Gambia’s Future",
+    titleNote: {
+      en: "Reading focus: climate resilience, jobs, agriculture, and infrastructure.",
+      zh: "标题说明：这篇适合练习气候韧性、就业、农业和基础设施表达。",
+      yue: "標題說明：呢篇適合練習氣候韌性、就業、農業同基礎設施表達。",
+    },
+    source: "World Bank",
+    sourceUrl: "https://www.worldbank.org/en/news/press-release/2026/05/05/building-resilience-powering-jobs-and-growth-for-the-gambia-s-future",
+    sourceType: "Public Institution",
+    isFree: true,
+    date: "2026-05-05",
+    week: "2026 Week 19",
+    region: "Africa",
+    category: "Environment",
+    level: "Intermediate",
+    summary: {
+      en: "The World Bank’s update on The Gambia links climate resilience with jobs and long-term growth. It highlights how flooding, heat stress, coastal erosion, agriculture, finance, electricity, roads, and tourism all shape development choices.",
+      zh: "世界银行关于冈比亚的更新把气候韧性与就业和长期增长联系起来。它强调洪水、热压力、海岸侵蚀、农业、金融、电力、道路和旅游都会影响发展选择。",
+      yue: "世界銀行關於岡比亞嘅更新將氣候韌性同就業、長期增長連繫起嚟。佢強調洪水、熱壓力、海岸侵蝕、農業、金融、電力、道路同旅遊都會影響發展選擇。",
+    },
+    whyItMatters: {
+      en: "This is useful for IELTS because it shows climate change as an economic and employment issue, not only an environmental one.",
+      zh: "这个主题对雅思很有用，因为它展示气候变化不仅是环境问题，也是经济和就业问题。",
+      yue: "呢個題目對雅思好有用，因為佢展示氣候變化唔只係環境問題，亦係經濟同就業問題。",
+    },
+    keyVocabulary: [
+      {
+        word: "climate resilience",
+        meaning: {
+          en: "the ability to prepare for and recover from climate risks",
+          zh: "准备并从气候风险中恢复的能力",
+          yue: "準備並由氣候風險中恢復嘅能力",
+        },
+      },
+      {
+        word: "livelihoods",
+        meaning: {
+          en: "the ways people earn a living",
+          zh: "人们谋生的方式",
+          yue: "人哋謀生嘅方式",
+        },
+      },
+      {
+        word: "blended finance",
+        meaning: {
+          en: "using public and private money together to support investment",
+          zh: "结合公共和私人资金来支持投资",
+          yue: "結合公共同私人資金嚟支持投資",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Climate policy can protect both people and productivity.",
+      zh: "气候政策可以同时保护民众和生产率。",
+      yue: "氣候政策可以同時保護民眾同生產率。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this sentence to connect environmental action with jobs, incomes, and economic stability.",
+      zh: "这个句子适合把环境行动与就业、收入和经济稳定联系起来。",
+      yue: "呢句適合將環境行動同就業、收入同經濟穩定連繫起嚟。",
+    },
+    discussionQuestion: {
+      en: "Should climate investment focus first on infrastructure, agriculture, or jobs?",
+      zh: "气候投资应该首先关注基础设施、农业还是就业？",
+      yue: "氣候投資應該首先關注基礎設施、農業定就業？",
+    },
+    writingPrompt: {
+      en: "Climate change is increasingly affecting economic development. What can governments do to protect jobs and long-term growth?",
+      zh: "气候变化正越来越多地影响经济发展。政府可以做些什么来保护就业和长期增长？",
+      yue: "氣候變化正越嚟越多影響經濟發展。政府可以做啲咩去保護就業同長期增長？",
+    },
+  },
+  {
+    id: "2026-w19-information-war-csis",
+    title: "How to Lose an Information War in 10 Days",
+    titleNote: {
+      en: "Reading focus: disinformation, public diplomacy, and digital media.",
+      zh: "标题说明：这篇适合练习虚假信息、公共外交和数字媒体表达。",
+      yue: "標題說明：呢篇適合練習虛假資訊、公共外交同數碼媒體表達。",
+    },
+    source: "CSIS",
+    sourceUrl: "https://www.csis.org/analysis/how-lose-information-war-10-days",
+    sourceType: "Think Tank",
+    isFree: true,
+    date: "2026-05-05",
+    week: "2026 Week 19",
+    region: "Global",
+    category: "Technology",
+    level: "Advanced",
+    summary: {
+      en: "This CSIS commentary explains how online narratives, memes, and coordinated accounts can shape public understanding during conflict. It argues that battlefield success may not translate into an information advantage.",
+      zh: "这篇 CSIS 评论解释在线叙事、表情包和协同账号如何在冲突期间影响公众理解，并指出战场成功不一定能转化为信息优势。",
+      yue: "呢篇 CSIS 評論解釋網上敘事、迷因同協同帳號點樣喺衝突期間影響公眾理解，並指出戰場成功唔一定可以轉化為資訊優勢。",
+    },
+    whyItMatters: {
+      en: "It helps IELTS learners discuss media literacy, trust, war reporting, social platforms, and the speed of modern communication.",
+      zh: "它可以帮助雅思学习者讨论媒体素养、信任、战争报道、社交平台和现代传播速度。",
+      yue: "佢可以幫雅思學習者討論媒體素養、信任、戰爭報道、社交平台同現代傳播速度。",
+    },
+    keyVocabulary: [
+      {
+        word: "disinformation",
+        meaning: {
+          en: "false information spread deliberately to mislead people",
+          zh: "故意传播、用来误导他人的虚假信息",
+          yue: "故意傳播、用嚟誤導他人嘅虛假資訊",
+        },
+      },
+      {
+        word: "public diplomacy",
+        meaning: {
+          en: "communication aimed at influencing foreign publics",
+          zh: "旨在影响外国公众的沟通方式",
+          yue: "旨在影響外國公眾嘅溝通方式",
+        },
+      },
+      {
+        word: "narrative",
+        meaning: {
+          en: "a way of explaining events that shapes how people understand them",
+          zh: "塑造人们理解事件方式的叙事",
+          yue: "塑造人哋理解事件方式嘅敘事",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Facts alone may not be enough to shape public opinion.",
+      zh: "仅有事实可能不足以塑造公众舆论。",
+      yue: "單靠事實可能唔足以塑造公眾輿論。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this when discussing why communication style, timing, and trust also matter.",
+      zh: "当讨论为什么沟通方式、时机和信任也很重要时，可以使用这个表达。",
+      yue: "當討論點解溝通方式、時機同信任都重要，可以用呢個表達。",
+    },
+    discussionQuestion: {
+      en: "How can ordinary people avoid being misled by online information during a crisis?",
+      zh: "普通人在危机期间如何避免被网络信息误导？",
+      yue: "普通人喺危機期間點樣避免被網上資訊誤導？",
+    },
+    writingPrompt: {
+      en: "Social media has made it harder for people to know what information to trust. To what extent do you agree or disagree?",
+      zh: "社交媒体让人们更难判断哪些信息值得信任。你在多大程度上同意或不同意？",
+      yue: "社交媒體令人更難判斷邊啲資訊值得信任。你喺幾大程度上同意或者唔同意？",
+    },
+  },
+  {
+    id: "2026-w19-taiwan-pressure-csis",
+    title: "The Geometry of Coercion: Tracking the PRC’s Maritime and Air Pressure on Taiwan",
+    titleNote: {
+      en: "Reading focus: open-source data, security pressure, and regional stability.",
+      zh: "标题说明：这篇适合练习开源数据、安全压力和地区稳定相关表达。",
+      yue: "標題說明：呢篇適合練習開源數據、安全壓力同地區穩定相關表達。",
+    },
+    source: "CSIS",
+    sourceUrl: "https://www.csis.org/analysis/geometry-coercion-tracking-prcs-maritime-and-air-pressure-taiwan",
+    sourceType: "Research",
+    isFree: true,
+    date: "2026-05-05",
+    week: "2026 Week 19",
+    region: "Asia",
+    category: "Technology",
+    level: "Advanced",
+    summary: {
+      en: "This CSIS report uses open-source vessel and aircraft activity data to measure pressure around Taiwan. It introduces a framework for tracking proximity, frequency, and intensity over time.",
+      zh: "这份 CSIS 报告使用开源船只和飞机活动数据来衡量台湾周边压力，并提出一个追踪距离、频率和强度变化的框架。",
+      yue: "呢份 CSIS 報告使用開源船隻同飛機活動數據衡量台灣周邊壓力，並提出一個追蹤距離、頻率同強度變化嘅框架。",
+    },
+    whyItMatters: {
+      en: "It is useful for IELTS discussions about data, security, international relations, and how evidence can support policy decisions.",
+      zh: "它适合用于雅思中关于数据、安全、国际关系以及证据如何支持政策决策的讨论。",
+      yue: "佢適合用於雅思入面關於數據、安全、國際關係，以及證據點樣支持政策決策嘅討論。",
+    },
+    keyVocabulary: [
+      {
+        word: "coercion",
+        meaning: {
+          en: "pressure used to force someone to act in a certain way",
+          zh: "迫使某方按特定方式行动的压力",
+          yue: "迫使某方按特定方式行動嘅壓力",
+        },
+      },
+      {
+        word: "open-source data",
+        meaning: {
+          en: "publicly available information that can be analyzed",
+          zh: "可以被分析的公开信息",
+          yue: "可以被分析嘅公開資訊",
+        },
+      },
+      {
+        word: "readiness",
+        meaning: {
+          en: "the state of being prepared for action",
+          zh: "为行动做好准备的状态",
+          yue: "為行動做好準備嘅狀態",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Data can make gradual pressure more visible.",
+      zh: "数据可以让渐进式压力变得更可见。",
+      yue: "數據可以令漸進式壓力變得更可見。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this to describe how numbers and maps can reveal patterns that are hard to see day by day.",
+      zh: "这个表达可用于说明数字和地图如何揭示日常难以看出的模式。",
+      yue: "呢個表達可用於說明數字同地圖點樣揭示日常難以睇出嘅模式。",
+    },
+    discussionQuestion: {
+      en: "Can public data help reduce misunderstanding in international security disputes?",
+      zh: "公开数据能否帮助减少国际安全争端中的误解？",
+      yue: "公開數據可唔可以幫助減少國際安全爭端入面嘅誤解？",
+    },
+    writingPrompt: {
+      en: "Some people believe open data improves public understanding of global conflicts. Others think it can increase tension. Discuss both views and give your opinion.",
+      zh: "有人认为开放数据能提升公众对全球冲突的理解，也有人认为它可能加剧紧张局势。讨论双方观点并给出你的看法。",
+      yue: "有人認為開放數據可以提升公眾對全球衝突嘅理解，亦有人認為佢可能加劇緊張局勢。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
+    id: "2026-w19-economic-statistics-brookings",
+    title: "What Does Successful Innovation in Headline Economic Statistics Look Like?",
+    titleNote: {
+      en: "Reading focus: economic data, trust, privacy, and public decision-making.",
+      zh: "标题说明：这篇适合练习经济数据、信任、隐私和公共决策表达。",
+      yue: "標題說明：呢篇適合練習經濟數據、信任、私隱同公共決策表達。",
+    },
+    source: "Brookings",
+    sourceUrl: "https://www.brookings.edu/articles/what-does-successful-innovation-in-headline-economic-statistics-look-like/",
+    sourceType: "Think Tank",
+    isFree: true,
+    date: "2026-05-05",
+    week: "2026 Week 19",
+    region: "Americas",
+    category: "Economy",
+    level: "Advanced",
+    summary: {
+      en: "This Brookings article examines how official economic statistics can modernize without losing accuracy, privacy, accessibility, and public trust. It is especially useful for learning how data systems support policy decisions.",
+      zh: "这篇 Brookings 文章探讨官方经济统计如何在现代化的同时保持准确性、隐私、可获得性和公众信任。它特别适合学习数据系统如何支持政策决策。",
+      yue: "呢篇 Brookings 文章探討官方經濟統計點樣喺現代化同時保持準確性、私隱、可獲得性同公眾信任。佢特別適合學習數據系統點樣支持政策決策。",
+    },
+    whyItMatters: {
+      en: "IELTS essays often ask about technology, public policy, and trust. Economic statistics show why data quality matters for decisions that affect daily life.",
+      zh: "雅思作文经常涉及科技、公共政策和信任。经济统计展示了数据质量为何会影响日常生活相关决策。",
+      yue: "雅思作文經常涉及科技、公共政策同信任。經濟統計展示咗數據質素點解會影響日常生活相關決策。",
+    },
+    keyVocabulary: [
+      {
+        word: "headline statistics",
+        meaning: {
+          en: "major economic numbers that are widely reported, such as GDP or inflation",
+          zh: "被广泛报道的重要经济数据，如 GDP 或通胀",
+          yue: "被廣泛報道嘅重要經濟數據，例如 GDP 或通脹",
+        },
+      },
+      {
+        word: "data governance",
+        meaning: {
+          en: "rules for managing, protecting, and using data",
+          zh: "管理、保护和使用数据的规则",
+          yue: "管理、保護同使用數據嘅規則",
+        },
+      },
+      {
+        word: "usability",
+        meaning: {
+          en: "how easy something is to use effectively",
+          zh: "某物被有效使用的便利程度",
+          yue: "某物被有效使用嘅便利程度",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Innovation should improve quality, not just reduce costs.",
+      zh: "创新应提升质量，而不仅仅是降低成本。",
+      yue: "創新應該提升質素，而唔只係降低成本。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this when arguing that reform should be judged by long-term usefulness, not only short-term savings.",
+      zh: "当论证改革应以长期实用性而非短期节省来评估时，可以使用这个表达。",
+      yue: "當論證改革應以長期實用性而唔係短期節省嚟評估，可以用呢個表達。",
+    },
+    discussionQuestion: {
+      en: "Why is public trust important when governments publish economic data?",
+      zh: "政府发布经济数据时，为什么公众信任很重要？",
+      yue: "政府發布經濟數據時，點解公眾信任好重要？",
+    },
+    writingPrompt: {
+      en: "Governments are using more digital data to make decisions. What are the benefits and risks of this trend?",
+      zh: "政府正使用更多数字数据来做决策。这一趋势有哪些好处和风险？",
+      yue: "政府正使用更多數碼數據嚟做決策。呢個趨勢有咩好處同風險？",
+    },
+  },
+  {
+    id: "2026-w19-executive-orders-society-brookings",
+    title: "How Executive Orders Are Reshaping Black America",
+    titleNote: {
+      en: "Reading focus: civil rights, voting access, public policy, and social equality.",
+      zh: "标题说明：这篇适合练习公民权利、投票机会、公共政策和社会平等表达。",
+      yue: "標題說明：呢篇適合練習公民權利、投票機會、公共政策同社會平等表達。",
+    },
+    source: "Brookings",
+    sourceUrl: "https://www.brookings.edu/articles/how-executive-orders-are-reshaping-black-america/",
+    sourceType: "Think Tank",
+    isFree: true,
+    date: "2026-05-05",
+    week: "2026 Week 19",
+    region: "Americas",
+    category: "Society",
+    level: "Advanced",
+    summary: {
+      en: "This Brookings discussion looks at how executive actions, voting rights, immigration enforcement, DEI policy, and federal workforce changes may affect Black communities in the United States.",
+      zh: "这篇 Brookings 讨论关注行政命令、投票权、移民执法、DEI 政策和联邦劳动力变化如何影响美国黑人社区。",
+      yue: "呢篇 Brookings 討論關注行政命令、投票權、移民執法、DEI 政策同聯邦勞動力變化點樣影響美國黑人社區。",
+    },
+    whyItMatters: {
+      en: "It provides language for IELTS topics about democracy, equal opportunity, representation, and the role of civic participation.",
+      zh: "它为雅思中关于民主、机会平等、代表性和公民参与作用的话题提供表达素材。",
+      yue: "佢為雅思入面關於民主、機會平等、代表性同公民參與作用嘅題目提供表達素材。",
+    },
+    keyVocabulary: [
+      {
+        word: "voting rights",
+        meaning: {
+          en: "the legal right to vote in elections",
+          zh: "在选举中投票的法律权利",
+          yue: "喺選舉中投票嘅法律權利",
+        },
+      },
+      {
+        word: "representation",
+        meaning: {
+          en: "the presence of people or groups in decision-making bodies",
+          zh: "人群或群体在决策机构中的代表性",
+          yue: "人群或者群體喺決策機構入面嘅代表性",
+        },
+      },
+      {
+        word: "civic participation",
+        meaning: {
+          en: "taking part in public life, community action, or politics",
+          zh: "参与公共生活、社区行动或政治事务",
+          yue: "參與公共生活、社區行動或者政治事務",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Policy changes can have unequal effects across communities.",
+      zh: "政策变化可能对不同社区产生不平等影响。",
+      yue: "政策變化可能對唔同社區產生不平等影響。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this to discuss why the same rule may affect groups differently because of history, income, geography, or access.",
+      zh: "这个表达适合说明为什么同一规则会因历史、收入、地理位置或资源获取差异而对群体产生不同影响。",
+      yue: "呢個表達適合說明點解同一規則會因歷史、收入、地理位置或者資源獲取差異而對群體產生唔同影響。",
+    },
+    discussionQuestion: {
+      en: "What can local communities do when national policy changes affect their rights or opportunities?",
+      zh: "当国家政策变化影响权利或机会时，地方社区可以做些什么？",
+      yue: "當國家政策變化影響權利或者機會時，地方社區可以做啲咩？",
+    },
+    writingPrompt: {
+      en: "Some people think civic participation is the best way to protect equal rights. Others believe stronger national laws are more important. Discuss both views and give your opinion.",
+      zh: "有人认为公民参与是保护平等权利的最佳方式，也有人认为更强有力的国家法律更重要。讨论双方观点并给出你的看法。",
+      yue: "有人認為公民參與係保護平等權利嘅最佳方式，亦有人認為更強有力嘅國家法律更重要。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
     id: "2026-w18-climate-finance-cfr",
     title: "Understanding the Global Push for Climate Finance",
     titleNote: {
