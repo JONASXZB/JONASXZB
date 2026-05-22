@@ -68,6 +68,26 @@ export const homeLabels: Record<Locale, {
   vocabularyPreviewStats: string;
   vocabularyPreviewBody: string;
   openVocabularyBank: string;
+  learningPath: {
+    title: string;
+    subtitle: string;
+    targetLevel: string;
+    todayPlanTitle: string;
+    resetTodayPlan: string;
+    vocabularyCta: string;
+    weeklyReadingCta: string;
+    paths: Array<{
+      title: string;
+      level: string;
+      steps: string[];
+      ctaLabel?: string;
+      ctaHref?: string;
+    }>;
+    dailyPlan: Array<{
+      id: string;
+      label: string;
+    }>;
+  };
   heroSubtitle: string;
   skillsSubtitle: string;
   resourcesTitle: string;
@@ -208,6 +228,62 @@ export const homeLabels: Record<Locale, {
     vocabularyPreviewBody:
       "Build your IELTS vocabulary with topic-based words, examples, and pronunciation practice.",
     openVocabularyBank: "Open Vocabulary Bank",
+    learningPath: {
+      title: "Start Here",
+      subtitle: "Choose a study path and follow a simple IELTS routine.",
+      targetLevel: "Target level",
+      todayPlanTitle: "Today's 45-minute IELTS Plan",
+      resetTodayPlan: "Reset today's plan",
+      vocabularyCta: "Vocabulary Bank",
+      weeklyReadingCta: "Weekly Global Reading",
+      paths: [
+        {
+          title: "Beginner Foundation",
+          level: "IELTS 5.0-6.0",
+          steps: [
+            "Learn core vocabulary",
+            "Try easy listening practice",
+            "Read one short article",
+            "Practise Speaking Part 1",
+            "Write one short Task 2 idea",
+          ],
+          ctaLabel: "Vocabulary Bank",
+          ctaHref: "/vocabulary",
+        },
+        {
+          title: "Balanced Practice",
+          level: "IELTS 6.0-7.0",
+          steps: [
+            "Read Weekly Global Reading",
+            "Review 10 vocabulary items",
+            "Do one medium practice test",
+            "Answer one Speaking Part 3 question",
+            "Write a 250-word Task 2 response",
+          ],
+          ctaLabel: "Weekly Global Reading",
+          ctaHref: "/weekly-news",
+        },
+        {
+          title: "Advanced 7+",
+          level: "IELTS 7.0+",
+          steps: [
+            "Read one think-tank or research article",
+            "Do one hard practice test",
+            "Practise academic vocabulary",
+            "Complete one full writing mock",
+            "Do a full speaking simulation",
+          ],
+          ctaLabel: "Weekly Global Reading",
+          ctaHref: "/weekly-news",
+        },
+      ],
+      dailyPlan: [
+        { id: "listening", label: "10 min Listening" },
+        { id: "reading", label: "15 min Reading" },
+        { id: "vocabulary", label: "10 min Vocabulary" },
+        { id: "speaking-writing", label: "10 min Speaking or Writing" },
+      ],
+    },
     heroSubtitle:
       "High-quality IELTS practice, expert strategies, and weekly global reading to help you achieve your target band score.",
     skillsSubtitle: "Comprehensive practice and resources for all four IELTS modules.",
@@ -388,6 +464,62 @@ export const homeLabels: Record<Locale, {
     vocabularyPreviewStats: "300 个雅思主题词，支持英式/美式发音",
     vocabularyPreviewBody: "通过主题词汇、例句和发音练习积累雅思词汇。",
     openVocabularyBank: "打开词汇库",
+    learningPath: {
+      title: "从这里开始",
+      subtitle: "选择一个学习路径，并按照简单的雅思日常计划练习。",
+      targetLevel: "目标分数",
+      todayPlanTitle: "今日 45 分钟雅思计划",
+      resetTodayPlan: "重置今日计划",
+      vocabularyCta: "词汇库",
+      weeklyReadingCta: "每周全球精读",
+      paths: [
+        {
+          title: "基础入门",
+          level: "IELTS 5.0-6.0",
+          steps: [
+            "学习核心词汇",
+            "尝试简单听力练习",
+            "阅读一篇短文章",
+            "练习 Speaking Part 1",
+            "写一个简短 Task 2 观点",
+          ],
+          ctaLabel: "词汇库",
+          ctaHref: "/vocabulary",
+        },
+        {
+          title: "均衡训练",
+          level: "IELTS 6.0-7.0",
+          steps: [
+            "阅读每周全球精读",
+            "复习 10 个词汇项目",
+            "完成一次中等难度练习",
+            "回答一个 Speaking Part 3 问题",
+            "写一篇 250 词 Task 2 回答",
+          ],
+          ctaLabel: "每周全球精读",
+          ctaHref: "/weekly-news",
+        },
+        {
+          title: "高级 7+",
+          level: "IELTS 7.0+",
+          steps: [
+            "阅读一篇智库或研究文章",
+            "完成一次高难度练习",
+            "练习学术词汇",
+            "完成一次完整写作模拟",
+            "完成一次完整口语模拟",
+          ],
+          ctaLabel: "每周全球精读",
+          ctaHref: "/weekly-news",
+        },
+      ],
+      dailyPlan: [
+        { id: "listening", label: "10 分钟听力" },
+        { id: "reading", label: "15 分钟阅读" },
+        { id: "vocabulary", label: "10 分钟词汇" },
+        { id: "speaking-writing", label: "10 分钟口语或写作" },
+      ],
+    },
     heroSubtitle: "高质量雅思练习、专家策略和每周全球阅读，帮助您达到目标分数。",
     skillsSubtitle: "覆盖雅思四个模块的综合练习和学习资源。",
     resourcesTitle: "学习资源",
@@ -562,6 +694,62 @@ export const homeLabels: Record<Locale, {
     vocabularyPreviewStats: "300 個雅思主題詞，支援英式/美式發音",
     vocabularyPreviewBody: "透過主題詞彙、例句同發音練習累積雅思詞彙。",
     openVocabularyBank: "打開詞彙庫",
+    learningPath: {
+      title: "由呢度開始",
+      subtitle: "揀一條學習路線，跟住簡單嘅雅思日常計劃練習。",
+      targetLevel: "目標分數",
+      todayPlanTitle: "今日 45 分鐘雅思計劃",
+      resetTodayPlan: "重設今日計劃",
+      vocabularyCta: "詞彙庫",
+      weeklyReadingCta: "每週全球精讀",
+      paths: [
+        {
+          title: "基礎入門",
+          level: "IELTS 5.0-6.0",
+          steps: [
+            "學習核心詞彙",
+            "嘗試簡單聽力練習",
+            "閱讀一篇短文章",
+            "練習 Speaking Part 1",
+            "寫一個簡短 Task 2 觀點",
+          ],
+          ctaLabel: "詞彙庫",
+          ctaHref: "/vocabulary",
+        },
+        {
+          title: "均衡訓練",
+          level: "IELTS 6.0-7.0",
+          steps: [
+            "閱讀每週全球精讀",
+            "重溫 10 個詞彙項目",
+            "完成一次中等難度練習",
+            "回答一條 Speaking Part 3 問題",
+            "寫一篇 250 詞 Task 2 回答",
+          ],
+          ctaLabel: "每週全球精讀",
+          ctaHref: "/weekly-news",
+        },
+        {
+          title: "高階 7+",
+          level: "IELTS 7.0+",
+          steps: [
+            "閱讀一篇智庫或者研究文章",
+            "完成一次高難度練習",
+            "練習學術詞彙",
+            "完成一次完整寫作模擬",
+            "完成一次完整口語模擬",
+          ],
+          ctaLabel: "每週全球精讀",
+          ctaHref: "/weekly-news",
+        },
+      ],
+      dailyPlan: [
+        { id: "listening", label: "10 分鐘聽力" },
+        { id: "reading", label: "15 分鐘閱讀" },
+        { id: "vocabulary", label: "10 分鐘詞彙" },
+        { id: "speaking-writing", label: "10 分鐘口語或寫作" },
+      ],
+    },
     heroSubtitle: "高質量雅思練習、專家策略同每週全球閱讀，幫助您達到目標分數。",
     skillsSubtitle: "覆蓋雅思四個模組嘅綜合練習同學習資源。",
     resourcesTitle: "學習資源",

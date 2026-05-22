@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { LearningPathDashboard } from "@/components/LearningPathDashboard";
 import { PracticeTestsSection } from "@/components/PracticeTestsSection";
 import { TopNav } from "@/components/TopNav";
 import { SpeakingPractice } from "@/components/SpeakingPractice";
@@ -1353,6 +1354,8 @@ export default function Home() {
             />
           </div>
         </section>
+
+        <LearningPathDashboard language={language} />
 
         <section id="ielts-skills" className="border-y border-slate-200 bg-white py-16 sm:py-20">
           <div className="container">
