@@ -124,10 +124,13 @@ export function PracticeTestsSection({ skill, language }: PracticeTestsSectionPr
                 {labels.openPractice} <ArrowRight className="h-4 w-4" />
               </a>
             ) : (
-              <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
-                <LinkIcon className="h-4 w-4" />
-                {labels.noExternalLink}
-              </span>
+              <div className="mt-5 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
+                  <LinkIcon className="h-4 w-4" />
+                  {labels.internalPractice}
+                </span>
+                <span className="text-sm font-medium text-slate-500">{labels.noExternalLink}</span>
+              </div>
             )}
           </Card>
         ))}
