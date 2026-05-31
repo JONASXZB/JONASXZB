@@ -1,0 +1,66 @@
+name: "$5 Quick Website Fix"
+description: "Request one tiny website/UI fix or README polish pass."
+title: "[Quick Fix] "
+labels: ["quick-fix"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the request. Please do not include private keys, seed phrases, account logins, bank details, OTP codes, or sensitive customer data.
+  - type: input
+    id: url
+    attributes:
+      label: Website or repo URL
+      description: Link to the page, repo, or file with the issue.
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Exact issue
+      description: What is broken or what should be polished?
+      placeholder: "The mobile navbar wraps on 390px width..."
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot or screen recording
+      description: Paste a link or describe what the screenshot shows.
+      placeholder: "Screenshot link or short description"
+    validations:
+      required: false
+  - type: input
+    id: stack
+    attributes:
+      label: Tech stack
+      placeholder: "HTML/CSS, React, Tailwind, Next.js, Vite..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should the fixed version look like or do?
+      placeholder: "The button should stay on one line and align with the card text."
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      placeholder: "Today / 24 hours / date"
+    validations:
+      required: false
+  - type: dropdown
+    id: payment
+    attributes:
+      label: Preferred payment network
+      options:
+        - USDC on Base
+        - USDC on Polygon
+        - USDT TRC20
+        - Other crypto after confirmation
+    validations:
+      required: true
