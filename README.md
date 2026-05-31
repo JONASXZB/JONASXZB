@@ -46,11 +46,17 @@ Please include:
 6. Deadline
 7. Preferred payment network
 
-Crypto payment is preferred after scope confirmation. USDC on Base/Polygon or USDT TRC20 is preferred for small payments because fees are usually lower. Never send private keys, seed phrases, bank details, exchange logins, or OTP codes.
+Crypto payment is preferred after scope confirmation.
+
+Current public receiving address:
+
+- `USDT/ERC-20: 0xc580927355132643ad82b4c12ba94a7a93e63ba2`
+
+Other networks are not configured yet. Never send private keys, seed phrases, bank details, exchange logins, or OTP codes.
 
 ## More Service Details
 
-- Public service preview: https://quick-digital-tasks-site.vercel.app
+- Public service page: https://five-dollar-website-fix.vercel.app/
 - Scope: one tiny issue at a time, confirmed before work starts
 
 I keep fixes minimal so the first result can be delivered quickly.

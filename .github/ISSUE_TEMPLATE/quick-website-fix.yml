@@ -58,9 +58,7 @@ body:
     attributes:
       label: Preferred payment network
       options:
-        - USDC on Base
-        - USDC on Polygon
-        - USDT TRC20
-        - Other crypto after confirmation
+        - USDT on Ethereum / ERC-20
+        - Other crypto only after written confirmation
     validations:
       required: true
