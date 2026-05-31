@@ -54,3 +54,7 @@ Crypto payment is preferred after scope confirmation. USDC on Base/Polygon or US
 - Scope: one tiny issue at a time, confirmed before work starts
 
 I keep fixes minimal so the first result can be delivered quickly.
+
+## Open Proposals
+
+- [RustChain Foundation Council proposal](proposals/rustchain-foundation-council-proposal.md)
