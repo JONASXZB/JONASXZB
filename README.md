@@ -61,6 +61,10 @@ Other networks are not configured yet. Never send private keys, seed phrases, ba
 
 I keep fixes minimal so the first result can be delivered quickly.
 
+## Open Source / Bounty Work
+
+- Currently exploring and contributing to [RustChain](https://github.com/Scottcjn/Rustchain), a DePIN project focused on Proof-of-Antiquity, hardware fingerprinting, and RTC-paid open-source bounties.
+
 ## Open Proposals
 
 - [RustChain Foundation Council proposal](proposals/rustchain-foundation-council-proposal.md)
