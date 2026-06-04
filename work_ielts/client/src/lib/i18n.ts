@@ -165,6 +165,21 @@ export const homeLabels: Record<Locale, {
   clearDraft: string;
   draftSaved: string;
   writeHere: string;
+  writingPolish: {
+    title: string;
+    subtitle: string;
+    enterSentences: string;
+    tryDemoFeedback: string;
+    correctedVersion: string;
+    grammarNote: string;
+    clarityNote: string;
+    academicPhrasing: string;
+    ieltsReminder: string;
+    demoModeNotice: string;
+    notOfficialScore: string;
+    futureModelNote: string;
+    demoResponse: string;
+  };
   writingChecklistItems: string[];
   sourceLesson: string;
   practice: string;
@@ -384,6 +399,22 @@ export const homeLabels: Record<Locale, {
     clearDraft: "Clear Draft",
     draftSaved: "Draft saved locally",
     writeHere: "Write your answer here...",
+    writingPolish: {
+      title: "Writing Polish",
+      subtitle: "Grammar, clarity and academic phrasing support",
+      enterSentences: "Enter 1-3 sentences",
+      tryDemoFeedback: "Try demo feedback",
+      correctedVersion: "Corrected version",
+      grammarNote: "Grammar note",
+      clarityNote: "Clarity note",
+      academicPhrasing: "Academic phrasing",
+      ieltsReminder: "IELTS reminder",
+      demoModeNotice: "Demo mode: your text is processed only in the browser and is not sent to any server.",
+      notOfficialScore: "This is not an official IELTS score.",
+      futureModelNote: "Future version may use a grammar correction model through a secure backend.",
+      demoResponse:
+        "This demo shows how AI feedback may appear. Real AI correction will be added later through a secure backend.",
+    },
     writingChecklistItems: [
       "Task Response: answer every part of the question directly",
       "Coherence and Cohesion: use clear paragraphs and logical linking",
@@ -615,6 +646,21 @@ export const homeLabels: Record<Locale, {
     clearDraft: "清空草稿",
     draftSaved: "草稿已保存在本地",
     writeHere: "在这里写下你的答案……",
+    writingPolish: {
+      title: "写作润色",
+      subtitle: "语法、清晰度与学术表达支持",
+      enterSentences: "输入 1–3 句话",
+      tryDemoFeedback: "试用示例反馈",
+      correctedVersion: "修改后版本",
+      grammarNote: "语法提示",
+      clarityNote: "清晰度提示",
+      academicPhrasing: "学术表达",
+      ieltsReminder: "雅思提醒",
+      demoModeNotice: "演示模式：你的文本只在浏览器中处理，不会发送到任何服务器。",
+      notOfficialScore: "这不是官方雅思分数。",
+      futureModelNote: "未来版本可能会通过安全后端使用语法纠错模型。",
+      demoResponse: "此演示展示未来 AI 反馈可能呈现的方式。真实 AI 纠错功能之后会通过安全后端加入。",
+    },
     writingChecklistItems: [
       "任务回应：直接回答题目的每个部分",
       "连贯与衔接：段落清晰，逻辑连接自然",
@@ -845,6 +891,21 @@ export const homeLabels: Record<Locale, {
     clearDraft: "清空草稿",
     draftSaved: "草稿已儲存喺本機",
     writeHere: "喺呢度寫低你嘅答案……",
+    writingPolish: {
+      title: "寫作潤色",
+      subtitle: "語法、清晰度同學術表達支援",
+      enterSentences: "輸入 1–3 句",
+      tryDemoFeedback: "試用示例回饋",
+      correctedVersion: "修改後版本",
+      grammarNote: "語法提示",
+      clarityNote: "清晰度提示",
+      academicPhrasing: "學術表達",
+      ieltsReminder: "雅思提醒",
+      demoModeNotice: "演示模式：你嘅文字只會喺瀏覽器處理，唔會傳送到任何伺服器。",
+      notOfficialScore: "呢個唔係官方雅思分數。",
+      futureModelNote: "未來版本可能會透過安全後端使用語法糾錯模型。",
+      demoResponse: "呢個演示展示未來 AI 回饋可能會點樣呈現。真正 AI 糾錯功能之後會透過安全後端加入。",
+    },
     writingChecklistItems: [
       "任務回應：直接回答題目每個部分",
       "連貫與銜接：段落清晰，邏輯連接自然",

@@ -7,6 +7,7 @@ import { TopNav } from "@/components/TopNav";
 import { SpeakingPractice } from "@/components/SpeakingPractice";
 import { VocabularyNotebook } from "@/components/VocabularyNotebook";
 import { WritingPractice } from "@/components/WritingPractice";
+import { WritingPolishDemo } from "@/components/WritingPolishDemo";
 import { listeningAccentResources } from "@/data/listeningAccentResources";
 import { listeningResources } from "@/data/listeningResources";
 import { readingResourceGroups, readingResources } from "@/data/readingResources";
@@ -1111,6 +1112,10 @@ export default function Home() {
                 </div>
 
                 <WritingPractice language={language} />
+
+                <div className="mt-5">
+                  <WritingPolishDemo language={language} />
+                </div>
 
                 <Card className="mt-5 rounded-3xl border-slate-200 bg-white p-6 shadow-sm">
                   <h3 className="text-xl font-semibold text-slate-950">{t.writingChecklist}</h3>
