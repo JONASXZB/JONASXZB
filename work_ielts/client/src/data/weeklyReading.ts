@@ -30,6 +30,450 @@ export interface WeeklyReadingItem {
 
 export const weeklyReadings: WeeklyReadingItem[] = [
   {
+    id: "2026-w21-ai-accountability-brookings",
+    title: "Anthropomorphic AI Terms Create Gaps in Accountability",
+    titleNote: {
+      en: "Reading focus: AI language, accountability, regulation, and responsible technology use.",
+      zh: "标题说明：这篇适合练习 AI 语言、责任归属、监管和负责任科技使用。",
+      yue: "標題說明：呢篇適合練習 AI 語言、責任歸屬、監管同負責任科技使用。",
+    },
+    source: "Brookings",
+    sourceUrl: "https://www.brookings.edu/articles/anthropomorphic-ai-terms-create-gaps-in-accountability/",
+    sourceType: "Think Tank",
+    isFree: true,
+    date: "2026-05-20",
+    week: "2026 Week 21",
+    region: "Global",
+    category: "Technology",
+    level: "Advanced",
+    summary: {
+      en: "This Brookings commentary explains why describing AI systems with human-like words can make responsibility less clear. It argues that more precise operational language can help users, companies, and policymakers discuss AI risks without treating the system as an independent moral actor.",
+      zh: "这篇 Brookings 评论解释，使用拟人化词汇描述 AI 系统可能会让责任归属变得模糊。文章认为，更精确的操作性语言有助于用户、企业和政策制定者讨论 AI 风险，而不是把系统当成独立的道德主体。",
+      yue: "呢篇 Brookings 評論解釋，用擬人化詞語描述 AI 系統可能會令責任歸屬變得模糊。文章認為，更精準嘅操作性語言有助用戶、企業同政策制定者討論 AI 風險，而唔係將系統當成獨立嘅道德主體。",
+    },
+    whyItMatters: {
+      en: "AI accountability is useful for IELTS because it connects technology, ethics, public trust, business responsibility, and government regulation.",
+      zh: "AI 责任归属对雅思很有用，因为它连接科技、伦理、公众信任、企业责任和政府监管。",
+      yue: "AI 責任歸屬對雅思好有用，因為佢連接科技、倫理、公眾信任、企業責任同政府監管。",
+    },
+    keyVocabulary: [
+      {
+        word: "anthropomorphic",
+        meaning: {
+          en: "describing a non-human thing as if it had human qualities",
+          zh: "把非人类事物描述成具有人类特征的",
+          yue: "將非人類事物描述成有人類特徵嘅",
+        },
+      },
+      {
+        word: "accountability",
+        meaning: {
+          en: "responsibility for decisions, actions, and outcomes",
+          zh: "对决定、行动和结果承担责任",
+          yue: "對決定、行動同結果承擔責任",
+        },
+      },
+      {
+        word: "over-trust",
+        meaning: {
+          en: "placing too much confidence in a system or person",
+          zh: "对系统或个人给予过高信任",
+          yue: "對系統或者個人畀過高信任",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "The language we use to describe technology can shape how responsibility is understood.",
+      zh: "我们描述技术时使用的语言，会影响人们如何理解责任。",
+      yue: "我哋描述科技時用嘅語言，會影響人哋點樣理解責任。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this when discussing AI safety, social media platforms, autonomous systems, or corporate responsibility.",
+      zh: "讨论 AI 安全、社交媒体平台、自动化系统或企业责任时，可以使用这个表达。",
+      yue: "討論 AI 安全、社交媒體平台、自動化系統或者企業責任時，可以用呢個表達。",
+    },
+    discussionQuestion: {
+      en: "Should companies be required to avoid human-like language when marketing AI products?",
+      zh: "企业在推广 AI 产品时，是否应该被要求避免使用拟人化语言？",
+      yue: "企業推廣 AI 產品時，係咪應該被要求避免用擬人化語言？",
+    },
+    writingPrompt: {
+      en: "Some people believe artificial intelligence should be described in human-like terms to make it easier to use. Others argue this creates confusion about responsibility. Discuss both views and give your opinion.",
+      zh: "有人认为应该用拟人化语言描述人工智能，让它更容易使用。也有人认为这会造成责任归属混乱。讨论双方观点并给出你的看法。",
+      yue: "有人認為應該用擬人化語言描述人工智能，令佢更易用。亦有人認為咁會造成責任歸屬混亂。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
+    id: "2026-w21-un-climate-resolution-ap",
+    title: "UN Votes to Support Strong Action on Climate Change",
+    titleNote: {
+      en: "Reading focus: international law, climate justice, diplomacy, and global cooperation.",
+      zh: "标题说明：这篇适合练习国际法、气候正义、外交和全球合作。",
+      yue: "標題說明：呢篇適合練習國際法、氣候正義、外交同全球合作。",
+    },
+    source: "AP News",
+    sourceUrl: "https://apnews.com/article/90b89dc776e0bece17f2ab4064b7f71e",
+    sourceType: "News",
+    isFree: true,
+    date: "2026-05-20",
+    week: "2026 Week 21",
+    region: "Global",
+    category: "Environment",
+    level: "Intermediate",
+    summary: {
+      en: "AP reports that the UN General Assembly approved a nonbinding resolution supporting stronger climate action after an advisory opinion from the International Court of Justice. The story is useful for reading about diplomacy, legal responsibility, and disagreement between countries over climate obligations.",
+      zh: "AP 报道称，联合国大会在国际法院咨询意见之后通过了一项支持更强气候行动的非约束性决议。这篇适合阅读外交、法律责任以及各国对气候义务分歧的内容。",
+      yue: "AP 報道指，聯合國大會喺國際法院諮詢意見之後通過咗一項支持更強氣候行動嘅非約束性決議。呢篇適合閱讀外交、法律責任同各國對氣候義務分歧嘅內容。",
+    },
+    whyItMatters: {
+      en: "Climate policy often appears in IELTS Writing Task 2 because it asks whether global problems require national, local, or international solutions.",
+      zh: "气候政策常出现在雅思大作文中，因为它涉及全球问题应由国家、地方还是国际层面解决。",
+      yue: "氣候政策經常出現喺雅思大作文，因為佢涉及全球問題應該由國家、地方定國際層面解決。",
+    },
+    keyVocabulary: [
+      {
+        word: "nonbinding resolution",
+        meaning: {
+          en: "a formal decision that expresses a position but is not legally enforceable",
+          zh: "表达立场但没有法律强制力的正式决议",
+          yue: "表達立場但冇法律強制力嘅正式決議",
+        },
+      },
+      {
+        word: "climate justice",
+        meaning: {
+          en: "the idea that climate impacts and responsibilities should be handled fairly",
+          zh: "气候影响和责任应被公平处理的理念",
+          yue: "氣候影響同責任應該被公平處理嘅理念",
+        },
+      },
+      {
+        word: "multilateral cooperation",
+        meaning: {
+          en: "countries working together through international institutions",
+          zh: "国家通过国际机构共同合作",
+          yue: "國家透過國際機構共同合作",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Global environmental problems require more than voluntary promises.",
+      zh: "全球环境问题需要的不只是自愿承诺。",
+      yue: "全球環境問題需要嘅唔只係自願承諾。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this to argue that climate action may need laws, finance, monitoring, and international pressure.",
+      zh: "这个表达可用于论证气候行动可能需要法律、资金、监督和国际压力。",
+      yue: "呢個表達可以用嚟論證氣候行動可能需要法律、資金、監督同國際壓力。",
+    },
+    discussionQuestion: {
+      en: "Should rich countries have greater legal responsibility for climate damage?",
+      zh: "富裕国家是否应该对气候损害承担更大的法律责任？",
+      yue: "富裕國家係咪應該對氣候損害承擔更大法律責任？",
+    },
+    writingPrompt: {
+      en: "Some people think climate change can only be solved through international agreements. Others believe local action is more effective. Discuss both views and give your opinion.",
+      zh: "有人认为气候变化只能通过国际协议解决，也有人认为地方行动更有效。讨论双方观点并给出你的看法。",
+      yue: "有人認為氣候變化只能透過國際協議解決，亦有人認為地方行動更有效。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
+    id: "2026-w21-carbon-pricing-worldbank",
+    title: "State and Trends of Carbon Pricing 2026",
+    titleNote: {
+      en: "Reading focus: carbon pricing, public revenue, emissions policy, and green finance.",
+      zh: "标题说明：这篇适合练习碳定价、公共财政、排放政策和绿色金融。",
+      yue: "標題說明：呢篇適合練習碳定價、公共財政、排放政策同綠色金融。",
+    },
+    source: "World Bank",
+    sourceUrl: "https://www.worldbank.org/en/news/press-release/2026/05/19/direct-carbon-pricing-covers-nearly-one-third-of-global-emissions",
+    sourceType: "Public Institution",
+    isFree: true,
+    date: "2026-05-19",
+    week: "2026 Week 21",
+    region: "Global",
+    category: "Environment",
+    level: "Intermediate",
+    summary: {
+      en: "The World Bank reports that direct carbon pricing now covers just under one-third of global greenhouse gas emissions if current instruments and those under development are counted. The article connects climate policy with public budgets, innovation, carbon markets, and development finance.",
+      zh: "世界银行报告称，如果把已实施和正在开发的工具计算在内，直接碳定价覆盖的全球温室气体排放接近三分之一。文章把气候政策与公共预算、创新、碳市场和发展融资联系起来。",
+      yue: "世界銀行報告指，如果將已實施同開發中嘅工具計算在內，直接碳定價覆蓋嘅全球溫室氣體排放接近三分之一。文章將氣候政策同公共預算、創新、碳市場同發展融資連繫起嚟。",
+    },
+    whyItMatters: {
+      en: "This topic helps IELTS learners move beyond simple environmental vocabulary and discuss practical policy tools.",
+      zh: "这个主题能帮助雅思学习者超越简单环保词汇，讨论更实际的政策工具。",
+      yue: "呢個題目可以幫雅思學習者超越簡單環保詞彙，討論更實際嘅政策工具。",
+    },
+    keyVocabulary: [
+      {
+        word: "carbon pricing",
+        meaning: {
+          en: "a policy that makes emitting greenhouse gases carry a financial cost",
+          zh: "让温室气体排放承担经济成本的政策",
+          yue: "令溫室氣體排放承擔經濟成本嘅政策",
+        },
+      },
+      {
+        word: "emissions coverage",
+        meaning: {
+          en: "the share of emissions included under a policy or system",
+          zh: "被某项政策或系统覆盖的排放比例",
+          yue: "被某項政策或者系統覆蓋嘅排放比例",
+        },
+      },
+      {
+        word: "development finance",
+        meaning: {
+          en: "funding used to support economic and social development",
+          zh: "用于支持经济和社会发展的资金",
+          yue: "用嚟支持經濟同社會發展嘅資金",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "A well-designed carbon price can encourage cleaner choices without banning every polluting activity.",
+      zh: "设计良好的碳价格可以鼓励更清洁的选择，而不必禁止所有污染活动。",
+      yue: "設計良好嘅碳價格可以鼓勵更清潔嘅選擇，而唔需要禁止所有污染活動。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this when discussing market-based environmental policies in IELTS Writing Task 2.",
+      zh: "讨论市场化环保政策时，这个表达很适合用于雅思大作文。",
+      yue: "討論市場化環保政策時，呢個表達好適合用喺雅思大作文。",
+    },
+    discussionQuestion: {
+      en: "Is carbon pricing fair if it raises costs for ordinary consumers?",
+      zh: "如果碳定价提高普通消费者的成本，它还公平吗？",
+      yue: "如果碳定價提高普通消費者嘅成本，佢仲公平嗎？",
+    },
+    writingPrompt: {
+      en: "Some people believe governments should tax pollution to reduce emissions. Others think this may hurt consumers and businesses. Discuss both views and give your opinion.",
+      zh: "有人认为政府应该对污染征税以减少排放，也有人认为这可能伤害消费者和企业。讨论双方观点并给出你的看法。",
+      yue: "有人認為政府應該對污染徵稅以減少排放，亦有人認為呢個可能傷害消費者同企業。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
+    id: "2026-w21-ai-cybersecurity-cfr",
+    title: "Scaling Intelligence: The Security Foundations Beneath America’s AI Ambitions Are Cracking",
+    titleNote: {
+      en: "Reading focus: AI diffusion, cybersecurity, risk management, and institutional assumptions.",
+      zh: "标题说明：这篇适合练习 AI 扩散、网络安全、风险管理和制度假设。",
+      yue: "標題說明：呢篇適合練習 AI 擴散、網絡安全、風險管理同制度假設。",
+    },
+    source: "Council on Foreign Relations",
+    sourceUrl: "https://www.cfr.org/articles/scaling-intelligence-the-security-foundations-beneath-americas-ai-ambitions-are-cracking",
+    sourceType: "Think Tank",
+    isFree: true,
+    date: "2026-05-18",
+    week: "2026 Week 21",
+    region: "Global",
+    category: "Technology",
+    level: "Advanced",
+    summary: {
+      en: "This CFR article argues that AI is not only creating new tools but also challenging old cybersecurity assumptions. It focuses on whether institutions still understand who is acting, what systems can do, and which security checks remain meaningful as AI becomes more widely deployed.",
+      zh: "这篇 CFR 文章认为，AI 不只是创造新工具，也在挑战旧有的网络安全假设。文章关注在 AI 更广泛部署时，机构是否仍清楚谁在行动、系统能做什么，以及哪些安全检查仍然有效。",
+      yue: "呢篇 CFR 文章認為，AI 唔只係創造新工具，亦挑戰舊有嘅網絡安全假設。文章關注喺 AI 更廣泛部署時，機構係咪仍然清楚邊個喺行動、系統可以做咩，同邊啲安全檢查仍然有效。",
+    },
+    whyItMatters: {
+      en: "Cybersecurity is a strong IELTS topic because it links technology with trust, privacy, national security, and business risk.",
+      zh: "网络安全是很强的雅思话题，因为它连接科技、信任、隐私、国家安全和商业风险。",
+      yue: "網絡安全係好強嘅雅思題目，因為佢連接科技、信任、私隱、國家安全同商業風險。",
+    },
+    keyVocabulary: [
+      {
+        word: "diffusion",
+        meaning: {
+          en: "the spread of a technology or practice across many places",
+          zh: "技术或做法在多处扩散",
+          yue: "技術或者做法喺多處擴散",
+        },
+      },
+      {
+        word: "threat model",
+        meaning: {
+          en: "an explanation of what risks a system is designed to defend against",
+          zh: "说明系统设计用来防范哪些风险的模型",
+          yue: "說明系統設計用嚟防範邊啲風險嘅模型",
+        },
+      },
+      {
+        word: "risk committee",
+        meaning: {
+          en: "a group responsible for reviewing major organizational risks",
+          zh: "负责审查重大组织风险的小组",
+          yue: "負責審查重大組織風險嘅小組",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Security systems must evolve when the assumptions behind them become outdated.",
+      zh: "当安全系统背后的假设过时时，安全体系也必须演进。",
+      yue: "當安全系統背後嘅假設過時，安全體系亦必須演進。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this to discuss why old rules may not work well for new technologies.",
+      zh: "这个表达适合讨论为什么旧规则可能不适用于新技术。",
+      yue: "呢個表達適合討論點解舊規則可能唔適用於新科技。",
+    },
+    discussionQuestion: {
+      en: "Should companies slow down AI deployment until they better understand cybersecurity risks?",
+      zh: "企业是否应该在更好理解网络安全风险之前放慢 AI 部署？",
+      yue: "企業係咪應該喺更好理解網絡安全風險之前放慢 AI 部署？",
+    },
+    writingPrompt: {
+      en: "New technologies can improve productivity but also create new risks. How should governments and companies balance innovation and security?",
+      zh: "新技术可以提高生产率，但也会带来新风险。政府和企业应如何平衡创新与安全？",
+      yue: "新科技可以提高生產率，但亦會帶嚟新風險。政府同企業應該點樣平衡創新同安全？",
+    },
+  },
+  {
+    id: "2026-w21-south-korea-population-owid",
+    title: "South Korea’s Population Is Set to Shrink: What Would It Take to Stop the Decline?",
+    titleNote: {
+      en: "Reading focus: population decline, fertility, aging, migration, and demographic modeling.",
+      zh: "标题说明：这篇适合练习人口下降、生育率、老龄化、移民和人口模型。",
+      yue: "標題說明：呢篇適合練習人口下降、生育率、老齡化、移民同人口模型。",
+    },
+    source: "Our World in Data",
+    sourceUrl: "https://ourworldindata.org/south-koreas-population-is-set-to-shrink-what-would-it-take-to-stop-the-decline",
+    sourceType: "Data",
+    isFree: true,
+    date: "2026-05-18",
+    week: "2026 Week 21",
+    region: "Asia",
+    category: "Society",
+    level: "Intermediate",
+    summary: {
+      en: "Our World in Data uses South Korea as a case study for population decline. The article explains how fertility, life expectancy, and net migration shape future population size and age structure, making it useful for data-based reading practice.",
+      zh: "Our World in Data 以韩国为案例分析人口下降。文章解释生育率、预期寿命和净移民如何影响未来人口规模和年龄结构，非常适合做数据型阅读练习。",
+      yue: "Our World in Data 以韓國作為案例分析人口下降。文章解釋生育率、預期壽命同淨移民點樣影響未來人口規模同年齡結構，好適合做數據型閱讀練習。",
+    },
+    whyItMatters: {
+      en: "Aging societies are common IELTS topics because they connect family life, work, pensions, healthcare, migration, and government policy.",
+      zh: "老龄化社会是常见雅思话题，因为它连接家庭生活、工作、养老金、医疗、移民和政府政策。",
+      yue: "老齡化社會係常見雅思題目，因為佢連接家庭生活、工作、退休金、醫療、移民同政府政策。",
+    },
+    keyVocabulary: [
+      {
+        word: "fertility rate",
+        meaning: {
+          en: "the average number of children born to each woman",
+          zh: "每名女性平均生育的孩子数量",
+          yue: "每名女性平均生育嘅孩子數量",
+        },
+      },
+      {
+        word: "age structure",
+        meaning: {
+          en: "the way a population is divided by age groups",
+          zh: "人口按年龄群体划分的结构",
+          yue: "人口按年齡群體劃分嘅結構",
+        },
+      },
+      {
+        word: "net migration",
+        meaning: {
+          en: "the difference between people entering and leaving a country",
+          zh: "进入和离开一个国家的人数差额",
+          yue: "進入同離開一個國家嘅人數差額",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Population change is shaped by births, deaths, and migration.",
+      zh: "人口变化由出生、死亡和移民共同塑造。",
+      yue: "人口變化由出生、死亡同移民共同塑造。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this as a clear topic sentence when explaining demographic trends.",
+      zh: "解释人口趋势时，这句话可以作为清晰的主题句。",
+      yue: "解釋人口趨勢時，呢句可以作為清晰嘅主題句。",
+    },
+    discussionQuestion: {
+      en: "Should governments try to raise birth rates, welcome more migrants, or adapt to smaller populations?",
+      zh: "政府应该努力提高生育率、接纳更多移民，还是适应人口减少？",
+      yue: "政府應該努力提高生育率、接納更多移民，定係適應人口減少？",
+    },
+    writingPrompt: {
+      en: "In many countries, the population is aging and birth rates are falling. What problems can this cause, and what solutions are possible?",
+      zh: "许多国家人口正在老龄化，出生率也在下降。这会造成什么问题？有哪些解决办法？",
+      yue: "好多國家人口正在老齡化，出生率亦下降。呢個會造成咩問題？有咩解決辦法？",
+    },
+  },
+  {
+    id: "2026-w21-ai-data-centers-tariffs-csis",
+    title: "The Impact of Tariffs on the AI Data Center Buildout",
+    titleNote: {
+      en: "Reading focus: AI infrastructure, semiconductors, tariffs, supply chains, and industrial policy.",
+      zh: "标题说明：这篇适合练习 AI 基础设施、半导体、关税、供应链和产业政策。",
+      yue: "標題說明：呢篇適合練習 AI 基礎設施、半導體、關稅、供應鏈同產業政策。",
+    },
+    source: "CSIS",
+    sourceUrl: "https://www.csis.org/analysis/impact-tariffs-ai-data-center-buildout-balancing-supply-chain-security-and-ai",
+    sourceType: "Think Tank",
+    isFree: true,
+    date: "2026-05-14",
+    week: "2026 Week 21",
+    region: "Americas",
+    category: "Technology",
+    level: "Advanced",
+    summary: {
+      en: "This CSIS brief examines how tariffs on semiconductors and metals could raise the cost of building AI data centers. It is a strong background reading selected for the Week 21 pack because it connects AI growth with supply chains, energy, industrial policy, and economic competitiveness.",
+      zh: "这篇 CSIS 简报分析半导体和金属关税可能如何提高 AI 数据中心建设成本。它作为 Week 21 阅读包的背景阅读材料收录，适合把 AI 增长与供应链、能源、产业政策和经济竞争力联系起来阅读。",
+      yue: "呢篇 CSIS 簡報分析半導體同金屬關稅可能點樣提高 AI 數據中心建設成本。佢作為 Week 21 閱讀包嘅背景閱讀材料收錄，適合將 AI 增長同供應鏈、能源、產業政策同經濟競爭力連繫起嚟閱讀。",
+    },
+    whyItMatters: {
+      en: "This article helps IELTS learners see that AI is not only software; it also depends on physical infrastructure, energy, chips, and trade rules.",
+      zh: "这篇文章帮助雅思学习者看到，AI 不只是软件，它还依赖实体基础设施、能源、芯片和贸易规则。",
+      yue: "呢篇文章幫雅思學習者睇到，AI 唔只係軟件，佢仲依賴實體基礎設施、能源、晶片同貿易規則。",
+    },
+    keyVocabulary: [
+      {
+        word: "infrastructure buildout",
+        meaning: {
+          en: "the large-scale construction or expansion of essential systems",
+          zh: "关键系统的大规模建设或扩张",
+          yue: "關鍵系統嘅大規模建設或者擴張",
+        },
+      },
+      {
+        word: "tariff",
+        meaning: {
+          en: "a tax on imported goods",
+          zh: "对进口商品征收的税",
+          yue: "對進口商品徵收嘅稅",
+        },
+      },
+      {
+        word: "supply chain security",
+        meaning: {
+          en: "the protection of the flow of goods, parts, and materials",
+          zh: "对商品、零部件和材料流动的保护",
+          yue: "對商品、零部件同材料流動嘅保護",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Digital innovation often depends on physical infrastructure.",
+      zh: "数字创新往往依赖实体基础设施。",
+      yue: "數碼創新往往依賴實體基礎設施。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this to make technology essays more concrete by linking software to energy, hardware, and supply chains.",
+      zh: "这个表达能把软件与能源、硬件和供应链联系起来，让科技类作文更具体。",
+      yue: "呢個表達可以將軟件同能源、硬件同供應鏈連繫起嚟，令科技類作文更具體。",
+    },
+    discussionQuestion: {
+      en: "Should countries prioritize cheaper AI infrastructure or more secure domestic supply chains?",
+      zh: "国家应该优先考虑更便宜的 AI 基础设施，还是更安全的本土供应链？",
+      yue: "國家應該優先考慮更平嘅 AI 基礎設施，定係更安全嘅本土供應鏈？",
+    },
+    writingPrompt: {
+      en: "Some people believe governments should protect domestic technology industries with tariffs. Others argue that tariffs raise costs and slow innovation. Discuss both views and give your opinion.",
+      zh: "有人认为政府应该用关税保护本国科技产业，也有人认为关税会提高成本并减缓创新。讨论双方观点并给出你的看法。",
+      yue: "有人認為政府應該用關稅保護本國科技產業，亦有人認為關稅會提高成本並拖慢創新。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
     id: "2026-w19-ai-growth-fairness-brookings",
     title: "AI Growth Acceleration versus Distributional Fairness",
     titleNote: {
