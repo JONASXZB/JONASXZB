@@ -165,11 +165,12 @@ export const homeLabels: Record<Locale, {
   clearDraft: string;
   draftSaved: string;
   writeHere: string;
-  writingPolish: {
+  writingAssistant: {
     title: string;
     subtitle: string;
     enterSentences: string;
-    tryDemoFeedback: string;
+    checkMyWriting: string;
+    localDemoFeedback: string;
     correctedVersion: string;
     grammarNote: string;
     clarityNote: string;
@@ -178,7 +179,23 @@ export const homeLabels: Record<Locale, {
     demoModeNotice: string;
     notOfficialScore: string;
     futureModelNote: string;
-    demoResponse: string;
+    feedback: {
+      emptyCorrected: string;
+      emptyGrammar: string;
+      emptyClarity: string;
+      genericGrammar: string;
+      hadDinnerGrammar: string;
+      formalGrammar: string;
+      doNotGrammar: string;
+      genericClarity: string;
+      removeSoClarity: string;
+      shortClarity: string;
+      genericAcademic: string;
+      dailyLifeAcademic: string;
+      cannotAcademic: string;
+      formalAcademic: string;
+      localScoreReminder: string;
+    };
   };
   writingChecklistItems: string[];
   sourceLesson: string;
@@ -399,21 +416,37 @@ export const homeLabels: Record<Locale, {
     clearDraft: "Clear Draft",
     draftSaved: "Draft saved locally",
     writeHere: "Write your answer here...",
-    writingPolish: {
-      title: "Writing Polish",
-      subtitle: "Grammar, clarity and academic phrasing support",
+    writingAssistant: {
+      title: "English Writing Assistant",
+      subtitle: "Improve grammar, clarity, and academic phrasing",
       enterSentences: "Enter 1-3 sentences",
-      tryDemoFeedback: "Try demo feedback",
+      checkMyWriting: "Check my writing",
+      localDemoFeedback: "Local demo feedback",
       correctedVersion: "Corrected version",
       grammarNote: "Grammar note",
       clarityNote: "Clarity note",
       academicPhrasing: "Academic phrasing",
       ieltsReminder: "IELTS reminder",
-      demoModeNotice: "Demo mode: your text is processed only in the browser and is not sent to any server.",
+      demoModeNotice: "Local demo mode: your text is processed only in the browser and is not sent to any server.",
       notOfficialScore: "This is not an official IELTS score.",
-      futureModelNote: "Future version may use a grammar correction model through a secure backend.",
-      demoResponse:
-        "This demo shows how AI feedback may appear. Real AI correction will be added later through a secure backend.",
+      futureModelNote: "A future version may use a secure backend with a grammar correction model.",
+      feedback: {
+        emptyCorrected: "Enter 1-3 sentences to see local demo feedback.",
+        emptyGrammar: "No text was entered.",
+        emptyClarity: "Add a complete sentence before checking the demo feedback.",
+        genericGrammar: "No major basic grammar issue was detected by this local demo.",
+        hadDinnerGrammar: "Use \"had dinner\" for a completed action today.",
+        formalGrammar: "Use formal written English in IELTS Writing.",
+        doNotGrammar: "Use \"do not\" instead of \"dont\" in formal writing.",
+        genericClarity: "Check whether your idea is fully developed with a reason or example.",
+        removeSoClarity: "Remove 'so' at the beginning for cleaner academic writing.",
+        shortClarity: "Your sentence is clear, but for IELTS Writing you should develop the idea with a reason or example.",
+        genericAcademic: "For IELTS Writing, use precise and formal phrasing.",
+        dailyLifeAcademic: "For IELTS Writing, expand the idea: \"Having dinner earlier can help people maintain a healthier daily routine.\"",
+        cannotAcademic: "For formal academic writing, consider using \"cannot\" instead of \"can't\".",
+        formalAcademic: "Replace casual phrasing with more precise academic wording.",
+        localScoreReminder: "This is local demo feedback, not an official IELTS score.",
+      },
     },
     writingChecklistItems: [
       "Task Response: answer every part of the question directly",
@@ -646,20 +679,37 @@ export const homeLabels: Record<Locale, {
     clearDraft: "清空草稿",
     draftSaved: "草稿已保存在本地",
     writeHere: "在这里写下你的答案……",
-    writingPolish: {
-      title: "写作润色",
-      subtitle: "语法、清晰度与学术表达支持",
+    writingAssistant: {
+      title: "英语写作助手",
+      subtitle: "提升语法、清晰度和学术表达",
       enterSentences: "输入 1–3 句话",
-      tryDemoFeedback: "试用示例反馈",
+      checkMyWriting: "检查我的写作",
+      localDemoFeedback: "本地演示反馈",
       correctedVersion: "修改后版本",
       grammarNote: "语法提示",
       clarityNote: "清晰度提示",
       academicPhrasing: "学术表达",
       ieltsReminder: "雅思提醒",
-      demoModeNotice: "演示模式：你的文本只在浏览器中处理，不会发送到任何服务器。",
+      demoModeNotice: "本地演示模式：你的文本只在浏览器中处理，不会发送到任何服务器。",
       notOfficialScore: "这不是官方雅思分数。",
-      futureModelNote: "未来版本可能会通过安全后端使用语法纠错模型。",
-      demoResponse: "此演示展示未来 AI 反馈可能呈现的方式。真实 AI 纠错功能之后会通过安全后端加入。",
+      futureModelNote: "未来版本可能会通过带有语法纠错模型的安全后端实现。",
+      feedback: {
+        emptyCorrected: "输入 1–3 句话后即可查看本地演示反馈。",
+        emptyGrammar: "尚未输入文本。",
+        emptyClarity: "请先输入一个完整句子，再检查演示反馈。",
+        genericGrammar: "这个本地演示没有检测到明显的基础语法问题。",
+        hadDinnerGrammar: "表示今天已经完成的动作时，可以用 “had dinner”。",
+        formalGrammar: "雅思写作中应使用正式书面英语。",
+        doNotGrammar: "正式写作中应使用 “do not”，不要写 “dont”。",
+        genericClarity: "检查你的观点是否已经用原因或例子充分展开。",
+        removeSoClarity: "句首去掉 “so”，学术写作会更清晰。",
+        shortClarity: "句子本身清楚，但雅思写作中应加入原因或例子来展开观点。",
+        genericAcademic: "雅思写作中应使用准确、正式的表达。",
+        dailyLifeAcademic: "雅思写作中可以扩展为：“更早吃晚餐有助于人们保持更健康的日常作息。”",
+        cannotAcademic: "正式学术写作中，可以考虑用 “cannot” 代替 “can't”。",
+        formalAcademic: "把口语化表达替换为更准确的学术表达。",
+        localScoreReminder: "这是本地演示反馈，不是官方雅思分数。",
+      },
     },
     writingChecklistItems: [
       "任务回应：直接回答题目的每个部分",
@@ -891,20 +941,37 @@ export const homeLabels: Record<Locale, {
     clearDraft: "清空草稿",
     draftSaved: "草稿已儲存喺本機",
     writeHere: "喺呢度寫低你嘅答案……",
-    writingPolish: {
-      title: "寫作潤色",
-      subtitle: "語法、清晰度同學術表達支援",
+    writingAssistant: {
+      title: "英文寫作助手",
+      subtitle: "改善語法、清晰度同學術表達",
       enterSentences: "輸入 1–3 句",
-      tryDemoFeedback: "試用示例回饋",
+      checkMyWriting: "檢查我嘅寫作",
+      localDemoFeedback: "本地演示回饋",
       correctedVersion: "修改後版本",
       grammarNote: "語法提示",
       clarityNote: "清晰度提示",
       academicPhrasing: "學術表達",
       ieltsReminder: "雅思提醒",
-      demoModeNotice: "演示模式：你嘅文字只會喺瀏覽器處理，唔會傳送到任何伺服器。",
+      demoModeNotice: "本地演示模式：你嘅文字只會喺瀏覽器入面處理，唔會傳送到任何伺服器。",
       notOfficialScore: "呢個唔係官方雅思分數。",
-      futureModelNote: "未來版本可能會透過安全後端使用語法糾錯模型。",
-      demoResponse: "呢個演示展示未來 AI 回饋可能會點樣呈現。真正 AI 糾錯功能之後會透過安全後端加入。",
+      futureModelNote: "未來版本可能會用配有語法糾錯模型嘅安全後端。",
+      feedback: {
+        emptyCorrected: "輸入 1–3 句之後，就可以睇本地演示回饋。",
+        emptyGrammar: "仲未輸入文字。",
+        emptyClarity: "請先輸入一個完整句子，再檢查演示回饋。",
+        genericGrammar: "呢個本地演示冇檢測到明顯基礎語法問題。",
+        hadDinnerGrammar: "表示今日已經完成嘅動作，可以用 “had dinner”。",
+        formalGrammar: "雅思寫作入面應該用正式書面英文。",
+        doNotGrammar: "正式寫作入面應該用 “do not”，唔好寫 “dont”。",
+        genericClarity: "檢查你嘅觀點係咪已經用原因或者例子充分展開。",
+        removeSoClarity: "句首拎走 “so”，學術寫作會更清晰。",
+        shortClarity: "句子本身清楚，但雅思寫作入面應該加入原因或者例子去展開觀點。",
+        genericAcademic: "雅思寫作入面應該用準確、正式嘅表達。",
+        dailyLifeAcademic: "雅思寫作入面可以擴展成：「更早食晚餐有助人保持更健康嘅日常作息。」",
+        cannotAcademic: "正式學術寫作入面，可以考慮用 “cannot” 代替 “can't”。",
+        formalAcademic: "將口語化表達換成更準確嘅學術表達。",
+        localScoreReminder: "呢個係本地演示回饋，唔係官方雅思分數。",
+      },
     },
     writingChecklistItems: [
       "任務回應：直接回答題目每個部分",

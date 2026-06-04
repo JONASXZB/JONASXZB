@@ -3,13 +3,23 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { homeLabels, type Locale } from "@/lib/i18n";
 
+type WritingAssistantCopy = (typeof homeLabels)[Locale]["writingAssistant"]["feedback"];
+
+type WritingFeedback = {
+  correctedVersion: string;
+  grammarNote: string;
+  clarityNote: string;
+  academicPhrasing: string;
+  ieltsReminder: string;
+};
+
 export function WritingPolishDemo({ language }: { language: Locale }) {
-  const t = homeLabels[language].writingPolish;
+  const t = homeLabels[language].writingAssistant;
   const [text, setText] = useState("");
-  const [hasFeedback, setHasFeedback] = useState(false);
+  const [feedback, setFeedback] = useState<WritingFeedback | null>(null);
 
   const showDemoFeedback = () => {
-    setHasFeedback(true);
+    setFeedback(analyzeWritingInput(text, t.feedback));
   };
 
   return (
@@ -41,21 +51,22 @@ export function WritingPolishDemo({ language }: { language: Locale }) {
 
           <div className="mt-3 flex justify-end">
             <Button onClick={showDemoFeedback} className="rounded-full bg-slate-950 px-5 text-sm font-semibold text-white hover:bg-slate-800">
-              {t.tryDemoFeedback}
+              {t.checkMyWriting}
             </Button>
           </div>
 
-          {hasFeedback && (
+          {feedback && (
             <div className="mt-4 rounded-2xl border border-slate-200 bg-[#f8fafc] p-4">
+              <p className="mb-3 text-sm font-semibold text-slate-950">{t.localDemoFeedback}</p>
               <div className="grid gap-3 md:grid-cols-2">
-                <FeedbackItem label={t.correctedVersion} value={t.demoResponse} />
-                <FeedbackItem label={t.grammarNote} value={t.demoResponse} />
-                <FeedbackItem label={t.clarityNote} value={t.demoResponse} />
-                <FeedbackItem label={t.academicPhrasing} value={t.demoResponse} />
+                <FeedbackItem label={t.correctedVersion} value={feedback.correctedVersion} />
+                <FeedbackItem label={t.grammarNote} value={feedback.grammarNote} />
+                <FeedbackItem label={t.clarityNote} value={feedback.clarityNote} />
+                <FeedbackItem label={t.academicPhrasing} value={feedback.academicPhrasing} />
               </div>
               <div className="mt-3 rounded-xl bg-white p-3 text-sm leading-6 text-slate-600 ring-1 ring-slate-200">
                 <span className="font-semibold text-slate-950">{t.ieltsReminder}: </span>
-                {t.notOfficialScore}
+                {feedback.ieltsReminder}
               </div>
             </div>
           )}
@@ -63,6 +74,89 @@ export function WritingPolishDemo({ language }: { language: Locale }) {
       </div>
     </Card>
   );
+}
+
+function analyzeWritingInput(input: string, copy: WritingAssistantCopy): WritingFeedback {
+  const normalized = input.trim().replace(/\s+/g, " ");
+
+  if (!normalized) {
+    return {
+      correctedVersion: copy.emptyCorrected,
+      grammarNote: copy.emptyGrammar,
+      clarityNote: copy.emptyClarity,
+      academicPhrasing: copy.genericAcademic,
+      ieltsReminder: copy.localScoreReminder,
+    };
+  }
+
+  const startsWithSo = /^so\b/i.test(normalized);
+  const isVeryShort = normalized.split(/\s+/).length < 8;
+  const hasCasualWord = /\b(wanna|gonna|gotta|idk|u)\b/i.test(normalized);
+  const hasCant = /\bcan't\b/i.test(normalized);
+  const hasDont = /\bdont\b/i.test(normalized);
+  const hasDailyLife = /\b(dinner|breakfast|lunch|today|yesterday|daily|school|work|home)\b/i.test(normalized);
+  const matchedDinnerRule = /^(so\s+)?i\s+(just\s+)?eat\s+dinner\s+today[.!?]?$/i.test(normalized);
+
+  let correctedVersion = normalized
+    .replace(/\bwanna\b/gi, "want to")
+    .replace(/\bgonna\b/gi, "going to")
+    .replace(/\bgotta\b/gi, "have to")
+    .replace(/\bdont\b/gi, "do not")
+    .replace(/\bidk\b/gi, "I do not know")
+    .replace(/\bu\b/gi, "you")
+    .replace(/(^|[\s"'(])i(?=([\s.,!?;:)]|$))/g, "$1I");
+
+  if (/^so\s+i\s+just\s+eat\s+dinner\s+today[.!?]?$/i.test(normalized)) {
+    correctedVersion = "I just had dinner today.";
+  } else if (/^i\s+just\s+eat\s+dinner\s+today[.!?]?$/i.test(normalized)) {
+    correctedVersion = "I just had dinner today.";
+  } else if (/^i\s+eat\s+dinner\s+today[.!?]?$/i.test(normalized)) {
+    correctedVersion = "I had dinner today.";
+  } else if (/^so\s+i\b/i.test(correctedVersion)) {
+    correctedVersion = correctedVersion.replace(/^so\s+i\b/i, "I");
+  }
+
+  correctedVersion = capitalizeFirstLetter(correctedVersion);
+  if (!/[.!?]$/.test(correctedVersion)) {
+    correctedVersion = `${correctedVersion}.`;
+  }
+
+  let grammarNote = copy.genericGrammar;
+  if (matchedDinnerRule) {
+    grammarNote = copy.hadDinnerGrammar;
+  } else if (hasCasualWord) {
+    grammarNote = copy.formalGrammar;
+  } else if (hasDont) {
+    grammarNote = copy.doNotGrammar;
+  }
+
+  let clarityNote = copy.genericClarity;
+  if (startsWithSo) {
+    clarityNote = copy.removeSoClarity;
+  } else if (isVeryShort) {
+    clarityNote = copy.shortClarity;
+  }
+
+  let academicPhrasing = copy.genericAcademic;
+  if (matchedDinnerRule || hasDailyLife) {
+    academicPhrasing = copy.dailyLifeAcademic;
+  } else if (hasCant) {
+    academicPhrasing = copy.cannotAcademic;
+  } else if (hasCasualWord) {
+    academicPhrasing = copy.formalAcademic;
+  }
+
+  return {
+    correctedVersion,
+    grammarNote,
+    clarityNote,
+    academicPhrasing,
+    ieltsReminder: copy.localScoreReminder,
+  };
+}
+
+function capitalizeFirstLetter(value: string) {
+  return value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
 }
 
 function FeedbackItem({ label, value }: { label: string; value: string }) {
