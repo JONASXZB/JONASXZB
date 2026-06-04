@@ -525,6 +525,75 @@
     <script>
       window.__timelines = window.__timelines || {};
 
+      const variables = window.__hyperframes?.getVariables?.() || {};
+      const language = variables.language === "zh" ? "zh" : "en";
+
+      if (language === "zh") {
+        const zhText = new Map([
+          ["A minimalist IELTS self-study platform.", "一个极简的雅思自学平台。"],
+          ["IELTS Skills", "雅思技能"],
+          ["Train all four IELTS skills.", "系统训练雅思四项能力。"],
+          ["Listening", "听力"],
+          ["Accent practice and exam-style listening paths.", "练习不同口音，建立考试型听力路径。"],
+          ["Reading", "阅读"],
+          ["Global articles, research, and IELTS thinking.", "用全球文章与研究训练雅思思维。"],
+          ["Writing", "写作"],
+          ["Prompt banks, drafts, checklists, and ideas.", "题库、草稿、自查清单与写作思路。"],
+          ["Speaking", "口语"],
+          ["Cue cards, discussion questions, and routines.", "口语题卡、讨论问题与练习流程。"],
+          ["Weekly Global Reading", "每周全球阅读"],
+          ["Learn through high-quality global reading.", "通过高质量全球阅读学习。"],
+          ["Turn current issues into vocabulary, discussion, and writing ideas.", "把全球议题转化为词汇、讨论素材与写作思路。"],
+          ["News", "新闻"],
+          ["Think Tanks", "智库"],
+          ["Research", "研究"],
+          ["Vocabulary", "词汇"],
+          ["Writing Ideas", "写作思路"],
+          ["Global", "全球"],
+          ["AI & Work", "人工智能与工作"],
+          ["Climate", "气候"],
+          ["Jobs & Resilience", "就业与韧性"],
+          ["Society", "社会"],
+          ["Data & Trust", "数据与信任"],
+          ["Vocabulary + Practice", "词汇与练习"],
+          ["Build vocabulary. Practice with structure.", "积累词汇，有结构地练习。"],
+          ["Vocabulary Bank", "词汇库"],
+          ["300 IELTS topic words with compact cards and learned status.", "300 个雅思主题词，配紧凑卡片与已学标记。"],
+          ["Practice Tests", "模拟练习"],
+          ["Easy · Medium · Hard paths for every IELTS skill.", "每项雅思能力都有简单、中等、困难路径。"],
+          ["UK / US pronunciation", "英式 / 美式发音"],
+          ["Browser speech practice for clearer recall and listening awareness.", "用浏览器发音练习帮助记忆，并提升听音意识。"],
+          ["Self-study rhythm", "自学节奏"],
+          ["Read, learn, practise, review, and build confidence step by step.", "阅读、学习、练习、复盘，逐步建立信心。"],
+          ["Resource-first learning", "资源优先学习"],
+          ["Free-first. Clean. Focused.", "免费优先，清晰专注。"],
+          ["Curated official practice, trusted public sources, and practical study flows.", "精选官方练习、可信公开资源与实用学习流程。"],
+          ["Official", "官方"],
+          ["IELTS practice links", "雅思练习链接"],
+          ["Start with trusted preparation sources.", "从可信备考资源开始。"],
+          ["Free", "免费"],
+          ["No paywall-first path", "不以付费墙为起点"],
+          ["Useful resources before paid tools.", "先用真正有价值的免费资源。"],
+          ["Trusted sources", "可信来源"],
+          ["News, data, research", "新闻、数据、研究"],
+          ["Build ideas from public reading.", "从公开阅读中积累观点。"],
+          ["Start your IELTS journey.", "开启你的雅思学习之路。"]
+        ]);
+
+        document.querySelectorAll("body *").forEach((element) => {
+          if (element.children.length > 0) {
+            return;
+          }
+
+          const currentText = element.textContent.trim();
+          const nextText = zhText.get(currentText);
+
+          if (nextText) {
+            element.textContent = nextText;
+          }
+        });
+      }
+
       const tl = gsap.timeline({ paused: true });
 
       const enterScene = (selector, start, duration) => {

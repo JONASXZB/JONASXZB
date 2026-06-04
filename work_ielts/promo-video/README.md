@@ -29,6 +29,19 @@ Expected output:
 promo-video/output/ielts-navigator-pro-promo.mp4
 ```
 
+To render the Chinese version with the same timing, layout, and motion:
+
+```bash
+cd promo-video
+npm run render:zh
+```
+
+Chinese output:
+
+```text
+promo-video/output/ielts-navigator-pro-promo-zh.mp4
+```
+
 Expected duration: 25 seconds  
 Expected resolution: 1920x1080  
 Format: MP4
