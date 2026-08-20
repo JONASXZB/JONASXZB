@@ -30,6 +30,376 @@ export interface WeeklyReadingItem {
 
 export const weeklyReadings: WeeklyReadingItem[] = [
   {
+    id: "2026-w34-food-inflation-reuters",
+    title: "Food Inflation Returns to the Global Market Agenda",
+    titleNote: {
+      en: "Reading focus: food inflation, energy costs, supply chains, and household budgets.",
+      zh: "标题说明：这篇适合练习食品通胀、能源成本、供应链和家庭预算。",
+      yue: "標題說明：呢篇適合練習食品通脹、能源成本、供應鏈同家庭預算。",
+    },
+    source: "Reuters",
+    sourceUrl: "https://currently.att.yahoo.com/att/five-heat-063710657.html",
+    sourceType: "News",
+    isFree: true,
+    date: "2026-08-17",
+    week: "2026 Week 34",
+    region: "Global",
+    category: "Economy",
+    level: "Intermediate",
+    summary: {
+      en: "This Reuters market preview explains why investors are watching food inflation again. It links weather risks, energy costs, fertilizer shortages, and disruptions to grain shipments with the prices paid by households and businesses.",
+      zh: "这篇 Reuters 市场前瞻解释投资者为何再次关注食品通胀。文章把天气风险、能源成本、化肥短缺和粮食运输中断与家庭和企业支付的价格联系起来。",
+      yue: "呢篇 Reuters 市場前瞻解釋投資者點解再次關注食品通脹。文章將天氣風險、能源成本、化肥短缺同糧食運輸中斷，連繫到家庭同企業要支付嘅價格。",
+    },
+    whyItMatters: {
+      en: "Food prices are useful for IELTS because they connect climate, trade, inequality, public policy, and everyday living costs.",
+      zh: "食品价格是很实用的雅思主题，因为它连接气候、贸易、不平等、公共政策和日常生活成本。",
+      yue: "食品價格係好實用嘅雅思題目，因為佢連接氣候、貿易、不平等、公共政策同日常生活成本。",
+    },
+    keyVocabulary: [
+      {
+        word: "food inflation",
+        meaning: {
+          en: "a sustained rise in the prices of food products",
+          zh: "食品价格持续上涨",
+          yue: "食品價格持續上升",
+        },
+      },
+      {
+        word: "supply disruption",
+        meaning: {
+          en: "an event that interrupts the normal movement of goods",
+          zh: "打断商品正常流动的事件",
+          yue: "打斷商品正常流動嘅事件",
+        },
+      },
+      {
+        word: "household budget",
+        meaning: {
+          en: "a plan for how a household earns and spends money",
+          zh: "家庭收入与支出的预算安排",
+          yue: "家庭收入同支出嘅預算安排",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Higher food prices place the greatest pressure on households with limited incomes.",
+      zh: "食品价格上涨会给收入有限的家庭带来最大压力。",
+      yue: "食品價格上升會對收入有限嘅家庭造成最大壓力。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this when discussing inflation, poverty, inequality, or government support in IELTS Writing Task 2.",
+      zh: "讨论通胀、贫困、不平等或政府援助时，可以在雅思大作文中使用这个表达。",
+      yue: "討論通脹、貧困、不平等或者政府援助時，可以喺雅思大作文用呢個表達。",
+    },
+    discussionQuestion: {
+      en: "Should governments control essential food prices during periods of high inflation?",
+      zh: "在高通胀时期，政府是否应该控制基本食品价格？",
+      yue: "喺高通脹時期，政府係咪應該控制基本食品價格？",
+    },
+    writingPrompt: {
+      en: "Rising food prices affect some groups more than others. What causes this problem, and what should governments do about it?",
+      zh: "食品价格上涨对某些群体的影响更大。这个问题由什么造成？政府应该如何应对？",
+      yue: "食品價格上升對某啲群體影響更大。呢個問題由咩造成？政府應該點樣應對？",
+    },
+  },
+  {
+    id: "2026-w34-bioplastics-ap",
+    title: "Plastic Made from Sugar Offers an Alternative to Persistent Waste",
+    titleNote: {
+      en: "Background reading selected for the Week 34 pack: microplastics, bioplastics, composting, and consumer choices.",
+      zh: "作为 Week 34 阅读包的背景材料收录：微塑料、生物塑料、堆肥和消费选择。",
+      yue: "作為 Week 34 閱讀包嘅背景材料收錄：微塑膠、生物塑膠、堆肥同消費選擇。",
+    },
+    source: "AP News",
+    sourceUrl: "https://apnews.com/article/biobased-biodegradable-plastics-climate-compost-838fb5b4619e5020e3c01157a312a5d8",
+    sourceType: "News",
+    isFree: true,
+    date: "2026-08-10",
+    week: "2026 Week 34",
+    region: "Americas",
+    category: "Environment",
+    level: "Intermediate",
+    summary: {
+      en: "Selected as background reading for the Week 34 pack, this AP report examines plant-based polymers used to make compostable forks and packaging. It presents bioplastics as one possible response to persistent microplastic pollution while also noting cost, infrastructure, and disposal challenges.",
+      zh: "这篇 AP 报道作为 Week 34 阅读包的背景材料，介绍用植物基聚合物制造可堆肥餐具和包装。文章把生物塑料视为应对持久微塑料污染的一种可能方案，同时也指出成本、基础设施和处置方面的挑战。",
+      yue: "呢篇 AP 報道作為 Week 34 閱讀包嘅背景材料，介紹用植物基聚合物製造可堆肥餐具同包裝。文章將生物塑膠視為應對持久微塑膠污染嘅一種可能方案，同時亦指出成本、基礎設施同處置方面嘅挑戰。",
+    },
+    whyItMatters: {
+      en: "The topic helps learners compare technological solutions with changes in consumption and waste-management systems.",
+      zh: "这个主题帮助学习者比较技术解决方案与消费方式、废物管理系统的改变。",
+      yue: "呢個題目幫學習者比較技術解決方案，同消費方式、廢物管理系統嘅改變。",
+    },
+    keyVocabulary: [
+      {
+        word: "bioplastic",
+        meaning: {
+          en: "plastic made partly or fully from renewable biological materials",
+          zh: "部分或完全由可再生生物材料制成的塑料",
+          yue: "部分或者完全由可再生生物材料製成嘅塑膠",
+        },
+      },
+      {
+        word: "compostable",
+        meaning: {
+          en: "able to break down into natural material under composting conditions",
+          zh: "能在堆肥条件下分解为自然物质的",
+          yue: "能夠喺堆肥條件下分解成自然物質嘅",
+        },
+      },
+      {
+        word: "persistent waste",
+        meaning: {
+          en: "waste that remains in the environment for a long time",
+          zh: "长期留存在环境中的废物",
+          yue: "長期留存喺環境入面嘅廢物",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "A new material is only effective when the system for collecting and processing it also works.",
+      zh: "只有收集和处理体系也能有效运作，新材料才真正有用。",
+      yue: "只有收集同處理系統都有效運作，新材料先至真正有用。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this to show that environmental innovation often depends on infrastructure and public behavior.",
+      zh: "这个表达可用于说明环保创新往往依赖基础设施和公众行为。",
+      yue: "呢個表達可以用嚟說明環保創新往往依賴基礎設施同公眾行為。",
+    },
+    discussionQuestion: {
+      en: "Are bioplastics a meaningful solution, or do they encourage continued use of disposable products?",
+      zh: "生物塑料是有意义的解决方案，还是会鼓励人们继续使用一次性产品？",
+      yue: "生物塑膠係有意義嘅解決方案，定係會鼓勵人繼續使用即棄產品？",
+    },
+    writingPrompt: {
+      en: "Some people believe new materials can solve plastic pollution, while others think reducing consumption is more important. Discuss both views and give your opinion.",
+      zh: "有人认为新材料可以解决塑料污染，也有人认为减少消费更重要。讨论双方观点并给出你的看法。",
+      yue: "有人認為新材料可以解決塑膠污染，亦有人認為減少消費更重要。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
+    id: "2026-w34-youth-ai-governance-un",
+    title: "Young People Call for a Role in Shaping AI Standards",
+    titleNote: {
+      en: "Background reading selected for the Week 34 pack: youth participation, AI governance, education, and digital inclusion.",
+      zh: "作为 Week 34 阅读包的背景材料收录：青年参与、AI 治理、教育和数字包容。",
+      yue: "作為 Week 34 閱讀包嘅背景材料收錄：青年參與、AI 治理、教育同數碼共融。",
+    },
+    source: "United Nations",
+    sourceUrl: "https://www.un.org/pt/node/246853",
+    sourceType: "Public Institution",
+    isFree: true,
+    date: "2026-08-13",
+    week: "2026 Week 34",
+    region: "Global",
+    category: "Technology",
+    level: "Intermediate",
+    summary: {
+      en: "Selected as background reading for the Week 34 pack, this UN story reports on a youth-led declaration about AI policy and governance. It emphasizes that young people should participate early in decisions about technologies that will shape education, employment, rights, and sustainable development.",
+      zh: "这篇联合国报道作为 Week 34 阅读包的背景材料，介绍一份由青年主导的 AI 政策与治理宣言。文章强调，年轻人应该尽早参与有关技术的决策，因为这些技术将影响教育、就业、权利和可持续发展。",
+      yue: "呢篇聯合國報道作為 Week 34 閱讀包嘅背景材料，介紹一份由青年主導嘅 AI 政策同治理宣言。文章強調，年輕人應該及早參與有關科技嘅決策，因為呢啲科技會影響教育、就業、權利同可持續發展。",
+    },
+    whyItMatters: {
+      en: "Youth participation is a strong IELTS topic because it connects citizenship, education, technology, and representation in public decisions.",
+      zh: "青年参与是很好的雅思主题，因为它连接公民责任、教育、科技和公共决策中的代表性。",
+      yue: "青年參與係好好嘅雅思題目，因為佢連接公民責任、教育、科技同公共決策入面嘅代表性。",
+    },
+    keyVocabulary: [
+      {
+        word: "governance",
+        meaning: {
+          en: "the systems and rules used to guide decisions and behavior",
+          zh: "用于指导决策和行为的制度与规则",
+          yue: "用嚟指導決策同行為嘅制度同規則",
+        },
+      },
+      {
+        word: "meaningful participation",
+        meaning: {
+          en: "involvement that has a real influence on decisions",
+          zh: "能够真正影响决策的参与",
+          yue: "能夠真正影響決策嘅參與",
+        },
+      },
+      {
+        word: "digital inclusion",
+        meaning: {
+          en: "ensuring that all people can access and benefit from digital technology",
+          zh: "确保所有人都能接触并受益于数字技术",
+          yue: "確保所有人都能接觸同受益於數碼科技",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "People affected by a policy should have a voice in how that policy is designed.",
+      zh: "受到政策影响的人应该在政策设计过程中拥有发言权。",
+      yue: "受到政策影響嘅人應該喺政策設計過程入面有發言權。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this when discussing youth councils, community consultation, school policy, or technology regulation.",
+      zh: "讨论青年委员会、社区咨询、学校政策或科技监管时，可以使用这个表达。",
+      yue: "討論青年委員會、社區諮詢、學校政策或者科技監管時，可以用呢個表達。",
+    },
+    discussionQuestion: {
+      en: "How can governments involve young people in technology policy without making participation symbolic?",
+      zh: "政府应如何让年轻人参与科技政策，同时避免这种参与流于形式？",
+      yue: "政府應該點樣畀年輕人參與科技政策，同時避免呢種參與流於形式？",
+    },
+    writingPrompt: {
+      en: "Young people should have a greater role in decisions about education and technology. To what extent do you agree or disagree?",
+      zh: "年轻人应该在教育和科技决策中发挥更大作用。你在多大程度上同意或不同意？",
+      yue: "年輕人應該喺教育同科技決策入面發揮更大作用。你喺幾大程度上同意或者唔同意？",
+    },
+  },
+  {
+    id: "2026-w34-ai-development-worldbank",
+    title: "AI Could Support Development, but Foundations Still Matter",
+    titleNote: {
+      en: "Background reading selected for the Week 34 pack: AI access, infrastructure, skills, public services, and inequality.",
+      zh: "作为 Week 34 阅读包的背景材料收录：AI 可及性、基础设施、技能、公共服务和不平等。",
+      yue: "作為 Week 34 閱讀包嘅背景材料收錄：AI 可及性、基礎設施、技能、公共服務同不平等。",
+    },
+    source: "World Bank",
+    sourceUrl: "https://www.worldbank.org/en/news/press-release/2026/08/04/ai-offers-lifeline-to-developing-economies-in-an-era-of-weak-growth",
+    sourceType: "Public Institution",
+    isFree: true,
+    date: "2026-08-04",
+    week: "2026 Week 34",
+    region: "Global",
+    category: "Technology",
+    level: "Advanced",
+    summary: {
+      en: "Selected as background reading for the Week 34 pack, this World Bank release argues that developing economies can benefit from practical, lower-cost AI tools. It also stresses that electricity, connectivity, skills, institutions, local data, evaluation, and public trust are necessary foundations.",
+      zh: "这篇世界银行材料作为 Week 34 阅读包的背景阅读，认为发展中经济体可以从实用、低成本的 AI 工具中受益。文章同时强调，电力、网络连接、技能、制度、本地数据、效果评估和公众信任是必要基础。",
+      yue: "呢篇世界銀行材料作為 Week 34 閱讀包嘅背景閱讀，認為發展中經濟體可以由實用、低成本嘅 AI 工具受益。文章同時強調，電力、網絡連接、技能、制度、本地數據、效果評估同公眾信任係必要基礎。",
+    },
+    whyItMatters: {
+      en: "The article supports balanced IELTS arguments about whether technology reduces inequality or widens existing gaps.",
+      zh: "这篇文章有助于围绕科技是减少不平等还是扩大既有差距，形成平衡的雅思论证。",
+      yue: "呢篇文章有助圍繞科技係減少不平等，定係擴大既有差距，形成平衡嘅雅思論證。",
+    },
+    keyVocabulary: [
+      {
+        word: "digital infrastructure",
+        meaning: {
+          en: "the networks, power, computing, and systems needed for digital services",
+          zh: "数字服务所需的网络、电力、计算能力和系统",
+          yue: "數碼服務所需嘅網絡、電力、運算能力同系統",
+        },
+      },
+      {
+        word: "institutional capacity",
+        meaning: {
+          en: "the ability of organizations and governments to implement policies effectively",
+          zh: "组织和政府有效实施政策的能力",
+          yue: "組織同政府有效實施政策嘅能力",
+        },
+      },
+      {
+        word: "productivity boost",
+        meaning: {
+          en: "an increase in the amount of useful output produced",
+          zh: "有效产出数量的提升",
+          yue: "有效產出數量嘅提升",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "Technology delivers broad benefits only when people have the infrastructure and skills to use it.",
+      zh: "只有当人们具备使用技术所需的基础设施和技能时，技术才能带来广泛收益。",
+      yue: "只有當人具備使用科技所需嘅基礎設施同技能時，科技先可以帶嚟廣泛收益。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this as a topic sentence in essays about the digital divide, education, or public investment.",
+      zh: "讨论数字鸿沟、教育或公共投资时，这句话可以作为主题句。",
+      yue: "討論數碼鴻溝、教育或者公共投資時，呢句可以作為主題句。",
+    },
+    discussionQuestion: {
+      en: "Should developing countries invest first in basic digital infrastructure or advanced AI systems?",
+      zh: "发展中国家应该优先投资基础数字设施，还是先进 AI 系统？",
+      yue: "發展中國家應該優先投資基礎數碼設施，定係先進 AI 系統？",
+    },
+    writingPrompt: {
+      en: "Some people believe artificial intelligence will reduce global inequality. Others think it will widen the gap between countries. Discuss both views and give your opinion.",
+      zh: "有人认为人工智能会减少全球不平等，也有人认为它会扩大国家之间的差距。讨论双方观点并给出你的看法。",
+      yue: "有人認為人工智能會減少全球不平等，亦有人認為佢會擴大國家之間嘅差距。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
+    id: "2026-w34-household-income-oecd",
+    title: "Household Income Growth Slows Across the OECD",
+    titleNote: {
+      en: "Background reading selected for the Week 34 pack: household income, GDP, inflation, and living standards.",
+      zh: "作为 Week 34 阅读包的背景材料收录：家庭收入、GDP、通胀和生活水平。",
+      yue: "作為 Week 34 閱讀包嘅背景材料收錄：家庭收入、GDP、通脹同生活水平。",
+    },
+    source: "OECD",
+    sourceUrl: "https://www.oecd.org/en/data/insights/statistical-releases/2026/08/growth-and-economic-well-being-first-quarter-2026-oecd.html",
+    sourceType: "Data",
+    isFree: true,
+    date: "2026-08-06",
+    week: "2026 Week 34",
+    region: "Global",
+    category: "Economy",
+    level: "Intermediate",
+    summary: {
+      en: "Selected as background reading for the Week 34 pack, this OECD statistical release reports that real household income per person grew more slowly in the first quarter of 2026 while real GDP per person increased slightly faster. The country results show why economic growth and household well-being do not always move together.",
+      zh: "这篇 OECD 统计发布作为 Week 34 阅读包的背景材料，指出 2026 年第一季度人均实际家庭收入增长放缓，而人均实际 GDP 增长略有加快。不同国家的结果说明，经济增长和家庭福祉并不总是同步变化。",
+      yue: "呢篇 OECD 統計發布作為 Week 34 閱讀包嘅背景材料，指出 2026 年第一季人均實際家庭收入增長放慢，而人均實際 GDP 增長略為加快。唔同國家嘅結果說明，經濟增長同家庭福祉唔一定同步變化。",
+    },
+    whyItMatters: {
+      en: "This is useful IELTS data because it helps learners distinguish national output from the money households can spend or save.",
+      zh: "这组数据对雅思很有用，因为它帮助学习者区分国家总产出与家庭可用于消费或储蓄的收入。",
+      yue: "呢組數據對雅思好有用，因為佢幫學習者區分國家總產出，同家庭可以用嚟消費或者儲蓄嘅收入。",
+    },
+    keyVocabulary: [
+      {
+        word: "real household income",
+        meaning: {
+          en: "household income adjusted for changes in prices",
+          zh: "根据物价变化调整后的家庭收入",
+          yue: "按物價變化調整後嘅家庭收入",
+        },
+      },
+      {
+        word: "per capita",
+        meaning: {
+          en: "calculated as an average for each person",
+          zh: "按每人平均计算",
+          yue: "按每人平均計算",
+        },
+      },
+      {
+        word: "living standards",
+        meaning: {
+          en: "the material conditions and economic well-being experienced by people",
+          zh: "人们所处的物质条件和经济福祉",
+          yue: "人所處嘅物質條件同經濟福祉",
+        },
+      },
+    ],
+    usefulExpression: {
+      en: "GDP growth does not automatically translate into higher living standards for every household.",
+      zh: "GDP 增长并不会自动转化为每个家庭生活水平的提高。",
+      yue: "GDP 增長唔會自動轉化成每個家庭生活水平嘅提高。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this when comparing national economic indicators with inequality or household experience.",
+      zh: "比较国家经济指标与不平等或家庭实际感受时，可以使用这个表达。",
+      yue: "比較國家經濟指標同不平等或者家庭實際感受時，可以用呢個表達。",
+    },
+    discussionQuestion: {
+      en: "Which measure better reflects progress: GDP growth or household income growth?",
+      zh: "哪项指标更能反映进步：GDP 增长还是家庭收入增长？",
+      yue: "邊項指標更能反映進步：GDP 增長定係家庭收入增長？",
+    },
+    writingPrompt: {
+      en: "Economic growth is often used to measure a country's success, but some people believe quality of life is more important. Discuss both views and give your opinion.",
+      zh: "经济增长常被用来衡量一个国家的成功，但有人认为生活质量更重要。讨论双方观点并给出你的看法。",
+      yue: "經濟增長經常被用嚟衡量一個國家嘅成功，但有人認為生活質素更重要。討論雙方觀點並畀出你嘅睇法。",
+    },
+  },
+  {
     id: "2026-w21-ai-accountability-brookings",
     title: "Anthropomorphic AI Terms Create Gaps in Accountability",
     titleNote: {
