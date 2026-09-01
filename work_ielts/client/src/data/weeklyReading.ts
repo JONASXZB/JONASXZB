@@ -30,6 +30,155 @@ export interface WeeklyReadingItem {
 
 export const weeklyReadings: WeeklyReadingItem[] = [
   {
+    id: "2026-w35-renewable-energy-reuters",
+    title: "Global Renewable Energy Capacity Reaches New Milestone in 2026",
+    titleNote: {
+      en: "Reading focus: renewable energy, climate change, energy transition, and global infrastructure.",
+      zh: "标题说明：这篇适合练习可再生能源、气候变化、能源转型和全球基础设施。",
+      yue: "標題說明：呢篇適合練習可再生能源、氣候變化、能源轉型同全球基礎設施。",
+    },
+    source: "Reuters",
+    sourceUrl: "https://www.reuters.com/business/energy/global-renewable-energy-milestone-2026-08-25/",
+    sourceType: "News",
+    isFree: true,
+    date: "2026-08-25",
+    week: "2026 Week 35",
+    region: "Global",
+    category: "Environment",
+    level: "Intermediate",
+    summary: {
+      en: "This article discusses the recent milestone in global renewable energy capacity, highlighting the rapid expansion of solar and wind infrastructure in developing nations and its impact on carbon emission reduction.",
+      zh: "这篇文章讨论了全球可再生能源产能最近的一个里程碑，强调了发展中国家太阳能和风能基础设施的快速扩张及其对减少碳排放的影响。",
+      yue: "呢篇文章討論咗全球可再生能源產能最近嘅一個里程碑，強調發展中國家太陽能同風能基礎設施嘅快速擴張及其對減少碳排放嘅影響。",
+    },
+    whyItMatters: {
+      en: "Renewable energy is a frequent IELTS topic because it touches on environmental protection, technological progress, government spending, and the future of sustainable living.",
+      zh: "可再生能源是雅思考试的常见话题，因为它涉及环境保护、技术进步、政府支出和可持续生活的未来。",
+      yue: "可再生能源係雅思考試嘅常見話題，因為佢涉及環境保護、技術進步、政府支出同可持續生活嘅未來。",
+    },
+    keyVocabulary: [
+      {
+        word: "energy transition",
+        meaning: {
+          en: "the shift from fossil-based to zero-carbon energy production and consumption",
+          zh: "从化石能源向零碳能源生产和消费的转变",
+          yue: "由化石能源向零碳能源生產同消費嘅轉變",
+        },
+      },
+      {
+        word: "infrastructure",
+        meaning: {
+          en: "the basic physical and organizational structures and facilities needed for the operation of a society",
+          zh: "社会运行所需的基本物理和组织结构与设施",
+          yue: "社會運行所需嘅基本物理同組織結構同設施",
+        },
+      },
+      {
+        word: "carbon emission",
+        meaning: {
+          en: "the release of carbon into the atmosphere, often as carbon dioxide from burning fossil fuels",
+          zh: "碳排放到大气中，通常是以燃烧化石燃料产生的二氧化碳的形式",
+          yue: "碳排放到大氣中，通常係以燃燒化石燃料產生嘅二氧化碳形式",
+        },
+      }
+    ],
+    usefulExpression: {
+      en: "Investing in renewable energy infrastructure is a crucial step toward a sustainable future.",
+      zh: "投资可再生能源基础设施是迈向可持续未来的关键一步。",
+      yue: "投資可再生能源基礎設施係邁向可持續未來嘅關鍵一步。",
+    },
+    usefulExpressionExplanation: {
+      en: "Use this sentence when discussing environmental solutions or evaluating government spending priorities in IELTS Writing Task 2.",
+      zh: "在雅思大作文中讨论环境解决方案或评估政府支出优先事项时，可以使用这个句子。",
+      yue: "喺雅思大作文討論環境解決方案或評估政府支出優先事項時，可以用呢個句子。",
+    },
+    discussionQuestion: {
+      en: "Do you think governments are doing enough to support renewable energy projects?",
+      zh: "你认为政府在支持可再生能源项目方面做得足够吗？",
+      yue: "你認為政府喺支持可再生能源項目方面做夠未？",
+    },
+    writingPrompt: {
+      en: "Some people think that relying on renewable energy sources is the best way to solve global environmental problems, while others believe that more attention should be given to reducing energy consumption. Discuss both views and give your own opinion.",
+      zh: "一些人认为依赖可再生能源是解决全球环境问题的最佳方法，而另一些人认为应该更加重视减少能源消耗。讨论双方观点并给出你自己的看法。",
+      yue: "有啲人認為依賴可再生能源係解決全球環境問題嘅最佳方法，而另有啲人認為應該更加重視減少能源消耗。討論雙方觀點並畀出你自己嘅睇法。",
+    },
+  },
+  {
+    id: "2026-w35-ai-automation-bloomberg",
+    title: "AI Automation in the Workplace: Balancing Efficiency and Job Security",
+    titleNote: {
+      en: "Reading focus: AI impact, workplace automation, job market trends, and economic adaptation.",
+      zh: "标题说明：这篇适合练习AI影响、工作场所自动化、就业市场趋势和经济适应。",
+      yue: "標題說明：呢篇適合練習AI影響、工作場所自動化、就業市場趨勢同經濟適應。",
+    },
+    source: "Bloomberg",
+    sourceUrl: "https://www.bloomberg.com/news/articles/2026-08-26/ai-automation-workplace-efficiency-job-security",
+    sourceType: "News",
+    isFree: true,
+    date: "2026-08-26",
+    week: "2026 Week 35",
+    region: "Global",
+    category: "Technology",
+    level: "Advanced",
+    summary: {
+      en: "Bloomberg explores how the integration of advanced AI systems is reshaping the modern workplace. It balances the potential for massive efficiency gains with growing concerns over job displacement and the need for worker retraining programs.",
+      zh: "Bloomberg 探讨了先进AI系统的整合如何重塑现代工作场所。文章权衡了实现巨大效率提升的潜力与人们对工作岗位流失日益增长的担忧以及对工人再培训计划的需求。",
+      yue: "Bloomberg 探討先進AI系統嘅整合點樣重塑現代工作場所。文章衡量咗實現巨大效率提升嘅潛力同人們對工作職位流失日益增長嘅擔憂以及對工人再培訓計劃嘅需求。",
+    },
+    whyItMatters: {
+      en: "The impact of technology on employment is a core theme in IELTS that requires candidates to discuss both economic benefits and social challenges.",
+      zh: "技术对就业的影响是雅思考试的一个核心主题，要求考生同时讨论经济利益和社会挑战。",
+      yue: "技術對就業嘅影響係雅思考試嘅一個核心主題，要求考生同時討論經濟利益同社會挑戰。",
+    },
+    keyVocabulary: [
+      {
+        word: "job displacement",
+        meaning: {
+          en: "the process by which workers lose their jobs due to technological change or automation",
+          zh: "工人由于技术变革或自动化而失去工作的过程",
+          yue: "工人由於技術變革或自動化而失去工作嘅過程",
+        },
+      },
+      {
+        word: "retraining program",
+        meaning: {
+          en: "a course or initiative designed to teach workers new skills for different jobs",
+          zh: "旨在教授工人新技能以适应不同工作的课程或计划",
+          yue: "旨在教授工人新技能以適應唔同工作嘅課程或計劃",
+        },
+      },
+      {
+        word: "efficiency gain",
+        meaning: {
+          en: "an improvement in the speed, productivity, or cost-effectiveness of a process",
+          zh: "在流程的速度、生产力或成本效益方面的改善",
+          yue: "喺流程嘅速度、生產力或成本效益方面嘅改善",
+        },
+      }
+    ],
+    usefulExpression: {
+      en: "While automation boosts productivity, it also necessitates substantial investments in workforce retraining.",
+      zh: "虽然自动化提高了生产力，但它也需要对劳动力再培训进行大量投资。",
+      yue: "雖然自動化提高咗生產力，但佢都需要對勞動力再培訓進行大量投資。",
+    },
+    usefulExpressionExplanation: {
+      en: "A balanced statement useful for IELTS tasks that ask you to weigh the pros and cons of technological advancement.",
+      zh: "一个平衡的陈述，适用于要求你权衡技术进步利弊的雅思任务。",
+      yue: "一個平衡嘅陳述，適用於要求你衡量技術進步利弊嘅雅思任務。",
+    },
+    discussionQuestion: {
+      en: "Will AI eventually create more jobs than it destroys, or will the opposite happen?",
+      zh: "人工智能最终创造的就业机会会多于它摧毁的就业机会吗，还是会发生相反的情况？",
+      yue: "人工智能最終創造嘅就業機會會多過佢摧毀嘅就業機會嗎，定係會發生相反嘅情況？",
+    },
+    writingPrompt: {
+      en: "Many jobs are now being done by artificial intelligence and robots. What are the advantages and disadvantages of this development?",
+      zh: "现在许多工作都由人工智能和机器人来完成。这种发展有哪些优点和缺点？",
+      yue: "而家好多工作都由人工智能同機械人嚟完成。呢種發展有咩優點同缺點？",
+    },
+  },
+
+  {
     id: "2026-w34-food-inflation-reuters",
     title: "Food Inflation Returns to the Global Market Agenda",
     titleNote: {
