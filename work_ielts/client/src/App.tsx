@@ -1,25 +1,35 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import Vocabulary from "@/pages/Vocabulary";
-import WeeklyNews from "@/pages/WeeklyNews";
+import { lazy, Suspense } from "react";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 
+const NotFound = lazy(() => import("@/pages/NotFound"));
+const Vocabulary = lazy(() => import("@/pages/Vocabulary"));
+const WeeklyNews = lazy(() => import("@/pages/WeeklyNews"));
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   // WeeklyNews is public and accessible to all users
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path={"/weekly-news"} component={WeeklyNews} />
-      <Route path={"/vocabulary"} component={Vocabulary} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense
+      fallback={
+        <p role="status" className="container py-12 text-slate-600">
+          Loading…
+        </p>
+      }
+    >
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path={"/weekly-news"} component={WeeklyNews} />
+        <Route path={"/vocabulary"} component={Vocabulary} />
+        <Route path={"/404"} component={NotFound} />
+        {/* Final fallback route */}
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 

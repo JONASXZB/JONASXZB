@@ -1,5 +1,14 @@
 # JONASXZB
 
+## Projects
+
+| Project | What it does |
+| --- | --- |
+| [mcp-minis](https://github.com/JONASXZB/mcp-minis) | Five small Python MCP servers for papers, transcripts, web reading, market data, and persistent notes. |
+| [IELTS Navigator Pro](https://github.com/JONASXZB/ielts-navigator-pro) | Public React/Vite showcase for IELTS study resources and sample reading topics. The fuller Express/tRPC project is in [work_ielts](work_ielts/). |
+| [StorageLens](https://github.com/JONASXZB/JONASXZB-StorageLens) | Native iOS photo-library analysis with on-device processing and manual cleanup confirmation. Requires Xcode. |
+| [AI Agent Notes](https://jonasxzb.github.io/) | Technical notes and a Beacon heartbeat tutorial, with an [RSS feed](https://jonasxzb.github.io/rss.xml). |
+
 ## $5 Quick Website Fix / UI Polish
 
 I take tiny, tightly scoped website fixes for indie hackers, students, small website owners, GitHub project maintainers, landing page makers, and small SaaS builders.

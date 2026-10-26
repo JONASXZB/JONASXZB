@@ -1025,7 +1025,6 @@ export const homeLabels: Record<Locale, {
 export const vocabularyNotebookLabels: Record<Locale, {
   title: string;
   subtitle: string;
-  pageHelper: string;
   word: string;
   wordPlaceholder: string;
   meaning: string;
@@ -1124,6 +1123,7 @@ export const vocabularyNotebookLabels: Record<Locale, {
 export const vocabularyBankLabels: Record<Locale, {
   title: string;
   subtitle: string;
+  pageHelper: string;
   search: string;
   searchPlaceholder: string;
   topic: string;

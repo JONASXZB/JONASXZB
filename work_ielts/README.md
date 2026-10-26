@@ -56,6 +56,8 @@ PORT=3000
 
 The current public pages can run without a database or OpenAI key. AI calls will fail safely until `OPENAI_API_KEY` is configured.
 
+Use Node.js 24 LTS and `npm ci` for a reproducible install from the committed npm lockfile. Before pushing, run `npm run check` and `npm run build:server`; the repository's IELTS workflow runs both checks automatically. Weekly Reading, Vocabulary, and the 404 page load on demand to keep their code out of the initial home-page bundle.
+
 ## Useful commands
 
 ```bash
